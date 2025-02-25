@@ -8,6 +8,8 @@ use function FastRoute\simpleDispatcher;
 // create route
 $dispatcher = simpleDispatcher(function (RouteCollector $r) {
     $r->addRoute('GET', '/', ['App/Controllers/HomeController', 'index']);
+    $r->addRoute('GET', '/about', ['App/Controllers/HomeController', 'About']);
+    $r->addRoute('GET', '/user/{id:\d+}', ['App/Controllers/UserController', 'show']);
     // etc
 });
 
