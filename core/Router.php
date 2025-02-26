@@ -10,7 +10,10 @@ class Router {
   }
 
   public function dispatch(string $url) {
-    $url = trim($url, '/');
+    if($url === '') 
+    {
+      $url = '/';
+    }
 
     if (isset($this->routes[$url])) {
       [$controller, $method] = $this->routes[$url];
