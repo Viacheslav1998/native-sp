@@ -1,15 +1,16 @@
 <?php
 namespace App\Controllers;
+use Core\Controller;
 
-class HomeController
+class HomeController extends Controller
 {
-    public function index()
-    {
-        echo "Это главная страница"; 
-    }
+  public function index()
+  {
+    return $this->render('home');
+  }
 
-    public function about()
-    {
-        echo "Это страница о нас";
-    }
+  public function about()
+  {
+    echo "Это страница о нас";
+  }
 }
