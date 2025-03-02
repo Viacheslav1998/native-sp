@@ -25,7 +25,7 @@ class ViewRenderer
 
     if(!$this->viewExists($view))
     {
-      require __DIR__. "/../App/Views/base/404.php";
+      require __DIR__. "/../../App/Views/base/404.php";
       return;
     }
 
