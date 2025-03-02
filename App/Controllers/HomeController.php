@@ -11,6 +11,6 @@ class HomeController extends Controller
 
   public function about()
   {
-    echo "Это страница о нас";
+    return $this->render('about');
   }
 }
