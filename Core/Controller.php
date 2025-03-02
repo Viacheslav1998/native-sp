@@ -1,22 +1,20 @@
 <?php 
 
 namespace Core;
+use App\Helpers\ViewRenderer;
 
 class Controller
 {
+	protected ViewRenderer $viewRenderer; 
+
+	public function __construct()
+	{
+		$this->viewRenderer = new ViewRenderer();
+	}
+
 	protected function render(string $view, array $data = [])
-	{       
-		extract($data);
-
-		$filePath = __DIR__ . "/../App/Views/$view.php";
-
-		if(!file_exists($filePath))
-		{
-			require __DIR__ . "/../App/Views/base/404.php";
-			return;
-		}
-		
-		require __DIR__ . "/../App/Views/$view.php";     
+	{
+		$this->viewRenderer->render($view, $data);
 	}
 
 }	

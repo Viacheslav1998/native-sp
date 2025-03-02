@@ -2,7 +2,7 @@
 
 namespace App\Helpers;
 
-class ViewRemderer
+class ViewRenderer
 {
 
   /**
@@ -29,7 +29,7 @@ class ViewRemderer
       return;
     }
 
-    require __DIR__ . "/../App/Views/$view.php";
+    require __DIR__ . "/../../App/Views/$view.php";
   } 
 
 }
