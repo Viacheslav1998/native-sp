@@ -1,7 +1,7 @@
 <?php
  
 return [
-  '/'          => ['HomeController', 'index'],
+  '/'         => ['HomeController', 'index'],
   'home'      => ['HomeController', 'index'],
   'about'     => ['HomeController', 'about'],
   'contact'   => ['HomeController', 'contact'],
