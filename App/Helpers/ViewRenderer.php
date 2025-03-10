@@ -19,7 +19,7 @@ class ViewRenderer
    * require $view / or 404
    * and converts the data for use in the template
    */
-  public function render(string $view, array $data)
+  public function render(string $view, array $data = [])
   {
     extract($data);
 
@@ -29,7 +29,10 @@ class ViewRenderer
       return;
     }
 
-    require __DIR__ . "/../../App/Views/$view.php";
+    // plug in the main template 
+    $content = __DIR__ . "/../../App/Views/$view.php";
+    require __DIR__ . "/../../App/Views/layouts/main.php";
+
   } 
 
 }
