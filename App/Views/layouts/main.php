@@ -4,7 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>тут плейсхолдер</title>
-  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="<?= base_url('root/static/style.css') ?>">
+  <script type="module" src="<?= base_url('root/static/main.js') ?>"></script>
+
+
+
 </head>
 <body>
   <div class="container bg-primary">
