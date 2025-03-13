@@ -3,6 +3,7 @@
 
 root/static/
 !root/custom/custom.js
+!root/custom/custom.css
 
 node_modules/
 dist/

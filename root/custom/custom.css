@@ -1,0 +1,7 @@
+/* custom styles here */
+.logo-image {
+  height: 350px;
+  background-image: url("/images/igu.jpg");
+  background-position-y: center;
+  background-size: cover;
+}
