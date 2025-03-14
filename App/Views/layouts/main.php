@@ -15,11 +15,13 @@
 </head>
 <body>
   <div class="container">
-    <?php require_once __DIR__ . "../../parts/header.php"; ?>
+    <?php require __DIR__ . "../../parts/header.php"; ?>
 
-    <h2>а тут какой то контент</h2>
+    <main>
+      <?php require $content; ?>
+    </main>
 
-    <?php require_once __DIR__ .  "../../parts/footer.php"; ?>
+    <?php require __DIR__ .  "../../parts/footer.php"; ?>
   </div>
 </body>
 </html>
