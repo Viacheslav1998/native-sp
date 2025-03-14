@@ -6,24 +6,27 @@ class Router {
   private array $routes = [];
 
   public function add(string $path, array $controller) {
-    $this->routes[$path] = $controller;
+    $path = preg_replace('/\{([\w]+)\}/', '(?P<\1>[^/]+)', $path);
+    $this->routes["#^" . $path . "$#"] = $controller;
   }
 
   public function dispatch(string $url) {
-    if($url === '') 
-    {
+    if ($url === '') {
       $url = '/';
     }
 
-    if (isset($this->routes[$url])) {
-      [$controller, $method] = $this->routes[$url];
-      $controller = "App\\Controllers\\$controller";
+    foreach ($this->routes as $route => [$controller, $method]) {
+      if (preg_match($route, $url, $matches)) {
+        $controller = "App\\Controllers\\$controller";
 
-      if (class_exists($controller)) {
-        $instance = new $controller();
-        if (method_exists($instance, $method)) {
-          $instance->$method();
-          return;
+        if (class_exists($controller)) {
+          $instance = new $controller();
+
+          if (method_exists($instance, $method)) {
+            array_shift($matches);
+            $instance->$method(...$matches);
+            return;
+          }
         }
       }
     }
