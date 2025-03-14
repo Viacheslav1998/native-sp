@@ -4,4 +4,17 @@
   background-image: url("/images/igu.jpg");
   background-position-y: center;
   background-size: cover;
+  background-repeat: no-repeat;
 }
+
+.info-box-height {
+  height: 200px;
+}
+
+.custom-text-nav > a {
+  color: var(--bs-success);
+}
+.custom-text-nav > a:hover {
+  color: var(--bs-warning); 
+}
+
