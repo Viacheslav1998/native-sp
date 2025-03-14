@@ -6,7 +6,7 @@ class HomeController extends Controller
 {
   public function index()
   {
-    return $this->render('home');
+    return $this->render('home', ['title' => 'Главная']);
   }
 
   public function about()
