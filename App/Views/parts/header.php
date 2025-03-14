@@ -10,7 +10,7 @@
       <div class="row align-items-end info-box-height">
         <div class="info-box"> 
           <div class="row text-white">
-            <div class="col">быстрый контакт: 8 747-233-36-00</div>
+            <div class="col">Быстрый контакт: 8 747-233-36-00</div>
           </div>
           <nav class="custom-text-nav">
             <a href="/">главная</a>

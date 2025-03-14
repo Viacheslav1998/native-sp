@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>тут плейсхолдер</title>
+  <title><?= $title ?? "hastle.test" ?></title>
   <link rel="icon" type="image/png" href="<?= base_url('favicon/favicon-96x96.png') ?>">
   <link rel="icon" type="image/svg+xml" href="<?= base_url('favicon/favicon.svg') ?>">
   <link rel="shortcut icon" href="<?= base_url('favicon/favicon.ico') ?>">
