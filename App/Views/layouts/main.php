@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?= $title ?? "hastle.test" ?></title>
+  <title><?= $title ?? 'hastle.test' ?></title>
   <link rel="icon" type="image/png" href="<?= base_url('favicon/favicon-96x96.png') ?>">
   <link rel="icon" type="image/svg+xml" href="<?= base_url('favicon/favicon.svg') ?>">
   <link rel="shortcut icon" href="<?= base_url('favicon/favicon.ico') ?>">
@@ -15,13 +15,13 @@
 </head>
 <body>
   <div class="container">
-    <?php require __DIR__ . "../../parts/header.php"; ?>
+    <?php require __DIR__ . '../../parts/header.php'; ?>
 
     <main>
       <?php require $content; ?>
     </main>
 
-    <?php require __DIR__ .  "../../parts/footer.php"; ?>
+    <?php require __DIR__ .  '../../parts/footer.php'; ?>
   </div>
 </body>
 </html>
