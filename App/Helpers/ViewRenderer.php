@@ -23,14 +23,16 @@ class ViewRenderer
     {
         extract($data);
 
-        if (!$this->viewExists($view)) {
-            require $this->viewsPath . 'base/404.php';
+        try {
+            if (!$this->viewExists($view)) {
+                throw new \Exception("View not found: $view");
+            }
 
-            return;
+            $content = $this->viewsPath . "$view.php";
+        } catch (\Exception $e) {
+            $content = $this->viewExists . 'base/404.php';
         }
 
-        // plug in the main template
-        $content = $this->viewsPath . "$view.php";
         require $this->viewsPath . 'layouts/main.php';
     }
 }
