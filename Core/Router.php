@@ -18,25 +18,35 @@ class Router
             $url = '/';
         }
 
-        foreach ($this->routes as $route => [$controller, $method]) {
-            if (preg_match($route, $url, $matches)) {
-                $controller = "App\\Controllers\\$controller";
+        try {
 
-                if (class_exists($controller)) {
-                    $instance = new $controller();
+            foreach ($this->routes as $route => [$controller, $method]) {
+                if (preg_match($route, $url, $matches)) {
+                    $controller = "App\\Controllers\\$controller";
 
-                    if (method_exists($instance, $method)) {
-                        array_shift($matches);
-                        $instance->$method(...$matches);
+                    if (class_exists($controller)) {
+                        $instance = new $controller();
 
-                        return;
+                        if (method_exists($instance, $method)) {
+                            array_shift($matches);
+                            $instance->$method(...$matches);
+
+                            return;
+                        }
                     }
                 }
             }
-        }
 
-        // if no match or route is found 
-        $errorController = new \App\Controllers\ErrorController();
-        return $errorController->notFound();
+            // if no match or route is found
+            $errorController = new \App\Controllers\ErrorController();
+
+            return $errorController->notFound();
+        } catch (\Throwable $e) {
+            error_log($e->getMessage());
+
+            $errorController = new \App\Controllers\ErrorController();
+
+            return $errorController->serverError();
+        }
     }
 }
