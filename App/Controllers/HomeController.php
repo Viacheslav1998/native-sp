@@ -15,4 +15,9 @@ class HomeController extends Controller
     {
         return $this->render('about', ['title' => 'О нас']);
     }
+    
+    public function contact()
+    {
+        return $this->render('contact');
+    }
 }

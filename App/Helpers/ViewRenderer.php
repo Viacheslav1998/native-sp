@@ -30,7 +30,7 @@ class ViewRenderer
 
             $content = $this->viewsPath . "$view.php";
         } catch (\Exception $e) {
-            $content = $this->viewExists . 'base/404.php';
+            $content = $this->viewsPath . 'base/404.php';
         }
 
         require $this->viewsPath . 'layouts/main.php';
