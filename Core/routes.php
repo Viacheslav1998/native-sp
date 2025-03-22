@@ -6,4 +6,5 @@ return [
   'about' => ['HomeController', 'about'],
   'contact' => ['HomeController', 'contact'],
   'user/{id}' => ['UserController', 'show'],
+  'testError' => ['TestController', 'testError'],
 ];
