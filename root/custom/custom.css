@@ -1,4 +1,6 @@
+
 /* custom styles here */
+* { user-select: none;}
 .box-logo-image {
   height: 350px;
   background-image: url("/images/igu.jpg");
@@ -32,3 +34,16 @@
 .custom-position-bn {
   top: 50px;
 }
+
+.custom-fone-grey {
+  background-color: rgba(77, 77, 77, 0.753);
+}
+
+.btn-custom-orange {
+  background-color: #ff5733; 
+  color: white; 
+  border: none; 
+}
+
+.btn-custom-orange:hover {
+  background-color: #e64a19; }
