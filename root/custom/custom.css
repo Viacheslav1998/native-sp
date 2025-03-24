@@ -18,3 +18,9 @@
   color: var(--bs-warning); 
 }
 
+.custom-img-size img {
+  width: 100%;
+}
+.custom-position-bn {
+  top: 50px;
+}

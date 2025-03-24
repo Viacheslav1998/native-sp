@@ -8,7 +8,10 @@
     </div>
     <div class="header-content">
       <div class="row align-items-end info-box-height">
-        <div class="info-box"> 
+        <div class="info-box">
+          <div class="row text-white">
+            <div class="col">Для рекламы: 8 747-233-00-00</div>
+          </div> 
           <div class="row text-white">
             <div class="col">Быстрый контакт: 8 747-233-36-00</div>
           </div>
@@ -22,8 +25,5 @@
         </div>
       </div>
     </div>
-  </div>
-
-  <h2>Новые события в городе - здесь </h2>
-  
+  </div>  
 </header>
