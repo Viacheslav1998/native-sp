@@ -4,7 +4,10 @@
       <div class="col">
         <h1 class="text-white">Hastle.</h1>
       </div>
-      <div class="col text-white text-end">Улица: Атмосферная 2/5, офис 216</div>
+      <div class="col text-white text-end">
+        <div>Караганда</div>
+        <div>Улица: Атмосферная 2/5, офис 216</div>
+      </div>
     </div>
     <div class="header-content">
       <div class="row align-items-end info-box-height">

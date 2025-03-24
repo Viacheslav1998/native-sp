@@ -39,9 +39,37 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col">
-    preparing
+<div class="additional-news">
+  <div class="row">
+    <div class="col">
+
+      <div class="position-relative p-1  bg-warning ">
+        <div class="position-absolute  py-3 px-5 top-0 start-0 w-100 h-100">
+          <h3>Погоди</h3>
+          <p>Крутое решение</p>
+          перейти
+        </div>
+        <img src="images/puppy.jpg" alt="imagen" class="w-100">
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="row ">
+    <div class="col ">
+      <div class="container-mini bg-danger-subtle">
+        как будто завтра надо куда то
+      </div>
+    </div>
+  </div>
+
+  <div class="row ">
+    <div class="col ">
+      <div class="container-mini bg-primary" >
+        как будто завтра надо куда то
+      </div>
+    </div>
   </div>
 </div>
 
