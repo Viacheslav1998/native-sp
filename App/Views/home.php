@@ -7,15 +7,12 @@
     </div>
   </div>
 </div>
-
 <div>
-  <h2 class="py-3 px-5 mb-3">Главное событие</h2>
+  <h2 class="py-3 px-5 mb-3 fw-normal">Главное событие</h2>
 </div>
-
 <div class="row">
   <div class="col">
     <div class="position-relative bg-dark p-1 mb-3 text-white custom-img-size">    
-
       <div class="position-absolute py-3 px-5 top-0 start-0 w-100 h-100 d-flex flex-column justify-content-between">
         <div class="custom-fone-grey p-2">
           <h2>Бесплатный тренинг по бродкастингу</h2>
@@ -25,51 +22,66 @@
           <button type="button" class="btn btn-custom-orange">Перейти</button>
         </div>
       </div>
-
       <img src="images/dd.png" alt="imagen" class="w-100">
     </div>
   </div>
 </div>
-
 <div class="row">
   <div class="col">
-    <div class="py-3 px-5 mb-3">
-      <h3>Новые события в городе - здесь </h3>
+    <div class="py-3 px-5 mb-2">
+      <h3 class="fw-lighter">Новые события в городе - здесь </h3>
     </div>
   </div>
 </div>
-
-<div class="additional-news">
-  <div class="row">
+<div class="additional-news mb-3">
+  <div class="row mb-5">
     <div class="col">
-
-      <div class="position-relative p-1  bg-warning ">
-        <div class="position-absolute  py-3 px-5 top-0 start-0 w-100 h-100">
-          <h3>Погоди</h3>
-          <p>Крутое решение</p>
-          перейти
+      <div class="position-relative p-1 bg-dark overflow-hidden rounded" style="height: 150px;">
+        <img src="images/cup.jpg" alt="imagen" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover">
+        <div class="position-absolute py-3 px-5 top-0 start-0 w-100 h-100 text-white d-flex flex-column justify-content-between" style="background: rgba(0, 0, 0, 0.5);">
+          <div>
+            <h3>Кружки и прочая посуда</h3>
+            <p>находимся по адресу ...</p>
+          </div>
+          <div>
+            <button type="button" class="btn btn-light">Перейти</button>
+          </div>
         </div>
-        <img src="images/puppy.jpg" alt="imagen" class="w-100">
-      </div>
-
-    </div>
-  </div>
-
-
-  <div class="row ">
-    <div class="col ">
-      <div class="container-mini bg-danger-subtle">
-        как будто завтра надо куда то
       </div>
     </div>
   </div>
-
-  <div class="row ">
-    <div class="col ">
-      <div class="container-mini bg-primary" >
-        как будто завтра надо куда то
+  <div class="row mb-5">
+    <div class="col">
+      <div class="position-relative p-1 bg-dark overflow-hidden rounded" style="height: 150px;">
+        <img src="images/gl.jpg" alt="imagen" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover">
+        <div class="position-absolute py-3 px-5 top-0 start-0 w-100 h-100 text-white d-flex flex-column justify-content-between" style="background: rgba(0, 0, 0, 0.5);">
+          <div>
+          <h3>Оптика - зоркий глаз</h3>
+          <p>Отличное решение для проверки зрения - только сегодня!</p>
+          </div>
+          <div>
+            <button type="button" class="btn btn-light">Перейти</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-5">
+    <div class="col">
+      <div class="position-relative p-1 bg-dark overflow-hidden rounded" style="height: 150px;">
+        <img src="images/hm.jpg" alt="imagen" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover">
+        <div class="position-absolute py-3 px-5 top-0 start-0 w-100 h-100 text-white d-flex flex-column justify-content-between" style="background: rgba(0, 0, 0, 0.5);">
+          <div>
+            <h3>Установка газонов</h3>
+            <p>Цена за неделю</p>
+          </div>
+          <div>
+            <button type="button" class="btn btn-light">Перейти</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
+<!-- список типо как в почте майл -->
