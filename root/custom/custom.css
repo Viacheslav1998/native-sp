@@ -1,6 +1,6 @@
-
 /* custom styles here */
 * { user-select: none;}
+
 .box-logo-image {
   height: 350px;
   background-image: url("/images/igu.jpg");
@@ -47,3 +47,7 @@
 
 .btn-custom-orange:hover {
   background-color: #e64a19; }
+
+.list-group-item:hover .custom-color-icon {
+  color: rgb(214, 36, 155);
+}

@@ -10,6 +10,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="<?= base_url('favicon/apple-touch-icon.png') ?>">
   <link rel="stylesheet" href="<?= base_url('root/static/main.css') ?>">
   <link rel="stylesheet" href="<?= base_url('root/custom/custom.css') ?>">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
   <script type="module" src="<?= base_url('/root/static/main.js') ?>"></script>
   <script defer src="<?= base_url('/root/custom/custom.js') ?>"></script>
 </head>
