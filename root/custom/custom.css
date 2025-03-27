@@ -59,6 +59,6 @@
 }
 .card {overflow: hidden; transition: 0.2s ease all;}
 .card:hover {
-  background-color: #252525;
+  background-color: #4380b9;
   color: white;
 }

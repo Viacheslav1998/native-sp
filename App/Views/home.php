@@ -7,7 +7,69 @@
     </div>
   </div>
 </div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+<div class="row">
+  <div class="col">
+    <div class="py-3 px-5 mb-2">
+      <h4 class="fw-lighter">Выбор категорий</h4>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4 mb-3">
+    <a href="#" class="card">
+      <img src="images/city.jpg">
+      <div class="card-body">
+        <h5>города</h5>
+        <p>события в регионе.</p>
+      </div>
+    </a>
+  </div>
+  <div class="col-4 mb-3">
+    <a href="#" class="card">
+      <img src="images/day.jpg">
+      <div class="card-body">
+        <h5>День</h5>
+        <p>Дневные события</p>
+      </div>
+    </a>
+  </div>
+  <div class="col-4 mb-3">
+    <a href="#" class="card">
+      <img src="images/night.jpg">
+      <div class="card-body">
+        <h5>Ночь</h5>
+        <p>Ночные события</p>
+      </div>
+    </a>
+  </div>
+  <div class="col-4 mb-3">
+    <a href="#" class="card">
+      <img src="images/undefined.jpg">
+      <div class="card-body">
+        <h5>событие</h5>
+        <p>какое то событие</p>
+      </div>
+    </a>
+  </div>
+  <div class="col-4 mb-3">
+    <a href="#" class="card">
+      <img src="images/undefined.jpg">
+      <div class="card-body">
+        <h5>событие</h5>
+        <p>какое то событие</p>
+      </div>
+    </a>
+  </div>
+  <div class="col-4 mb-3">
+    <a href="#" class="card">
+      <img src="images/undefined.jpg">
+      <div class="card-body">
+        <h5>событие</h5>
+        <p>какое то событие</p>
+      </div>
+    </a>
+  </div>
+</div>
 <div class="row">
   <div class="col">
     <h2 class="py-2 px-5 mb-3 fw-lighter">Разные события:</h2>
@@ -114,74 +176,4 @@
       </div>
     </div>
   </div>
-</div>
-<div class="row">
-  <div class="col">
-    <div class="pb-4 px-5 mb-2">
-      <h4 class="fw-lighter">Выбор категорий</h4>
-    </div>
-  </div>
-</div>
-<div class="row mb-5">
-  <div class="col-4 mb-3">
-
-    <a href="#" class="card">
-      <img src="images/city.jpg" alt="">
-      <div class="card-body">
-        <h5>города</h5>
-        <p>события в регионе.</p>
-      </div>
-    </a>
-  </div>
-
-  <div class="col-4 mb-3">
-    <div class="card">
-      <img src="" alt="">
-      <div class="card-body">
-        <h5>День</h5>
-        <p>Дневные события</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-4 mb-3">
-    <div class="card">
-      <img src="" alt="">
-      <div class="card-body">
-        <h5>Ночь</h5>
-        <p>Ночные события</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-4 mb-3">
-    <div class="card">
-      <img src="" alt="">
-      <div class="card-body">
-        <h5>Ночь</h5>
-        <p>Ночные события</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-4 mb-3">
-    <div class="card">
-      <img src="" alt="">
-      <div class="card-body">
-        <h5>Ночь</h5>
-        <p>Ночные события</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-4 mb-3">
-    <div class="card">
-      <img src="" alt="">
-      <div class="card-body">
-        <h5>Ночь</h5>
-        <p>Ночные события</p>
-      </div>
-    </div>
-  </div>
-
 </div>
