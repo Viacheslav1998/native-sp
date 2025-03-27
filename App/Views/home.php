@@ -10,29 +10,29 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 <div class="row">
   <div class="col">
-    <h2 class="py-3 px-5 mb-3">Разные события:</h2>
-    <div class="list-group py-2">
-      <a href="" class="list-group-item list-group-item-action list-group-item-info d-flex justify-content-between align-items-center">
+    <h2 class="py-2 px-5 mb-3 fw-lighter">Разные события:</h2>
+    <div class="list-group">
+      <a href="" class="list-group-item list-group-item-action list-group-item-dark d-flex justify-content-between align-items-center">
         Какое-то событие
         <i class="bi bi-stars custom-color-icon"></i>
       </a>
-      <a href="" class="list-group-item list-group-item-action list-group-item-info d-flex justify-content-between align-items-center">
+      <a href="" class="list-group-item list-group-item-action list-group-item-dark d-flex justify-content-between align-items-center">
         Какое-то событие asdasdsad
         <i class="bi bi-star custom-color-icon"></i>
       </a>
-      <a href="" class="list-group-item list-group-item-action list-group-item-info d-flex justify-content-between align-items-center">
+      <a href="" class="list-group-item list-group-item-action list-group-item-dark d-flex justify-content-between align-items-center">
         Какое-то событие asdasdasdsadasdasd
         <i class="bi bi-star custom-color-icon"></i>
       </a>
-      <a href="" class="list-group-item list-group-item-action list-group-item-info d-flex justify-content-between align-items-center">
+      <a href="" class="list-group-item list-group-item-action list-group-item-dark d-flex justify-content-between align-items-center">
         Какое-то событие asdasd
         <i class="bi bi-star custom-color-icon"></i>
       </a>
-      <a href="" class="list-group-item list-group-item-action list-group-item-info d-flex justify-content-between align-items-center">
+      <a href="" class="list-group-item list-group-item-action list-group-item-dark d-flex justify-content-between align-items-center">
         Какое-то событие asdasdasd sadasd asd
         <i class="bi bi-moon-stars custom-color-icon"></i>
       </a>
-      <a href="" class="list-group-item list-group-item-action list-group-item-info d-flex justify-content-between align-items-center">
+      <a href="" class="list-group-item list-group-item-action list-group-item-dark d-flex justify-content-between align-items-center">
         Какое-то событие asdasd asd asd as d
         <i class="bi bi-star custom-color-icon"></i>
       </a>
@@ -40,9 +40,9 @@
   </div>
 </div>
 <div>
-  <h2 class="py-3 px-5 mb-3 fw-normal">Главное событие</h2>
+  <h2 class="pt-4 px-5 mb-3 fw-lighter">Главное событие</h2>
 </div>
-<div class="row">
+<div class="row pt-2">
   <div class="col">
     <div class="position-relative bg-dark p-1 mb-3 text-white custom-img-size">    
       <div class="position-absolute py-3 px-5 top-0 start-0 w-100 h-100 d-flex flex-column justify-content-between">
@@ -115,5 +115,3 @@
     </div>
   </div>
 </div>
-
-<!-- список типо как в почте майл -->
