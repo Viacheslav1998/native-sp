@@ -124,13 +124,14 @@
 </div>
 <div class="row mb-5">
   <div class="col-4 mb-3">
-    <div class="card">
+
+    <a href="#" class="card">
       <img src="images/city.jpg" alt="">
       <div class="card-body">
         <h5>города</h5>
         <p>события в регионе.</p>
       </div>
-    </div>
+    </a>
   </div>
 
   <div class="col-4 mb-3">
