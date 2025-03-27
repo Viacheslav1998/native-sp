@@ -115,3 +115,10 @@
     </div>
   </div>
 </div>
+<div class="row">
+  <div class="col">
+    <div class="pb-4 px-5 mb-2">
+      <h4 class="fw-lighter">Выбор категорий</h4>
+    </div>
+  </div>
+</div>
