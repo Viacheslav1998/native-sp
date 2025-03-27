@@ -125,7 +125,7 @@
 <div class="row mb-5">
   <div class="col-4 mb-3">
     <div class="card">
-      <img src="" alt="">
+      <img src="images/city.jpg" alt="">
       <div class="card-body">
         <h5>города</h5>
         <p>события в регионе.</p>
@@ -182,7 +182,5 @@
       </div>
     </div>
   </div>
-
-  
 
 </div>
