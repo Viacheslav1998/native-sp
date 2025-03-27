@@ -61,7 +61,7 @@
 <div class="row">
   <div class="col">
     <div class="py-3 px-5 mb-2">
-      <h3 class="fw-lighter">Новые события в городе - здесь </h3>
+      <h3 class="fw-lighter">Новые события в городе</h3>
     </div>
   </div>
 </div>
@@ -121,4 +121,68 @@
       <h4 class="fw-lighter">Выбор категорий</h4>
     </div>
   </div>
+</div>
+<div class="row mb-5">
+  <div class="col-4 mb-3">
+    <div class="card">
+      <img src="" alt="">
+      <div class="card-body">
+        <h5>города</h5>
+        <p>события в регионе.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-4 mb-3">
+    <div class="card">
+      <img src="" alt="">
+      <div class="card-body">
+        <h5>День</h5>
+        <p>Дневные события</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-4 mb-3">
+    <div class="card">
+      <img src="" alt="">
+      <div class="card-body">
+        <h5>Ночь</h5>
+        <p>Ночные события</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-4 mb-3">
+    <div class="card">
+      <img src="" alt="">
+      <div class="card-body">
+        <h5>Ночь</h5>
+        <p>Ночные события</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-4 mb-3">
+    <div class="card">
+      <img src="" alt="">
+      <div class="card-body">
+        <h5>Ночь</h5>
+        <p>Ночные события</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-4 mb-3">
+    <div class="card">
+      <img src="" alt="">
+      <div class="card-body">
+        <h5>Ночь</h5>
+        <p>Ночные события</p>
+      </div>
+    </div>
+  </div>
+
+  
+
 </div>
