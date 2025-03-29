@@ -18,8 +18,9 @@ class ViewRenderer
     /**
      * require $view / or 404
      * and converts the data for use in the template
+     * the main template is used by default
      */
-    public function render(string $view, array $data = []): void
+    public function render(string $view, array $data = [], string $layout = 'main'): void
     {
         extract($data);
 
@@ -33,6 +34,6 @@ class ViewRenderer
             $content = $this->viewsPath . 'base/404.php';
         }
 
-        require $this->viewsPath . 'layouts/main.php';
+        require $this->viewsPath . "layouts/$layout.php";
     }
 }
