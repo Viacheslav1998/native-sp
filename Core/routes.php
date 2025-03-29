@@ -7,4 +7,7 @@ return [
   'contact' => ['HomeController', 'contact'],
   'user/{id}' => ['UserController', 'show'],
   'testError' => ['TestController', 'testError'],
+
+  // AdminPanel need QAuth = sessions
+  'dashboard' => ['AdminController', 'dashboard'],
 ];
