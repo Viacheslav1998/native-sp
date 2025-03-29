@@ -36,4 +36,7 @@ class ViewRenderer
 
         require $this->viewsPath . "layouts/$layout.php";
     }
+
 }
+
+
