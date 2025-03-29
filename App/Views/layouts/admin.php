@@ -22,7 +22,7 @@
       <?php require $content; ?>
     </main>
 
-    <?php require __DIR__ .  '../../parts/footer.php'; ?>
+    <?php require __DIR__ .  '../../admin/parts/footer.php'; ?>
   </div>
 </body>
 </html>

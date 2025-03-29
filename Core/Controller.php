@@ -15,6 +15,6 @@ class Controller
 
     protected function render(string $view, array $data = [], string $layout = 'admin')
     {
-        $this->viewRenderer->render($view, $data);
+        $this->viewRenderer->render($view, $data, $layout);
     }
 }
