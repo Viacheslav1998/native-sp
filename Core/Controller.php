@@ -13,7 +13,7 @@ class Controller
         $this->viewRenderer = new ViewRenderer();
     }
 
-    protected function render(string $view, array $data = [], string $layout = 'admin')
+    protected function render(string $view, array $data = [], string $layout = 'main')
     {
         $this->viewRenderer->render($view, $data, $layout);
     }
