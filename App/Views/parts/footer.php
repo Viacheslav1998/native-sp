@@ -9,6 +9,10 @@
         <p>Выбранный город:</p>
         <p>Караганда</p>
       </div>
+      <div>
+        <h4>Для админов:</h4>
+        <a href="/dashboard" class="btn btn-outline-warning">Админам</a>
+      </div>
     </div>
     <div class="col m-1">
       <div class="logo-mini">
