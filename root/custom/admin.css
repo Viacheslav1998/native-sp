@@ -1,0 +1,7 @@
+/* only admin panel style */
+
+.size-head {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
