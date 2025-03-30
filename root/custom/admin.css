@@ -5,6 +5,7 @@
   height: 100px;
   object-fit: cover;
 }
-.menu {
-  background-color: rgb(224, 224, 224);
-}
+
+/* .menu {} */
+.custom-silver { background-color: rgb(224, 224, 224) }
+.custom-height { height: 800px;}
