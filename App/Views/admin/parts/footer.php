@@ -1,5 +1,5 @@
 <footer>
-  <div class="bg-dark pt-2 pb-1 px-2">
+  <div class="custom-footer pt-2 pb-1 px-2">
     <div class="row">
       <div class="col text-white">
         <h6>ADM.HASTLE.</h6>
