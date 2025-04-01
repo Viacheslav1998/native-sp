@@ -11,7 +11,7 @@
       </div>
       <div>
         <h4>Для админов:</h4>
-        <a href="/dashboard" class="btn btn-outline-warning">Админам</a>
+        <a href="/a4min/dashboard" class="btn btn-outline-warning">Админам</a>
       </div>
     </div>
     <div class="col m-1">

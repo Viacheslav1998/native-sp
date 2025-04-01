@@ -14,6 +14,6 @@
 </div>
 <div class="row mb-4">
   <div class="col">
-    <img class="size size-content img-content" src="images/foneb.jpg">
+    <img class="size size-content img-content" src="/images/foneb.jpg">
   </div>
 </div>

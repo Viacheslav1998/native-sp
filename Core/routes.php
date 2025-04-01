@@ -9,5 +9,8 @@ return [
   'testError' => ['TestController', 'testError'],
 
   // AdminPanel need QAuth = sessions
-  'dashboard' => ['AdminController', 'dashboard'],
+  'a4min/dashboard' => ['AdminController', 'dashboard'],
+  'a4min/add' => ['AdminController', 'create'],
+  'a4min/events' => ['AdminController', 'events'],
+  'a4min/persons' => ['AdminController', 'persons']
 ];
