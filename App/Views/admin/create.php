@@ -1,3 +1,11 @@
 <div class="custom-silver my-4 p-4">
-<h1>Создать событие</h1>
+  <p class="fs-2">Добавить событие</p>
+  <div class="row">
+    <div class="col">
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    </div>
+    </div>
+  </div>
 </div>
