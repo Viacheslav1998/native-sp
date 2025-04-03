@@ -1,9 +1,12 @@
 <footer>
   <div class="custom-footer pt-2 pb-1 px-2">
-    <div class="row">
+    <div class="row text-center">
       <div class="col text-white">
         <h6>ADM.HASTLE.</h6>
-        <a href="/" class="btn btn-outline-warning">ссылка на основной сайт</a>
+        <a href="/" class="btn btn-outline-warning">перейти на сайт</a>
+      </div>
+      <div class="col text-white">
+        <h6>Привет: пользователь</h6>
       </div>
       <div class="col">
         <h6 class="text-white">faster tools</h6>
