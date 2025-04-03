@@ -10,8 +10,8 @@
         <p>Караганда</p>
       </div>
       <div>
-        <h4>Для админов:</h4>
-        <a href="/a4min/dashboard" class="btn btn-outline-warning">Админам</a>
+        <h4>Для пользователей:</h4>
+        <a href="/a4min/dashboard" class="btn btn-outline-warning">Панелька</a>
       </div>
     </div>
     <div class="col m-1">

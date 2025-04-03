@@ -12,5 +12,5 @@ return [
   'a4min/dashboard' => ['AdminController', 'dashboard'],
   'a4min/add' => ['AdminController', 'create'],
   'a4min/events' => ['AdminController', 'events'],
-  'a4min/persons' => ['AdminController', 'persons']
+  'a4min/persons' => ['AdminController', 'persons'],
 ];

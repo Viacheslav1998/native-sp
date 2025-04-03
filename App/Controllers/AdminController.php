@@ -16,4 +16,6 @@ class AdminController extends \Core\Controller
   {
     return $this->render('admin/create', ['title' => 'Создать нового пользователя'], $this->template);
   }
+
+
 }
