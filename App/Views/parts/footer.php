@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col m-1">
       <div class="logo-mini">
-        <h6>Hastle.</h6>
+        <h6 class="text-warning">Hastle.</h6>
       </div>
       <div>
         <p>Выбранный город:</p>
