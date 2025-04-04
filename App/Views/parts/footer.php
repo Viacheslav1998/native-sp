@@ -39,7 +39,6 @@
         </div>
         <div class="logo" style="height: 192px; width: 192px; background-color: orange;">
           <img src="images/hastle.png">
-          <!-- test vsc commit -->
         </div>
       </div>
     </div>
