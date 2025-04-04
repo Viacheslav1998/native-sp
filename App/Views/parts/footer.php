@@ -6,35 +6,40 @@
         <h6 class="text-warning">Hastle.</h6>
       </div>
       <div>
-        <p>Выбранный город:</p>
-        <p>Караганда</p>
+        <p>Выбранный город:<br><span class="fw-lighter">Караганда</span> </p>
+      </div>
+      <div class="fw-lighter">
+        <p>Информация о сотрудничестве находится в шапке</p>
       </div>
       <div>
-        <h4>Для пользователей:</h4>
-        <a href="/a4min/dashboard" class="btn btn-outline-warning">Панелька</a>
+        <h4 class="fw-light">Для пользователей:</h4>
+        <a href="/a4min/dashboard" class="btn btn-outline-warning">Управление</a>
       </div>
     </div>
-    <div class="col m-1">
-      <div class="logo-mini">
-        <h6>быстрая навигация:</h6>
-      </div>
+    <div class="col m-1 d-flex justify-content-center">
       <div>
-        <ul>
-          <li><a href="">Ночные события</a></li>
-          <li><a href="">Дневные события</a></li>
-          <li><a href="">Специальные события</a></li>
-          <li><a href="">события</a></li>
-          <li><a href="">события</a></li>
-        </ul>
+        <div class="logo-mini">
+          <h6 class="text-warning">Быстрая навигация:</h6>
+        </div>
+        <div>
+          <ul class="faster-nav">
+            <li><a href="">Ночные события</a></li>
+            <li><a href="">Дневные события</a></li>
+            <li><a href="">Специальные события</a></li>
+            <li><a href="">события</a></li>
+            <li><a href="">события</a></li>
+          </ul>
+        </div>
       </div>
     </div>
-    <div class="col m-1">
-      <div class="logo-mini">
-        <h6>Тут что то</h6>
-      </div>
+    <div class="col m-1 d-flex flex-row-reverse">
       <div>
-        <p>какой то контент - лого ?</p>
-        <p>можно и 4 блок</p>
+        <div class="logo-mini">
+          <h6 class="text-white">Больше - действий.</h6>
+        </div>
+        <div class="logo" style="height: 192px; width: 192px; background-color: orange;">
+          <img src="images/hastle.png">
+        </div>
       </div>
     </div>
   </div>

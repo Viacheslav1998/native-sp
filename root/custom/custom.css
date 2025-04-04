@@ -1,5 +1,7 @@
 /* custom styles here */
-* { user-select: none;}
+* { user-select: none; list-style-type: none;}
+a { color: white; }
+a:hover { color: orange;}
 
 .box-logo-image {
   height: 350px;
@@ -63,6 +65,9 @@
   color: white;
 }
 
+.faster-nav > li {
+  margin-bottom: 10px;
+}
 /* css only for 404 page */
 @media only screen and (min-width: 801px) {
   .img-404 {
@@ -86,6 +91,9 @@
 }
 
 @media only screen and (max-width: 800px) {
+  .info-box {
+    background-color: #000000;
+  }
   .custom-404-mob {
     background-image: url("/images/dog-404.jpg");
     background-size: cover;
