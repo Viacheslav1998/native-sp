@@ -5,20 +5,23 @@
   </div>
   <div class="menu custom-silver">
     <div class="row p-3">
-      <div class="col text-center">
-        <a href="/a4min/dashboard" class="btn btn-outline-secondary fs-5 w-100 py-4">Главная</a>
+      <div class="col">
+        <a href="/a4min/dashboard" class="d-flex align-items-center justify-content-center btn btn-outline-secondary w-100 h-100 py-4">Главная</a>
       </div>
       <div class="col text-center">
-        <a href="/a4min/add" class="btn btn-outline-secondary fs-5 w-100 py-4">Добавить простое событие</a>
+        <a href="/a4min/add" class="d-flex align-items-center justify-content-center btn btn-outline-secondary w-100 h-100 py-4">Добавить простое событие</a>
       </div>
       <div class="col text-center">
-        <a href="/a4min/add" class="btn btn-outline-secondary fs-5 w-100 py-4">Добавить главное событие</a>
+        <a href="/a4min/add" class="d-flex align-items-center justify-content-center btn btn-outline-secondary w-100 h-100 py-4">Добавить главное событие</a>
       </div>
       <div class="col text-center">
-        <a href="/a4min/events" class="btn btn-outline-secondary fs-5 w-100 py-4">События</a>
+        <a href="/a4min/events" class="d-flex align-items-center justify-content-center btn btn-outline-secondary w-100 h-100 py-4">Управление простыми событиями</a>
       </div>
       <div class="col text-center">
-        <a href="a4min/persons" class="btn btn-outline-secondary fs-5 w-100 py-4">Пользователи</a>
+        <a href="/a4min/events" class="d-flex align-items-center justify-content-center btn btn-outline-secondary w-100 h-100 py-4">Управление главными событиями</a>
+      </div>
+      <div class="col text-center">
+        <a href="a4min/persons" class="d-flex align-items-center justify-content-center btn btn-outline-secondary w-100 h-100 py-4">Управление пользователями</a>
       </div>
     </div>
   </div>

@@ -38,7 +38,7 @@
           <h6 class="text-white">Больше - действий.</h6>
         </div>
         <div class="logo" style="height: 192px; width: 192px; background-color: orange;">
-          <img src="images/hastle.png">
+          <img src="/images/hastle.png">
         </div>
       </div>
     </div>
