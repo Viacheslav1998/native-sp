@@ -101,8 +101,10 @@
     </div>
   </div>
 </div>
-<div>
-  <h2 class="pt-4 px-5 mb-3 fw-lighter">Главное событие</h2>
+<div class="row ">
+  <div class="col">
+    <h2 class="pt-4 px-5 mb-3 fw-lighter">Главное событие</h2>
+  </div>
 </div>
 <div class="row pt-2">
   <div class="col">
@@ -112,8 +114,13 @@
           <h2>Бесплатный тренинг по бродкастингу</h2>
           <p>Запись будет с 9 по 15 число, потому что места ограничены. Пробные бесплатные 3 урока. Секретные методики и ...</p>
         </div>
-        <div>
-          <button type="button" class="btn btn-custom-orange">Перейти</button>
+        <div class="row">
+          <div class="col">
+            <button type="button" class="btn btn-custom-orange">Перейти</button>
+          </div>
+          <div class="col d-flex justify-content-end">
+            <button type="button" class="btn btn-success">Все главные события</button>
+          </div>   
         </div>
       </div>
       <img src="images/dd.png" alt="imagen" class="w-100">
@@ -123,7 +130,7 @@
 <div class="row">
   <div class="col">
     <div class="py-3 px-5 mb-2">
-      <h3 class="fw-lighter">Новые события в городе</h3>
+      <h3 class="fw-lighter">Топ 3 популярных события</h3>
     </div>
   </div>
 </div>

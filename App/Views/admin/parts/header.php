@@ -9,7 +9,10 @@
         <a href="/a4min/dashboard" class="btn btn-outline-secondary fs-5 w-100 py-4">Главная</a>
       </div>
       <div class="col text-center">
-        <a href="/a4min/add" class="btn btn-outline-secondary fs-5 w-100 py-4">Добавить</a>
+        <a href="/a4min/add" class="btn btn-outline-secondary fs-5 w-100 py-4">Добавить простое событие</a>
+      </div>
+      <div class="col text-center">
+        <a href="/a4min/add" class="btn btn-outline-secondary fs-5 w-100 py-4">Добавить главное событие</a>
       </div>
       <div class="col text-center">
         <a href="/a4min/events" class="btn btn-outline-secondary fs-5 w-100 py-4">События</a>
