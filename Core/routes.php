@@ -13,5 +13,6 @@ return [
   'a4min/form-regular-event' => ['AdminController', 'createRegularForm'],
   'a4min/form-main-event' => ['AdminController', 'createMainForm'],
   'a4min/events' => ['AdminController', 'events'],
+  'a4min/main-events' => ['AdminController', 'mainEvents'],
   'a4min/persons' => ['AdminController', 'persons'],
 ];

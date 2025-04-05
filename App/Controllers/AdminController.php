@@ -19,7 +19,22 @@ class AdminController extends \Core\Controller
 
   public function createMainForm()
   {
-    return $this->render('admin/create-main', ['title' => 'Создать главное событие'], $this->remplate);
+    return $this->render('admin/create-main', ['title' => 'Создать главное событие'], $this->template);
+  }
+
+  public function events()
+  {
+    return $this->render('admin/events', ['title' => 'Управление всеми событиями'], $this->template);
+  }
+
+  public function mainEvents()
+  {
+    return $this->render('admin/main-events', ['title' => 'Управление главными событиями'], $this->template);
+  }
+
+  public function persons()
+  {
+    return $this->render('admin/persons', ['title' => 'Управление пользователями'], $this->template);
   }
 
 }
