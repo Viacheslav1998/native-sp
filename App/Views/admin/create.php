@@ -1,5 +1,5 @@
 <div class="custom-silver my-4 p-4">
-  <p class="fs-2">Добавить событие</p>
+  <p class="fs-2">Добавить простое событие</p>
   <div class="row">
     <form>
       <div class="col">

@@ -10,50 +10,40 @@ a:hover { color: orange;}
   background-size: cover;
   background-repeat: no-repeat;
 }
-
 .custom-head-bg {
   background-color: #7d742a;
 }
-
 .custom-font-size {
   font-size: 25px;
 }
-
 .info-box-height {
   height: 200px;
 }
-
 .custom-text-nav > a {
   color: var(--bs-success);
 }
 .custom-text-nav > a:hover {
   color: var(--bs-warning); 
 }
-
 .custom-img-size img {
   width: 100%;
 }
 .custom-position-bn {
   top: 50px;
 }
-
 .custom-fone-grey {
   background-color: rgba(77, 77, 77, 0.753);
 }
-
 .btn-custom-orange {
   background-color: #ff5733; 
   color: white; 
   border: none; 
 }
-
 .btn-custom-orange:hover {
   background-color: #e64a19; }
-
 .list-group-item:hover .custom-color-icon {
   color: rgb(255, 255, 255);
 }
-
 .card img {
   height: 200px;
   object-fit: cover;

@@ -3,7 +3,7 @@
     <b>ADM-HUSTLE.</b>
     <img class="size size-head" src="/images/wp.jpg">
   </div>
-  <div class="menu">
+  <div class="menu custom-silver">
     <div class="row p-3">
       <div class="col my-2 text-center">
         <a href="/a4min/dashboard" class=" d-flex align-items-center justify-content-center btn btn-outline-dark w-100 h-100 py-4">Главная</a>
