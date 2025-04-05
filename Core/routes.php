@@ -10,7 +10,8 @@ return [
 
   // AdminPanel need QAuth = sessions
   'a4min/dashboard' => ['AdminController', 'dashboard'],
-  'a4min/add' => ['AdminController', 'create'],
+  'a4min/form-regular-event' => ['AdminController', 'createRegularForm'],
+  'a4min/form-main-event' => ['AdminController', 'createMainForm'],
   'a4min/events' => ['AdminController', 'events'],
   'a4min/persons' => ['AdminController', 'persons'],
 ];

@@ -12,10 +12,14 @@ class AdminController extends \Core\Controller
     return $this->render('admin/dashboard', ['title' => 'Добро пожаловать в админку'], $this->template);
   }
 
-  public function create()
+  public function createRegularForm()
   {
-    return $this->render('admin/create', ['title' => 'Создать нового пользователя'], $this->template);
+    return $this->render('admin/create', ['title' => 'Создать простое собатие'], $this->template);
   }
 
+  public function createMainForm()
+  {
+    return $this->render('admin/create-main', ['title' => 'Создать главное событие'], $this->remplate);
+  }
 
 }
