@@ -16,7 +16,7 @@ class ErrorController extends Controller
 
         return $this->render('base/404');
     }
- 
+
     /**
      * server error - and something's broken.
      */

@@ -2,12 +2,10 @@
 
 namespace App\Controllers;
 
-class TestController 
+class TestController
 {
-
-  public function testError()
-  {
-      throw new \Exception('text error 500');
-  }
-
+    public function testError()
+    {
+        throw new \Exception('text error 500');
+    }
 }
