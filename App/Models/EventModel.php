@@ -8,7 +8,8 @@ class EventModel extends Model
 {
     public function getEvents()
     {
-        $stmt = $this->pdo->query("SELECT * FROM events");
-        return $stmt->fetchAll();
+        $stmt = $this->pdo()->query("SELECT * FROM events");
+        $val = $stmt->fetchAll();
+        
     }
 }

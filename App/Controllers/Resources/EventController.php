@@ -2,10 +2,13 @@
 
 namespace App\Controllers\Resources;
 
+use App\Models\EventModel;
+
 class EventController extends \Core\Controller
 {
     public function addEvent()
     {
-        // use model check guard status person
+        $event = new EventModel();
+        $event->getEvents();
     }
 }

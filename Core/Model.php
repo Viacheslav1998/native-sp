@@ -11,7 +11,7 @@ class Model
 
     public function __construct()
     {
-        if (self::$pdo) {
+        if (!self::$pdo) {
             $this->connect();
         }
     }
@@ -19,15 +19,15 @@ class Model
     protected function connect()
     {
         $host = 'localhost';
-        $db = 'testDatabase';
+        $db = 'hastle';
         $user = 'root';
-        $password = '1914';
+        $pass = '1914';
         $charset = 'utf8mb4';
 
         $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 
-        $option = [
-          PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCETION,
+        $options = [
+          PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
           PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
           PDO::ATTR_EMULATE_PREPARES => false,
         ];
