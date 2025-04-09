@@ -6,9 +6,9 @@ use App\Models\EventModel;
 
 class EventController extends \Core\Controller
 {
-    public function addEvent()
+    public function getEvents()
     {
         $event = new EventModel();
-        $events = $event->getEvents();
+        $events = $event->fetchAllEvents();
     }
 }
