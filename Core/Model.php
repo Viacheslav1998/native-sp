@@ -39,8 +39,19 @@ class Model
         }
     }
 
+    // used always
     protected function pdo()
     {
+        return self::$pdo;
+    }
+
+    // use for migration in singleton
+    public static function staticPDO()
+    {
+        if (!self::$pdo) {
+            // run __construct -> connect
+            new self();
+        }
         return self::$pdo;
     }
 }

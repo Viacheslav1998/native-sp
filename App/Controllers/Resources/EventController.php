@@ -8,7 +8,6 @@ class EventController extends \Core\Controller
 {
     public function getEvents()
     {
-        $event = new EventModel();
-        $events = $event->fetchAllEvents();
+        return true;
     }
 }
