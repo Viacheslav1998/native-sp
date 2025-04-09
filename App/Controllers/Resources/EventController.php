@@ -9,6 +9,6 @@ class EventController extends \Core\Controller
     public function addEvent()
     {
         $event = new EventModel();
-        $event->getEvents();
+        $events = $event->getEvents();
     }
 }
