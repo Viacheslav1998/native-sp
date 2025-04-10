@@ -49,7 +49,6 @@ class Model
     public static function staticPDO()
     {
         if (!self::$pdo) {
-            // run __construct -> connect
             new self();
         }
         return self::$pdo;
