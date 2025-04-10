@@ -18,11 +18,13 @@ class Model
 
     protected function connect()
     {
-        $host = 'localhost';
-        $db = 'hastle';
-        $user = 'root';
-        $pass = '1914';
-        $charset = 'utf8mb4';
+        $config = require __DIR__ . "/../config/database.php";
+
+        $host = $config['host'];
+        $db = $config['db'];
+        $user = $config['user'];
+        $pass = $config['pass'];
+        $charset = $config['charset'];
 
         $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 
