@@ -23,4 +23,3 @@ function xDump($stuff)
     var_dump($stuff);
     echo '</pre>';
 }
-

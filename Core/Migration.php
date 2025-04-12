@@ -91,4 +91,32 @@ class Migration
             }
         }
     }
+
+    /** 
+     * now you can see error/logs
+     */
+    protected function logError(\Throwable $e, string $context = '')
+    {
+        $timestamp = data('Y-m-d H:i:s');
+        $message = "[$timestamp] ❌ ERROR";
+
+        if($context) {
+          $message .= "during $context";
+        }
+
+        $message .= ":\n" . $e->getMessage() . "\n";
+
+        if($e instanceof PDOException && $e->errorInfo) {
+          $message .= "SQLSTATE: " . $e->errorInfo[0] . "\n";
+          $message .= "Driver Error Code: " . $e->errorInfo[1] . "\n";
+          $message .= "Driver Error Message" . $e->errorInfo[2] . "\n";
+        }
+        
+        $message .= "in " . $e->getFile() . ':' . $e->getLine() . "\n";
+        $message .= "Stack trace:\n" . $e->getTraceAsString() . "\n";
+        
+        error_log($message); 
+    }
+
+
 }
