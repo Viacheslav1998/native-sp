@@ -11,9 +11,9 @@ class Migration
     protected $migrationDir;
     
     public function __construct(PDO $pdo)
-    {
+    {     
         $this->pdo = $pdo;
-        $this->migrationDir = __DIR__ . '../database/migratons/';
+        $this->migrationDir = realpath(__DIR__ . '/../database/migrations') . '/';
     }
 
     /**
@@ -44,18 +44,23 @@ class Migration
      */
     public function applyMigration($filename)
     {
-        $sql = file_get_contents($this->migrationDir . $filename);
+        $filePath = $this->migrationDir . $filename;
+
         try {
+            if (!file_exists($filePath)) {
+              throw new \RuntimeException("Migration file not found: $filePath");
+            }
+
+            $sql = file_get_contents($filePath);
+
             $this->pdo->exec($sql);
-            
-            // save history in the database
+
             $stmt = $this->pdo->prepare("INSERT INTO migrations (filename) VALUES (:filename)");
             $stmt->execute(['filename' => $filename]);
 
-            // echo "✅ applied: $filename\n"; if you want
-        } catch(PDOException $e) {
-            echo "❌ FAILED to apply $filename: " . $e->getMessage() . "\n";
-            return false;
+        } catch (\Throwable $e) {
+          $this->logError($e, "applying migration $filename");
+          return false;
         }
 
         return true;
@@ -67,6 +72,9 @@ class Migration
      */
     public function run ()
     {
+
+        $this->logError(new \Exception("Тестовая ошибка логирования "), "вручную");
+
         // create tables if not exists
         $this->createMigrationsTable();
 
@@ -97,8 +105,8 @@ class Migration
      */
     protected function logError(\Throwable $e, string $context = '')
     {
-        $timestamp = data('Y-m-d H:i:s');
-        $message = "[$timestamp] ❌ ERROR";
+        $timestamp = date('Y-m-d H:i:s');
+        $message = "[$timestamp] ❌ ERROR ";
 
         if($context) {
           $message .= "during $context";
@@ -109,7 +117,7 @@ class Migration
         if($e instanceof PDOException && $e->errorInfo) {
           $message .= "SQLSTATE: " . $e->errorInfo[0] . "\n";
           $message .= "Driver Error Code: " . $e->errorInfo[1] . "\n";
-          $message .= "Driver Error Message" . $e->errorInfo[2] . "\n";
+          $message .= "Driver Error Message: " . $e->errorInfo[2] . "\n";
         }
         
         $message .= "in " . $e->getFile() . ':' . $e->getLine() . "\n";
