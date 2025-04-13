@@ -4,7 +4,7 @@ namespace Core;
 
 use PDO;
 use PDOException;
-
+use Exception;
 class Migration 
 {
     protected $pdo;
@@ -66,15 +66,15 @@ class Migration
         return true;
     }
 
+
+   
+
     /**
      * Command stack is executed
      * Database management
      */
-    public function run ()
+    public function run()
     {
-
-        $this->logError(new \Exception("Тестовая ошибка логирования "), "вручную");
-
         // create tables if not exists
         $this->createMigrationsTable();
 
@@ -101,7 +101,7 @@ class Migration
     }
 
     /** 
-     * now you can see error/logs
+     * generation logs/errors
      */
     protected function logError(\Throwable $e, string $context = '')
     {
