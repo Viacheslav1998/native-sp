@@ -4,7 +4,7 @@ namespace Core;
 
 use PDO;
 use PDOException;
-use Exception;
+
 class Migration 
 {
     protected $pdo;
