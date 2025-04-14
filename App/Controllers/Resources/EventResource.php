@@ -4,7 +4,7 @@ namespace App\Controllers\Resources;
 
 use App\Models\EventModel;
 
-class EventController extends \Core\Controller
+class EventResource extends \Core\Controller
 {
     public function getEvents()
     {

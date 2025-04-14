@@ -17,5 +17,5 @@ return [
   'a4min/persons' => ['AdminController', 'persons'],
 
   // event management need QAuth = sessions \Resources
-  'a4min/add-event' => ['Resources\\EventController', 'addEvent'],
+  'a4min/add-event' => ['Resources\\EventResource', 'addEvent'],
 ];

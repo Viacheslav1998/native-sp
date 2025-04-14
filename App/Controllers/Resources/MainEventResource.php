@@ -2,6 +2,6 @@
 
 namespace App\Controllers\Resources;
 
-class MainEventControllers extends \Core\Controller
+class MainEventResource extends \Core\Controller
 {
 }

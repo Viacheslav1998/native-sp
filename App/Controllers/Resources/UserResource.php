@@ -2,7 +2,7 @@
 
 namespace App\Controllers\Resources;
 
-class UserController
+class UserResource
 {
     public function show($id)
     {
