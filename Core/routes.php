@@ -1,6 +1,10 @@
 <?php
 
 return [
+  // prepare database | generate | create
+  'db/generate' => ['Resources\\DbSetupResource', 'generate'],
+
+  // start page\get-data
   '/' => ['HomeController', 'index'],
   'home' => ['HomeController', 'index'],
   'about' => ['HomeController', 'about'],

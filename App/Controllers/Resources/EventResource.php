@@ -10,4 +10,9 @@ class EventResource extends \Core\Controller
     {
         return true;
     }
+
+    public function addEvent()
+    {
+        echo "this is work a wonderfull - test message";
+    }
 }
