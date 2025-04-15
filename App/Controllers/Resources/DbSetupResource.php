@@ -13,7 +13,7 @@ class DbSetupResource {
       $migrations = new Migration($pdo);
       $migrations->run();
 
-      echo "200";
+      echo "ok: 200";
     }
 
 }

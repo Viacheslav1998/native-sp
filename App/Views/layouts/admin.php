@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="<?= base_url('root/static/main.css') ?>">
   <link rel="stylesheet" href="<?= base_url('root/custom/admin.css') ?>">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-  <script type="module" src="<?= base_url('/root/static/main.js') ?>"></script>
-  <script defer src="<?= base_url('/root/custom/admin.js') ?>"></script>
+  <script defer type="module" src="<?= base_url('/root/static/main.js') ?>"></script>
+  <script defer type="module" src="<?= base_url('/root/custom/admin.js') ?>"></script>
 </head>
 <body>
   <div class="container">

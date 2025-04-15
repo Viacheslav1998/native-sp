@@ -1,1 +1,3 @@
-console.log('hello admin panel');
+import userform from "./admin_components/userform.js";
+
+userform.testUserForm()
