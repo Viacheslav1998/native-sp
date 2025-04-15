@@ -1,7 +1,7 @@
 <div class="custom-silver my-4 p-4">
   <p class="fs-2">Добавить простое событие</p>
   <div class="row">
-    <form>
+    <form id="formEvent">
       <div class="col">
         <div class="mb-3">
           <label for="name" name="name" class="form-label text-secondary">Название события</label>

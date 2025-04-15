@@ -1,0 +1,5 @@
+ALTER TABLE events
+  ADD COLUMN short_description VARCHAR(255) NOT NULL, 
+  ADD COLUMN type_event VARCHAR(255) NOT NULL,
+  ADD COLUMN region VARCHAR(255) NOT NULL,
+  ADD COLUMN file_path VARCHAR(255);
