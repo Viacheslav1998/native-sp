@@ -3,6 +3,9 @@
   <div class="row">
     <form id="formEvent">
       <div class="col">
+      <div class="mb-3">
+          <input class="form-control form-control-lg cs-grey" name="id" type="hidden" required>
+        </div>
         <div class="mb-3">
           <label for="name" name="name" class="form-label text-secondary">Название события</label>
           <input class="form-control form-control-lg cs-grey " type="text" placeholder="напиши название события" aria-label=".form-control-lg" required>
@@ -39,8 +42,8 @@
         <br>
         </div>
         <div>
-          <label for="file" class="form-label text-secondary">Выбери изображение</label>
-          <input name="file" class="form-control form-control-lg" id="file" type="file">
+          <label for="file" class="form-label text-secondary">Выбери изображение(расширения картинок - .jpg, .jpeg, .png, .gif)</label>
+          <input name="file" class="form-control form-control-lg" id="file" type="file" accept=".jpg, .jpeg, .png, .gif">
         </div>
       </div>
       <br>

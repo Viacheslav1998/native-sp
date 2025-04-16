@@ -11,7 +11,7 @@ class EventResource extends \Core\Controller
         return true;
     }
 
-    public function addEvent()
+    public function saveEvent()
     {
         echo "this is work a wonderfull - test message";
     }
