@@ -22,4 +22,8 @@ return [
 
   // event management need QAuth = sessions \Resources
   'a4min/add-event' => ['Resources\\EventResource', 'addEvent'],
+
+
+  // test fetch api dataForm secret
+  'a4min/test-fetch' => ['TestController', 'testFetch'],
 ];
