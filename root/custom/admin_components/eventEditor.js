@@ -1,5 +1,6 @@
 const form = document.getElementById("formEvent")
 
+
 form.addEventListener("submit", async (e) => {
   e.preventDefault()
 
@@ -7,9 +8,11 @@ form.addEventListener("submit", async (e) => {
   console.log(formData)
 });
 
-function testEventEditor() {
-  console.log('editr module work')
-}
+
+// just example get data / fake placeholder
+fetch('https://reqres.in/api/users/2')
+  .then(res => res.json())
+  .then(data => console.log(data));
 
 export default {
 

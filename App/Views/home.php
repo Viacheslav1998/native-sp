@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col">
     <div class="custom-head-bg py-3 px-5 mb-3 text-white">
-      <h2>Домашняя</h2>
+      <h2><?php echo $title; ?></h2>
       <p class="fs-3 fw-lighter">Добро пожаловать на этот замечательный ресурс. <br> 
       Вы знаете - тут можно увидить событие в своем городе!</p>
     </div>
