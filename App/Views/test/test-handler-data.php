@@ -1,7 +1,7 @@
 <div class="custom-silver my-4 p-4">
   <p class="fs-2">Страница тестов</p>
   <div class="row">
-    <form id="formEvent">
+    <form id="testForm">
       <div class="col">
       <div class="mb-3">
           <input class="form-control form-control-lg cs-grey" name="id" type="hidden" required>
@@ -43,7 +43,7 @@
         </div>
         <div>
           <label for="file" class="form-label text-secondary">Выбери изображение(расширения картинок - .jpg, .jpeg, .png, .gif)</label>
-          <input name="file" class="form-control form-control-lg" id="file" type="file" accept=".jpg, .jpeg, .png, .gif">
+          <input name="imageInput" id="imageInput" class="form-control form-control-lg" id="file" type="file" accept=".jpg, .jpeg, .png, .gif">
         </div>
       </div>
       <br>
