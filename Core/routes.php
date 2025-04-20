@@ -11,6 +11,7 @@ return [
   'contact' => ['HomeController', 'contact'],
   'user/{id}' => ['UserController', 'show'],
   'testError' => ['TestController', 'testError'],
+  'testArrayString' => ['TestController', 'testDataArrayToString'],
 
   // AdminPanel need QAuth = sessions
   'a4min/dashboard' => ['AdminController', 'dashboard'],
