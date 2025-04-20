@@ -10,8 +10,14 @@ return [
   'about' => ['HomeController', 'about'],
   'contact' => ['HomeController', 'contact'],
   'user/{id}' => ['UserController', 'show'],
-  'testError' => ['TestController', 'testError'],
-  'testArrayString' => ['TestController', 'testDataArrayToString'],
+
+  // just test code ...
+  'test-error' => ['TestController', 'testError'],
+  'test-array-string' => ['TestController', 'testDataArrayToString'],
+  'test-fetch-data' => ['TestController', 'testFetchData'],
+  // test fetch api dataForm secret
+  'a4min/test-fetch' => ['TestController', 'testFetch'],
+
 
   // AdminPanel need QAuth = sessions
   'a4min/dashboard' => ['AdminController', 'dashboard'],
@@ -23,8 +29,4 @@ return [
 
   // event management need QAuth = sessions \Resources
   'a4min/add-event' => ['Resources\\EventResource', 'addEvent'],
-
-
-  // test fetch api dataForm secret
-  'a4min/test-fetch' => ['TestController', 'testFetch'],
 ];

@@ -29,5 +29,9 @@ class TestController extends Controller
         print_r($stmt);
     }
 
-
+    public function testFetchData()
+    {
+        $box = ["name" => "Slavik", "pass" => "19920032"];
+        $json = json_encode($box);
+    }
 }
