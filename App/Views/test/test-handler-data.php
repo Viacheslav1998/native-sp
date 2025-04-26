@@ -8,7 +8,7 @@
         </div>
         <div class="mb-3">
           <label for="name" name="name" class="form-label text-secondary">Название события</label>
-          <input class="form-control form-control-lg cs-grey " type="text" placeholder="напиши название события" aria-label=".form-control-lg" required>
+          <input class="form-control form-control-lg cs-grey" type="text" placeholder="напиши название события" aria-label=".form-control-lg" required>
         </div>
         <div class="mb-3">
           <label for="mini_desk" name="mini_desk" class="form-label text-secondary">Короткое описание</label>
@@ -55,7 +55,7 @@
     <!-- test form file -->
     <form id="formFile" style="background-color: black; margin-bottom: 5px; padding: 20px; color: white;" >
       <label for="test-file" style="font-size: 18px; font-weight: bold; color: orange;">текст получение данных картинки - путь картинки</label>
-      <input type="file" name="path_file">
+      <input type="file" name="file" id="file">
       <div style="text-align: right;">
         <button type="submit" class="btn btn-outline-danger btn-lg">Проверить получения изображение</button>
       </div>

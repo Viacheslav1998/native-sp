@@ -1,7 +1,7 @@
 // forms
 const testForm = document.getElementById("testForm")
 const testPushData = document.getElementById("checkStatic")
-const testFile = document.getElementById("formFile")
+const formFile = document.getElementById("formFile")
 const anotherFormSelectorTest = document.querySelector(".anotherForm")
 
 // get imagen
@@ -9,10 +9,9 @@ const fileInput = document.getElementById("file")
 
 // form test file
 formFile.addEventListener("submit", async (e) => {
-    const data = new FormData(formFile)
-    e.preventDefault()
-    
+    e.preventDefault()  
     const file = fileInput.files[0]
+    
     console.log(file)
 });
 
