@@ -31,6 +31,7 @@ return [
   'a4min/add-event' => ['Resources\\EventResource', 'addEvent'],
 
   // API
-  'api/post-test-data' => ['Resources\\TestResource', 'index'],
-  'api/getTestDataOneMoreTime' => ['Resources\\TestResource', 'getTestDataOneMoreTime']
+  'api/post-test-data' => ['Resources\\TestResource', 'testIndex'],
+  'api/testGetDataOneMoreTime' => ['Resources\\TestResource', 'testGetDataOneMoreTime'],
+  'api/testGetFakePerson' => ['Resources\\TestResource', 'testGetFakePerson']
 ];

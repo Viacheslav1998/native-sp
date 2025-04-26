@@ -72,7 +72,7 @@ async function sendData() {
   data.append('age', '1993')
 
   try {
-    const response = await fetch('/api/getTestDataOneMoreTime', {
+    const response = await fetch('/api/testGetDataOneMoreTime', {
       method: 'POST',
       body: data
     });
@@ -90,6 +90,45 @@ async function sendData() {
 }
 
 setTimeout(sendData, 1500);
+
+
+/**
+ * Another form. 
+ * We use then / setTimeout
+ */
+
+function testPersonData() {
+  // create obj FormData 
+  const person = new FormData();
+
+  // get data
+  person.append('name', 'Jack')
+  person.append('email', 'oxxwrd@gmail.com')
+  person.append('population', 5)
+
+  // send data get response
+  fetch('/api/testGetFakePerson', {
+    method: "POST",
+    body: person
+  })
+
+  .then(response => {
+    if(!response.ok) {
+      throw new Error("Ошибка при отправке данных")
+    }
+    return response.json()
+  })
+
+  .then(result => {
+    console.log('ответ от сервера: ', result )
+  })
+
+  .catch(error => {
+    console.error('ошибка запроса: ', error)
+  });
+}
+
+setTimeout(testPersonData, 1500);
 
 
 

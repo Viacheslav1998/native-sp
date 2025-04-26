@@ -4,31 +4,33 @@ namespace App\Controllers\Resources;
 
 class TestResource
 {
-  public function index()
+  public function testIndex()
   {
-      // header('Content-Type: application/json; charset=utf-8');
+      header('Content-Type: application/json; charset=utf-8');
+      
+      $data = [
+        'name' => $_POST['name'] ?? '',
+        'email' => $_POST['email'] ?? '',
+        'title' => $_POST['email'] ?? '',
+        'date' => $_POST['date'] ?? '',
+        'description' => $_POST['description'] ?? '',
+        'assessment' => $_POST['assessment'] ?? '',
+      ];
 
-      // get all data
-      // $data = [
-      //   'name' => $_POST['name'] ?? '',
-      //   'email' => $_POST['email'] ?? '',
-      //   'title' => $_POST['email'] ?? '',
-      //   'date' => $_POST['date'] ?? '',
-      //   'description' => $_POST['description'] ?? '',
-      //   'assessment' => $_POST['assessment'] ?? '',
-      // ];
-
-      // echo json_encode([
-      //     'status' => 'ok',
-      //     'data' => $data
-      // ]);
+      echo json_encode([
+          'status' => 'ok',
+          'data' => $data
+      ]);
   }     
 
-
-  public function getTestDataOneMoreTime()
+  /**
+   * we're getting a php response back.
+   */
+  public function testGetDataOneMoreTime()
   {
     header('Content-Type: application/json; charset=utf-8');
 
+    // getting data
     $data = [
       'name' => $_POST['name'] ?? '',
       'email' => $_POST['email'] ?? '',
@@ -41,6 +43,25 @@ class TestResource
       'data' => $data
     ]);
   }
+
+
+  public function testGetFakePerson()
+  {
+    header('Content-Type: application/json; charset=utf-8');
+
+    $person = [
+      'name' => $_POST['name'] ?? '',
+      'email' => $_POST['email'] ?? '',
+      'population' => $_POST['population'] ?? '2'
+    ];
+
+    echo json_encode([
+      'status' => 'data have been obtained',
+      'person' => $person 
+    ]);
+  }
+
+
   // public function create(){}     // form create (GET)
   // public function store(){}      // save data (POST)
   // public function show($id){}    // show one (GET)
