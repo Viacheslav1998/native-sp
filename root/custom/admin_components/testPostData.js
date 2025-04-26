@@ -11,13 +11,12 @@ const fileInput = document.getElementById("file")
 formFile.addEventListener("submit", async (e) => {
     e.preventDefault()  
     const file = fileInput.files[0]
-    
     console.log(file)
 });
 
 // form use append
-// create table = save data
 testPushData.addEventListener("submit", async (e) => {
+  e.preventDefault();
   const testData = new FormData()
   const date = new Date().toLocaleDateString()
 
@@ -28,13 +27,56 @@ testPushData.addEventListener("submit", async (e) => {
   testData.append("description", "this is a very interesting page and news - you can use it right now")
   testData.append("assessment", "5")
 
-  const response = await fetch("api/get-data", {
+  const response = await fetch("/api/post-test-data", {
     method: 'POST',
-    body: new FormData(testData)
+    body: testData
   });
 
-  const result = await response.json();
+  if(!response.ok) {
+    console.error("Error Network - ошибка")
+    return;
+  }
+
+  const result = await response.text();
+
+  // const result = await response.json();
+  console.log('ответ сервера: ' + result);
 });
+
+
+
+// Another async form send-data use [await]
+async function sendData() {
+
+  // create object data
+  const data = new FormData();
+
+  // add data into formData
+  data.append('name', 'Steven')
+  data.append('email', 'stv@mail.com')
+  data.append('title', 'tiny defender')
+  data.append('age', '1993')
+
+  try {
+    const response = await fetch('/api/getTestDataOneMoreTime', {
+      method: 'POST',
+      body: data
+    });
+
+    if(!response.ok) {
+      console.error('Error to call data');
+      return;
+    }
+
+    const result = await response.json();
+    console.log(result.data)
+  } catch(error) {
+    console.error("Error response: " + error)
+  }
+}
+
+setTimeout(sendData, 1500);
+
 
 
 export default {

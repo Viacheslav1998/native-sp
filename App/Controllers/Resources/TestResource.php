@@ -1,12 +1,46 @@
 <?php
 
-// Just Example Resource
+namespace App\Controllers\Resources;
+
 class TestResource
 {
   public function index()
   {
-    
-  }      
+      // header('Content-Type: application/json; charset=utf-8');
+
+      // get all data
+      // $data = [
+      //   'name' => $_POST['name'] ?? '',
+      //   'email' => $_POST['email'] ?? '',
+      //   'title' => $_POST['email'] ?? '',
+      //   'date' => $_POST['date'] ?? '',
+      //   'description' => $_POST['description'] ?? '',
+      //   'assessment' => $_POST['assessment'] ?? '',
+      // ];
+
+      // echo json_encode([
+      //     'status' => 'ok',
+      //     'data' => $data
+      // ]);
+  }     
+
+
+  public function getTestDataOneMoreTime()
+  {
+    header('Content-Type: application/json; charset=utf-8');
+
+    $data = [
+      'name' => $_POST['name'] ?? '',
+      'email' => $_POST['email'] ?? '',
+      'title' => $_POST['title'] ?? '',
+      'age' => $_POST['age'] ?? ''
+    ];
+
+    echo json_encode([
+      'status' => 'ok',
+      'data' => $data
+    ]);
+  }
   // public function create(){}     // form create (GET)
   // public function store(){}      // save data (POST)
   // public function show($id){}    // show one (GET)
