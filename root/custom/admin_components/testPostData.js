@@ -7,16 +7,26 @@ const anotherFormSelectorTest = document.querySelector(".anotherForm")
 // get imagen
 const fileInput = document.getElementById("file")
 
-// form test file
+/**
+ * form for file
+ * test get and manipulation file image - types [jpg, jpeg, png, gif] - memory-size[1000]
+ */
 formFile.addEventListener("submit", async (e) => {
     e.preventDefault()  
     const file = fileInput.files[0]
     console.log(file)
 });
 
-// form use append
+
+/**
+ * test data for use append
+ * Just check the data and accept the answer
+ * @response text but you can use json
+ * there's no try/catch method
+ */
 testPushData.addEventListener("submit", async (e) => {
   e.preventDefault();
+
   const testData = new FormData()
   const date = new Date().toLocaleDateString()
 
@@ -44,8 +54,12 @@ testPushData.addEventListener("submit", async (e) => {
 });
 
 
-
-// Another async form send-data use [await]
+/**
+ * Another async form send-data
+ * setTimeout - send timer
+ * use [await]
+ * @return json 
+ */
 async function sendData() {
 
   // create object data
