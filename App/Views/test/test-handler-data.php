@@ -1,9 +1,9 @@
 <div class="custom-silver my-4 p-4">
-  <p class="fs-2">Страница тестов</p>
+  <h1 class="fs-2 text-danger">Страница тестов</h1>
   <div class="row">
     <form id="testForm">
       <div class="col">
-      <div class="mb-3">
+        <div class="mb-3">
           <input class="form-control form-control-lg cs-grey" name="id" type="hidden" required>
         </div>
         <div class="mb-3">
@@ -11,7 +11,7 @@
           <input class="form-control form-control-lg cs-grey " type="text" placeholder="напиши название события" aria-label=".form-control-lg" required>
         </div>
         <div class="mb-3">
-          <label for="desk_mini" name="desk_mini" class="form-label text-secondary">Короткое описание</label>
+          <label for="mini_desk" name="mini_desk" class="form-label text-secondary">Короткое описание</label>
           <input class="form-control form-control-lg cs-grey" type="text" placeholder="короткое описание" aria-label=".form-control-lg" required>
         </div>
         <div>
@@ -33,11 +33,11 @@
           </select>
         </div>
         <div>
-        <label for="fullDesk" class="form-label text-secondary">Полное описание</label>
+        <label for="full_desk" class="form-label text-secondary">Полное описание</label>
         <br>
         <div class="form-floating">
-          <textarea rows="8" style="height: 100%;" name="fullDesk" class="form-control cs-grey" placeholder="Полное описание" id="fullDesk" required></textarea>
-          <label for="fullDesk">Полное описание твоего события...</label>
+          <textarea rows="8" style="height: 100%;" name="full_desk" class="form-control cs-grey" placeholder="Полное описание" id="full_desk" required></textarea>
+          <label for="full_desk">Полное описание твоего события...</label>
         </div>
         <br>
         </div>
@@ -49,7 +49,26 @@
       <br>
       <div style="text-align: right;">
         <button type="submit" class="btn btn-outline-success btn-lg">Создать</button>
+      </div><br>
+    </form>
+
+    <!-- test form file -->
+    <form id="formFile" style="background-color: black; margin-bottom: 5px; padding: 20px; color: white;" >
+      <label for="test-file" style="font-size: 18px; font-weight: bold; color: orange;">текст получение данных картинки - путь картинки</label>
+      <input type="file" name="path_file">
+      <div style="text-align: right;">
+        <button type="submit" class="btn btn-outline-danger btn-lg">Проверить получения изображение</button>
+      </div>
+      <br>
+    </form>
+
+    <!-- test form check static -->
+    <form id="checkStatic" style="background-color: black; color: white; padding: 20px;">
+      <label style="font-size: 18px; font-weight: bold;" >Данная форма пуста - она используется для проверки отправки или получения тестовых данных</label>
+      <div style="text-align: right;">
+        <button type="submit" class="btn btn-outline-success btn-lg">Получить статические данные</button>
       </div>
     </form>
+
   </div>
 </div>

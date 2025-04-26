@@ -1,7 +1,7 @@
 <?php
 
 return [
-  // prepare database | generate | create
+  // database | generate | create
   'db/generate' => ['Resources\\DbSetupResource', 'generate'],
 
   // start page\get-data
@@ -29,4 +29,7 @@ return [
 
   // event management need QAuth = sessions \Resources
   'a4min/add-event' => ['Resources\\EventResource', 'addEvent'],
+
+  // API
+  // 'api/post-test-data' => ['Resources\\TestResource', 'index']
 ];

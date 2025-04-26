@@ -13,7 +13,7 @@ class TestController extends Controller
 
     public function testFetch()
     {
-        return $this->render('test/test-handler-data', ['title' => 'test'], 'admin');
+        return $this->render('test/test-handler-data', ['title' => 'Страница тестирования данных'], 'admin');
     }
 
     public function testDataArrayToString()

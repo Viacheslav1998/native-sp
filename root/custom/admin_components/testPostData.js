@@ -1,14 +1,15 @@
-// just example handler and post data 
+// forms
 const testForm = document.getElementById("testForm")
-const secondAppendForm = document.getElementById("appendForm")
+const testPushData = document.getElementById("checkStatic")
+const testFile = document.getElementById("formFile")
 const anotherFormSelectorTest = document.querySelector(".anotherForm")
 
 // get imagen
 const fileInput = document.getElementById("file")
 
-// first testForm
-testForm.addEventListener("submit", async (e) => {
-    const data = new FormData(testForm)
+// form test file
+formFile.addEventListener("submit", async (e) => {
+    const data = new FormData(formFile)
     e.preventDefault()
     
     const file = fileInput.files[0]
@@ -17,7 +18,7 @@ testForm.addEventListener("submit", async (e) => {
 
 // form use append
 // create table = save data
-secondAppendForm.addEventListener("submit", async (e) => {
+testPushData.addEventListener("submit", async (e) => {
   const testData = new FormData()
   const date = new Date().toLocaleDateString()
 
@@ -28,8 +29,12 @@ secondAppendForm.addEventListener("submit", async (e) => {
   testData.append("description", "this is a very interesting page and news - you can use it right now")
   testData.append("assessment", "5")
 
-  // await см у себя в учебнике и создай талицу для проверки работоспособности твоей системы
+  const response = await fetch("api/get-data", {
+    method: 'POST',
+    body: new FormData(testData)
+  });
 
+  const result = await response.json();
 });
 
 
