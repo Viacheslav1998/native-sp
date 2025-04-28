@@ -52,6 +52,12 @@
       </div><br>
     </form>
 
+      <div class="col">
+        <h2 class="text-success">
+          форма отправки синхронных данных - не из инпутов
+        </h2>
+      </div>
+
     <!-- test form file -->
     <form id="formFile" style="background-color: black; margin-bottom: 5px; padding: 20px; color: white;" >
       <label for="test-file" style="font-size: 18px; font-weight: bold; color: orange;">текст получение данных картинки - путь картинки</label>
@@ -70,5 +76,57 @@
       </div>
     </form>
 
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <h2 class="text-danger">Форма отправки тестовых данных</h2>
+    <form id="anotherForm">
+      <div class="col">
+        <div class="mb-3">
+          <input class="form-control form-control-lg cs-grey" name="id" value="1" type="hidden" required>
+        </div>
+        <div class="mb-3">
+          <label for="name" class="form-label text-secondary">Название</label>
+          <input class="form-control form-control-lg cs-grey" name="name" type="text" placeholder="название" aria-label=".form-control-lg" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label text-secondary">почта</label>
+          <input class="form-control form-control-lg cs-grey" name="email" type="email" placeholder="почта" aria-label=".form-control-lg" required>
+        </div>
+        <div class="mb-3">
+          <label for="title" class="form-label text-secondary">заголовок</label>
+          <input class="form-control form-control-lg cs-grey" name="title" type="text" placeholder="заголовок" aria-label=".form-control-lg" required>
+        </div>
+        <div class="mb-3">
+          <input class="form-control form-control-lg cs-grey" name="date_js" value="20.20.1984" type="hidden" aria-label=".form-control-lg" required>
+        </div>
+        <label for="description" class="form-label text-secondary">Полное описание</label>
+        <br>
+        <div class="form-floating">
+          <textarea rows="8" style="height: 100%;" name="description" class="form-control cs-grey" placeholder="Полное описание" id="full_desk" required></textarea>
+          <label for="description">Полное описание...</label>
+        </div>
+        <div class="mb-3">
+          <label for="assessment" class="form-label text-secondary">оценка</label>
+          <select name="assessment" class="form-select form-select-lg mb-3 cs-grey" aria-label=".form-select-lg" required>
+            <option value="" selected disabled>Выбор оценки:</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <input class="form-control form-control-lg cs-grey" name="date_test_php" value="10.10.1984" type="hidden" aria-label=".form-control-lg" required>
+        </div>
+        <div style="text-align: right;">
+          <button type="submit" class="btn btn-outline-success btn-lg">Отправка данных на сервер (сохранения)</button>
+        </div>
+      </div>
+      
+    </form>
   </div>
 </div>

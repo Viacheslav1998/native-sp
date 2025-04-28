@@ -45,19 +45,15 @@ class TestResource
   }
 
 
-  public function testGetFakePerson()
+  public function testPostTestData()
   {
     header('Content-Type: application/json; charset=utf-8');
-
-    $person = file_get_contents('php://input');
-
 
     $person = [
       'name' => $_POST['name'] ?? '',
       'email' => $_POST['email'] ?? '',
       'population' => $_POST['population'] ?? '2'
     ];
-
 
     echo json_encode([
       'status' => 'data have been obtained',

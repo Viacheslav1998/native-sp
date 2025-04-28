@@ -33,5 +33,5 @@ return [
   // API
   'api/post-test-data' => ['Resources\\TestResource', 'testIndex'],
   'api/testGetDataOneMoreTime' => ['Resources\\TestResource', 'testGetDataOneMoreTime'],
-  'api/testGetFakePerson' => ['Resources\\TestResource', 'testGetFakePerson']
+  'api/testPostTestData' => ['Resources\\TestResource', 'testPostTestData']
 ];

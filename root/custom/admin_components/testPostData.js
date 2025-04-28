@@ -2,7 +2,7 @@
 const testForm = document.getElementById("testForm")
 const testPushData = document.getElementById("checkStatic")
 const formFile = document.getElementById("formFile")
-const anotherFormSelectorTest = document.querySelector(".anotherForm")
+// const testAnotherForm = document.getElementbyId("anotherForm")
 
 // get imagen
 const fileInput = document.getElementById("file")
@@ -89,7 +89,7 @@ async function sendData() {
   }
 }
 
-setTimeout(sendData, 1500);
+// setTimeout(sendData, 1500);
 
 
 /**
@@ -127,10 +127,28 @@ function testPersonData() {
     console.error('ошибка запроса: ', error)
   });
 }
+// setTimeout(testPersonData, 1500);
 
-setTimeout(testPersonData, 1500);
 
+anotherForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  try {
+    const response = await fetch('/api/testPostTestData',{
+      method: "POST",
+      body: new FormData(anotherForm)
+    });
 
+    if(!response.ok) {
+      console.error("не получилось выполнить запрос")
+      return
+    }
+
+    const result = await response.json()
+    // console.log(result)
+  } catch (error) {
+    console.error("Ошибка запроса:", error.message || error);
+  }
+});
 
 export default {
 
