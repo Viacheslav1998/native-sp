@@ -44,7 +44,9 @@ class TestResource
     ]);
   }
 
-
+  /**
+   * save own test data in database
+   */
   public function testPostTestData()
   {
     header('Content-Type: application/json; charset=utf-8');

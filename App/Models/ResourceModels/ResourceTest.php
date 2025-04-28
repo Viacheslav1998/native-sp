@@ -1,10 +1,72 @@
 <?php
 
-namespace App\Models\ResouceModels;
+namespace App\Models\ResourceModels;
 
-use App\Core;
+use Core\Model;
+use App\Helpers\ValidationHelper;
 
 class ResourceModel extends Model
 {
 
+    private \PDO $pdo;
+
+    public function __construct(\PDO $pdo)
+    {
+        $this->pdo = $pdo;
+    }
+
+    public function save(array $data): array
+    {
+        $errors = [];
+
+        if (!ValidationHelper::required($data['name'])) {
+          $errors['name'] = 'Названия обаязательно';
+        }
+
+        if(!ValidationHelper::email($data['email'])) {
+          $errors['email'] = 'Неверный формат Email';
+        }
+
+        if(!ValidationHelper::required($data['description'])) {
+          $errors['description'] = 'Описание обязательно.';
+        }
+
+        if (!ValidationHelper::numeric($data['assessment'])) {
+          $errors['assessment'] = 'Оценка должна быть числом.';
+        }
+
+        if (!empty($errors)) {
+          return [
+            'success' => false,
+            'errors'  => $errors,
+          ];
+        }
+
+        $stmt = $this->pdo->prepare('
+            INSERT INTO your_table (name, email, title, date_js, description, assessment, date_test_php)
+            VALUES (:name, :email, :title, :date_js, :description, :assessment, :date_test_php)
+        ');
+
+        $success = $stmt->execute([
+          ':name' => $data['name'],
+          ':email' =>  $data['email'],
+          ':title' => $data['title'],
+          ':date_js' => $data['date_js'],
+          ':description' => $data['description'],
+          ':assessment' =>  $data['assessment'],
+          ':date_test_php' => $data['date_test_php'],
+        ]);
+
+        if ($success) {
+            return [
+              'success' => true,
+              'message' => 'Данные успешно сохранены'
+            ];
+          } else {
+            return [
+              'success' => false, 
+              'message' => ['db' => 'Ошибка при сохранении в бд']
+            ];
+        }
+    }
 }
