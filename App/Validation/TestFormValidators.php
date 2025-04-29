@@ -4,6 +4,7 @@ namespace App\Validation;
 
 class TestFormValidators 
 {
+    /** for testResource  */
     public function validate(array $array): array
     {
         $errors = [];

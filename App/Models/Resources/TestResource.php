@@ -4,21 +4,27 @@ namespace App\Models\Resources;
 
 use Core\Model;
 use App\Helpers\ValidationHelper;
+use App\Validation\TestFormValidators;
 
 class TestResource extends Model
 {
 
-    private \PDO $pdo;
+    // private $pdo; in controller \PDO $pdo,
+    private $validator;
 
-    public function __construct(\PDO $pdo)
+    public function __construct(TestFormValidators $validator)
     {
-        $this->pdo = $pdo;
+        $this->validator = $validator;
     }
-        
+
+    /**
+     * save data
+     * return response 
+     * @param
+     */
     public function save(array $data): array
     {
-
-        $errors = $this->validate($data);
+        $errors = $this->validator->validate($data);
       
         if (!empty($errors)) {
           return [
@@ -27,31 +33,31 @@ class TestResource extends Model
           ];
         }
 
-        $stmt = $this->pdo->prepare('
-            INSERT INTO your_table (name, email, title, date_js, description, assessment, date_test_php)
-            VALUES (:name, :email, :title, :date_js, :description, :assessment, :date_test_php)
-        ');
-
-        $success = $stmt->execute([
-          ':name' => $data['name'],
-          ':email' =>  $data['email'],
-          ':title' => $data['title'],
-          ':date_js' => $data['date_js'], // js date function
-          ':description' => $data['description'],
-          ':assessment' =>  $data['assessment'],
-          ':date_test_php' => $data['date_test_php'], // only sql func date
-        ]);
-
-        if ($success) {
-            return [
-              'success' => true,
-              'message' => 'Данные успешно сохранены'
-            ];
-          } else {
-            return [
-              'success' => false, 
-              'message' => ['db' => 'Ошибка при сохранении в бд']
-            ];
-        }
+        return $this->storeToDatabase($data)
+          ? ['success' => true, 'message' => 'сохранено']
+          : ['success' => false, 'message' => ['db' => 'Error in Database']];
     }
+
+
+    /**
+     * proper data correction and storage
+     */
+    private function storeToDatabase(array $data): bool
+    {
+      $stmt = $this->pdo->prepare('
+          INSERT INTO your_table (name, email, title, date_js, description, assessment, date_test_php)
+          VALUES (:name, :email, :title, :date_js, :description, :assessment, :date_test_php)
+      ');
+
+      return $stmt->execute([
+        ':name' => $data['name'],
+        ':email' =>  $data['email'],
+        ':title' => $data['title'],
+        ':date_js' => $data['date_js'], // js date function
+        ':description' => $data['description'],
+        ':assessment' =>  $data['assessment'],
+        ':date_test_php' => $data['date_test_php'], // only sql func date
+      ]);
+    }
+
 }
