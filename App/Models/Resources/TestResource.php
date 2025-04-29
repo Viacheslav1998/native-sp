@@ -5,7 +5,7 @@ namespace App\Models\Resources;
 use Core\Model;
 use App\Helpers\ValidationHelper;
 
-class ResourceModel extends Model
+class TestResource extends Model
 {
 
     private \PDO $pdo;

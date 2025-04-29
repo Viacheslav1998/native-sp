@@ -12,7 +12,6 @@ return [
   'user/{id}' => ['UserController', 'show'],
 
   // just test code ...
-  'test-error' => ['TestController', 'testError'],
   'test-array-string' => ['TestController', 'testDataArrayToString'],
   'test-fetch-data' => ['TestController', 'testFetchData'],
   // test fetch api dataForm secret

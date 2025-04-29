@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class TestController
+class TestController extends \Core\Controller
 {
   public function testIndex()
   {
@@ -63,6 +63,10 @@ class TestController
     ]);
   }
 
+  public function testFetch()
+  {
+     return $this->render('test/test-handler-data', ['title' => 'шаблон для тестирования api'], 'admin');
+  }
 
   // public function create(){}     // form create (GET)
   // public function store(){}      // save data (POST)
