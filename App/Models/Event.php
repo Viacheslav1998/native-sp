@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Core\Model;
 
-class EventModel extends Model
+class Event extends Model
 {
     public function fetchAllEvents()
     {

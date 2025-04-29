@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\ResourceModels;
+namespace App\Models\Resources;
 
 use Core\Model;
 use App\Helpers\ValidationHelper;
@@ -51,10 +51,10 @@ class ResourceModel extends Model
           ':name' => $data['name'],
           ':email' =>  $data['email'],
           ':title' => $data['title'],
-          ':date_js' => $data['date_js'],
+          ':date_js' => $data['date_js'], // js date function
           ':description' => $data['description'],
           ':assessment' =>  $data['assessment'],
-          ':date_test_php' => $data['date_test_php'],
+          ':date_test_php' => $data['date_test_php'], // only sql func date
         ]);
 
         if ($success) {

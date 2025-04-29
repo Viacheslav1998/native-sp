@@ -2,35 +2,72 @@
 
 namespace App\Controllers;
 
-use Core\Controller;
-
-class TestController extends Controller
+class TestController
 {
-    public function testError()
-    {
-        throw new \Exception('text error 500');
-    }
+  public function testIndex()
+  {
+      header('Content-Type: application/json; charset=utf-8');
+      
+      $data = [
+        'name' => $_POST['name'] ?? '',
+        'email' => $_POST['email'] ?? '',
+        'title' => $_POST['title'] ?? '',
+        'date' => $_POST['date'] ?? '',
+        'description' => $_POST['description'] ?? '',
+        'assessment' => $_POST['assessment'] ?? '',
+      ];
 
-    public function testFetch()
-    {
-        return $this->render('test/test-handler-data', ['title' => 'Страница тестирования данных'], 'admin');
-    }
+      echo json_encode([
+          'status' => 'ok',
+          'data' => $data
+      ]);
+  }     
 
-    public function testDataArrayToString()
-    {
-        $status_code = http_response_code(200);
+  /**
+   * we're getting a php response back.
+   */
+  public function testGetDataOneMoreTime()
+  {
+    header('Content-Type: application/json; charset=utf-8');
 
-        $examp = "examp";
+    // getting data
+    $data = [
+      'name' => $_POST['name'] ?? '',
+      'email' => $_POST['email'] ?? '',
+      'title' => $_POST['title'] ?? '',
+      'age' => $_POST['age'] ?? ''
+    ];
 
-        $staff = [$examp, "status", $status_code];
+    echo json_encode([
+      'status' => 'ok',
+      'data' => $data
+    ]);
+  }
 
-        $stmt = [$mew, $build] = explode(",", implode(",", $staff));
-   
-        print_r($stmt);
-    }
+  /**
+   * save own test data in database
+   */
+  public function testPostTestData()
+  {
+    header('Content-Type: application/json; charset=utf-8');
 
-    public function testFetchData()
-    {
-        echo '123';
-    }
+    $person = [
+      'name' => $_POST['name'] ?? '',
+      'email' => $_POST['email'] ?? '',
+      'population' => $_POST['population'] ?? '2'
+    ];
+
+    echo json_encode([
+      'status' => 'data have been obtained',
+      'person' => $person 
+    ]);
+  }
+
+
+  // public function create(){}     // form create (GET)
+  // public function store(){}      // save data (POST)
+  // public function show($id){}    // show one (GET)
+  // public function edit($id){}    // form edit (GET)
+  // public function update($id){}  // update/fresh (PUT/PATCH)
+  // public function destroy($id){} // delete (DELETE)
 }

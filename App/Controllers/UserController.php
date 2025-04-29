@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Controllers\Resources;
+namespace App\Controllers;
 
-class UserResource
+class UserController
 {
     public function show($id)
     {

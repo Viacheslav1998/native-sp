@@ -2,7 +2,7 @@
 
 return [
   // database | generate | create
-  'db/generate' => ['Resources\\DbSetupResource', 'generate'],
+  'db/generate' => ['DbSetupContoller', 'generate'],
 
   // start page\get-data
   '/' => ['HomeController', 'index'],
@@ -28,10 +28,10 @@ return [
   'a4min/persons' => ['AdminController', 'persons'],
 
   // event management need QAuth = sessions \Resources
-  'a4min/add-event' => ['Resources\\EventResource', 'addEvent'],
+  'a4min/add-event' => ['EventController', 'addEvent'],
 
   // API
-  'api/post-test-data' => ['Resources\\TestResource', 'testIndex'],
-  'api/testGetDataOneMoreTime' => ['Resources\\TestResource', 'testGetDataOneMoreTime'],
-  'api/testPostTestData' => ['Resources\\TestResource', 'testPostTestData']
+  'api/post-test-data' => ['TestController', 'testIndex'],
+  'api/testGetDataOneMoreTime' => ['TestController', 'testGetDataOneMoreTime'],
+  'api/testPostTestData' => ['TestController', 'testPostTestData']
 ];

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Controllers\Resources;
+namespace App\Controllers;
 
-use App\Models\EventModel;
+use App\Models\Event;
 
 class EventResource extends \Core\Controller
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Controllers\Resources;
+namespace App\Controllers;
 
 use Core\Migration;
 use Core\Model;
 
-class DbSetupResource {
+class DbSetupController {
 
     public function generate()
     {
