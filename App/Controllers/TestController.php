@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\Resources\TestResource;
+
 class TestController extends \Core\Controller
 {
   public function testIndex()
@@ -45,18 +47,18 @@ class TestController extends \Core\Controller
   }
 
   /**
-   * save own test data in database
+   * the First method to Save test data
    */
   public function testPostTestData()
   {
-    header('Content-Type: application/json; charset=utf-8');
+    $testR = new TestResource();
 
-    $person = [
-      'name' => $_POST['name'] ?? '',
-      'email' => $_POST['email'] ?? '',
-      'population' => $_POST['population'] ?? '2'
+    $data = [
+      'name' => $_POST['name'] ?? null,
     ];
 
+    header('Content-Type: application/json; charset=utf-8');
+    // do - if [true.false response]
     echo json_encode([
       'status' => 'data have been obtained',
       'person' => $person 
