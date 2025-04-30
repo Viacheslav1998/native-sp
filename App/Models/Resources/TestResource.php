@@ -7,6 +7,7 @@ use App\Validation\TestFormValidators;
 
 class TestResource extends Model
 {
+    private $table = 'test_data';  
     private TestFormValidators $validator;
 
     public function __construct(TestFormValidators $validator)
@@ -39,10 +40,12 @@ class TestResource extends Model
      */
     private function storeToDatabase(array $data): bool
     {
-      $stmt = $this->pdo()->prepare('
-          INSERT INTO your_table (name, email, title, date_js, description, assessment)
+      $sql = "
+          INSERT INTO `$this->table` (name, email, title, date_js, description, assessment)
           VALUES (:name, :email, :title, :date_js, :description, :assessment)
-      ');
+      ";
+
+      $stmt = $this->pdo()->prepare($sql);
 
       return $stmt->execute([
         ':name' => $data['name'],
