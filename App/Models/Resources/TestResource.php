@@ -4,13 +4,13 @@ namespace App\Models\Resources;
 
 use Core\Model;
 use App\Helpers\ValidationHelper;
-use App\Validation\TestFormValidators;
+use App\Validation\TestFormValidators; 
 
 class TestResource extends Model
 {
 
     // private $pdo; in controller \PDO $pdo,
-    private $validator;
+    private TestFormValidators $validator;
 
     public function __construct(TestFormValidators $validator)
     {
@@ -19,7 +19,7 @@ class TestResource extends Model
 
     /**
      * save data
-     * return response 
+     * return response | error validation
      * @param
      */
     public function save(array $data): array
@@ -27,10 +27,7 @@ class TestResource extends Model
         $errors = $this->validator->validate($data);
       
         if (!empty($errors)) {
-          return [
-            'success' => false,
-            'errors'  => $errors,
-          ];
+          return ['success' => false, 'errors'  => $errors];
         }
 
         return $this->storeToDatabase($data)

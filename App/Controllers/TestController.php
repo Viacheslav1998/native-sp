@@ -2,10 +2,19 @@
 
 namespace App\Controllers;
 
+use App\Validation\TestFormValidators;
 use App\Models\Resources\TestResource;
 
 class TestController extends \Core\Controller
 {
+  private TestResource $testResource;
+
+  public function __construct()
+  {
+      $validator = new TestFormValidators();
+      $this->testResource = new TestResource($validator);
+  }
+  
   public function testIndex()
   {
       header('Content-Type: application/json; charset=utf-8');
@@ -51,24 +60,14 @@ class TestController extends \Core\Controller
    */
   public function testPostTestData()
   {
-    $testR = new TestResource();
-
-    $data = [
-      'name' => $_POST['name'] ?? null,
-    ];
+    $data = $_POST;
+    $result = $this->testResource->save($data);
 
     header('Content-Type: application/json; charset=utf-8');
-    // do - if [true.false response]
-    echo json_encode([
-      'status' => 'data have been obtained',
-      'person' => $person 
-    ]);
+    echo json_encode($result);
   }
 
-  public function testFetch()
-  {
-     return $this->render('test/test-handler-data', ['title' => 'шаблон для тестирования api'], 'admin');
-  }
+  
 
   // public function create(){}     // form create (GET)
   // public function store(){}      // save data (POST)

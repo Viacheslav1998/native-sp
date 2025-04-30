@@ -1,5 +1,5 @@
 <div class="custom-silver my-4 p-4">
-  <h1 class="fs-2 text-danger">Страница тестов</h1>
+  <h1 class="fs-2 text-danger"><?php echo $title; ?></h1>
   <div class="row">
     <form id="testForm">
       <div class="col">

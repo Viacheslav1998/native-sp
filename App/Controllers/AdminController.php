@@ -36,4 +36,9 @@ class AdminController extends \Core\Controller
     {
         return $this->render('admin/persons', ['title' => 'Управление пользователями'], $this->template);
     }
+
+    public function testFetch()
+    {
+        return $this->render('test/test-handler-data', ['title' => 'шаблон для тестирования api'], $this->template);
+    }
 }

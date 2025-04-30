@@ -15,7 +15,7 @@ return [
   'test-array-string' => ['TestController', 'testDataArrayToString'],
   'test-fetch-data' => ['TestController', 'testFetchData'],
   // test fetch api dataForm secret
-  'a4min/test-fetch' => ['TestController', 'testFetch'],
+  'a4min/test-fetch' => ['AdminController', 'testFetch'],
 
 
   // AdminPanel need QAuth = sessions
