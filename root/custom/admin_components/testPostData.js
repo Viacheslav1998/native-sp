@@ -139,14 +139,14 @@ anotherForm.addEventListener("submit", async (e) => {
     });
 
     if(!response.ok) {
-      console.error("не получилось выполнить запрос")
+      console.error("не удалось выполнить запрос: ", response)
       return
     }
 
     const result = await response.json()
     console.log(result)
   } catch (error) {
-    console.error("Ошибка запроса:", error.message || error);
+    console.error("Ошибка запроса:", error.message || error)
   }
 });
 
