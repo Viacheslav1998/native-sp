@@ -2,7 +2,7 @@
 const testForm = document.getElementById("testForm")
 const testPushData = document.getElementById("checkStatic")
 const formFile = document.getElementById("formFile")
-// const testAnotherForm = document.getElementbyId("anotherForm")
+// const anotherForm = document.getElementbyId("anotherForm")
 
 // get imagen
 const fileInput = document.getElementById("file")
@@ -144,7 +144,7 @@ anotherForm.addEventListener("submit", async (e) => {
     }
 
     const result = await response.json()
-    // console.log(result)
+    console.log(result)
   } catch (error) {
     console.error("Ошибка запроса:", error.message || error);
   }

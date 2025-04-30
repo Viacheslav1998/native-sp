@@ -119,9 +119,9 @@
             <option value="5">5</option>
           </select>
         </div>
-        <div class="mb-3">
+        <!-- <div class="mb-3">
           <input class="form-control form-control-lg cs-grey" name="date_test_php" value="10.10.1984" type="hidden" aria-label=".form-control-lg" required>
-        </div>
+        </div> -->
         <div style="text-align: right;">
           <button type="submit" class="btn btn-outline-success btn-lg">Отправка данных на сервер (сохранения)</button>
         </div>

@@ -3,17 +3,15 @@
 namespace App\Models\Resources;
 
 use Core\Model;
-use App\Helpers\ValidationHelper;
 use App\Validation\TestFormValidators; 
 
 class TestResource extends Model
 {
-
-    // private $pdo; in controller \PDO $pdo,
     private TestFormValidators $validator;
 
     public function __construct(TestFormValidators $validator)
     {
+        parent::__construct();
         $this->validator = $validator;
     }
 
@@ -41,9 +39,9 @@ class TestResource extends Model
      */
     private function storeToDatabase(array $data): bool
     {
-      $stmt = $this->pdo->prepare('
-          INSERT INTO your_table (name, email, title, date_js, description, assessment, date_test_php)
-          VALUES (:name, :email, :title, :date_js, :description, :assessment, :date_test_php)
+      $stmt = $this->pdo()->prepare('
+          INSERT INTO your_table (name, email, title, date_js, description, assessment)
+          VALUES (:name, :email, :title, :date_js, :description, :assessment)
       ');
 
       return $stmt->execute([
@@ -53,7 +51,6 @@ class TestResource extends Model
         ':date_js' => $data['date_js'], // js date function
         ':description' => $data['description'],
         ':assessment' =>  $data['assessment'],
-        ':date_test_php' => $data['date_test_php'], // only sql func date
       ]);
     }
 

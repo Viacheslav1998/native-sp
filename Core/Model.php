@@ -54,5 +54,5 @@ class Model
             new self();
         }
         return self::$pdo;
-    }
+    }    
 }

@@ -33,4 +33,6 @@ return [
   'api/post-test-data' => ['TestController', 'testIndex'],
   'api/testGetDataOneMoreTime' => ['TestController', 'testGetDataOneMoreTime'],
   'api/testPostTestData' => ['TestController', 'testPostTestData']
+
+  // CRUD - create/read/update/delete ... 
 ];

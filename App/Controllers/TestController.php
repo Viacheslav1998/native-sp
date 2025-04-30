@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Validation\TestFormValidators;
+// use App\Helpers\ValodationHelper;
 use App\Models\Resources\TestResource;
 
 class TestController extends \Core\Controller
@@ -61,9 +62,11 @@ class TestController extends \Core\Controller
   public function testPostTestData()
   {
     $data = $_POST;
+
     $result = $this->testResource->save($data);
 
     header('Content-Type: application/json; charset=utf-8');
+
     echo json_encode($result);
   }
 
