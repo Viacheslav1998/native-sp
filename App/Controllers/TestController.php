@@ -2,8 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Helpers\Request;
 use App\Validation\TestFormValidators;
-// use App\Helpers\ValodationHelper;
 use App\Models\Resources\TestResource;
 
 class TestController extends \Core\Controller
@@ -61,7 +61,7 @@ class TestController extends \Core\Controller
    */
   public function testPostTestData()
   {
-    $data = $_POST;
+    $data = Request::post();
 
     $result = $this->testResource->save($data);
 

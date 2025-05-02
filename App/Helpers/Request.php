@@ -1,8 +1,10 @@
 <?php
 
+namespace App\Helpers;
+
 /**
  * Helper Request
- * return HTTP protocol
+ * return HTTP protocols
  */
 class Request
 {
