@@ -13,9 +13,21 @@ class Request
    * return $_POST
    * or params
    */
-  public static function post(string $key = null, $default = null)
-  {
-    if($key === null) return $_POST;
-    return $_POST[$key] ?? $default;
-  }
+    public static function post(string $key = null, $default = null)
+    {
+        if($key === null) return $_POST;
+        return $_POST[$key] ?? $default;
+    }
+
+    /**
+     * return $_GET
+     * or params
+     */
+    public static function get(string $key = null, $default = null)
+    {
+        if($key === null) return $_GET;
+        return $_GET[$key] ?? $default;
+    }
+
+  
 }
