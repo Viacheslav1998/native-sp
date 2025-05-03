@@ -62,6 +62,47 @@ class Request
         return json_decode($json, true) ?? [];
     }
 
-    
+    /**
+     * GET CURRENT METHOD
+     */
+    public static function method(): string 
+    {
+        return $_SERVER['REQUEST_METHOD'] ?? 'GET';
+    }
+
+    /**
+     * is POST
+     */
+    public static function isPost(): bool
+    {
+        return strtoupper(self::method())  === 'POST'; 
+    }
+
+    /**
+     * is GET
+     */
+    public static function isGet(): bool
+    {
+        return strtoupper(self::method()) === 'GET';
+    }
+
+    /**
+     * IP
+     */
+    public function ip() : string
+    {
+        return $_SERVER['REMOTE_ADDR'] ?? '127.0.0.1';
+    }
+
+    /**
+     * header http response
+     */
+    public static function header(string $key): ?string
+    {
+        $key = strtoupper(str_replace('-', '_', $key));
+        $key = 'HTTP_' . $key;
+        return $_SERVER[$key] ?? null;
+    }
+
 
 }
