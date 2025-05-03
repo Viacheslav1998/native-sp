@@ -29,5 +29,22 @@ class Request
         return $_GET[$key] ?? $default;
     }
 
+
+    /**
+     * return $_REQUEST
+     */
+    public static function all(): array
+    {
+      return $_REQUEST;
+    } 
   
+
+    /**
+     * check param
+     */
+    public static function has(string $key): bool
+    {
+      return isset($_REQUEST[$key]);
+    }
+    
 }
