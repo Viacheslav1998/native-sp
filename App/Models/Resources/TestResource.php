@@ -26,12 +26,32 @@ class TestResource extends Model
         $errors = $this->validator->validate($data);
       
         if (!empty($errors)) {
-          return ['success' => false, 'errors'  => $errors];
+            return ['success' => false, 'errors'  => $errors];
         }
 
-        return $this->storeToDatabase($data)
-          ? ['success' => true, 'message' => 'сохранено']
-          : ['success' => false, 'message' => ['db' => 'Error in Database']];
+        try {
+            $saved = $this->storeToDatabase($data);
+            return $saved 
+                ? ['success' => true, 'message' => 'Данные успешно сохранены!']
+                : ['success' => false, 'message' => ['db' => 'Ошибка при создании']]; 
+        } catch (\PDOException $e) {
+            if(str_contains($e->getMessage(), '1062')) {
+                return [
+                    'succes' => false, 
+                    'errors' => ['email', 'Пользователь с такой почтой в системе уже есть!']
+                ];
+            }
+            
+            // another error
+            return [
+              'success' => false, 
+              'errors' => ['db', 'Ошибка базы данных!']
+            ];
+        }
+
+        // return $this->storeToDatabase($data)
+        //   ? ['success' => true, 'message' => 'сохранено']
+        //   : ['success' => false, 'message' => ['db' => 'Error in Database']];
     }
 
 

@@ -103,6 +103,4 @@ class Request
         $key = 'HTTP_' . $key;
         return $_SERVER[$key] ?? null;
     }
-
-
 }
