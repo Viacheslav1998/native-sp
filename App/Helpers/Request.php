@@ -29,22 +29,39 @@ class Request
         return $_GET[$key] ?? $default;
     }
 
-
     /**
      * return $_REQUEST
      */
     public static function all(): array
     {
-      return $_REQUEST;
+        return $_REQUEST;
     } 
   
-
     /**
      * check param
      */
     public static function has(string $key): bool
     {
-      return isset($_REQUEST[$key]);
+        return isset($_REQUEST[$key]);
     }
+
+    /**
+     * get input
+     */
+    public static function input(): array
+    {
+        return $_REQUEST;
+    }
+
+    /**
+     * return json input data
+     */
+    public static function json(): array
+    {   
+        $json = file_get_contents('php://input');
+        return json_decode($json, true) ?? [];
+    }
+
     
+
 }
