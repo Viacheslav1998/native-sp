@@ -12,6 +12,7 @@ class TestController extends \Core\Controller
 
   public function __construct()
   {
+      parent::__construct();
       $validator = new TestFormValidators();
       $this->testResource = new TestResource($validator);
   }
@@ -65,7 +66,7 @@ class TestController extends \Core\Controller
   {
     $this->jsonResponse(function () {
       $data = Request::post();
-      $this->testResource->save($data);
+      return $this->testResource->save($data);
     });
   }
 

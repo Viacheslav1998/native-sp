@@ -26,6 +26,7 @@ class TestResource extends Model
         $errors = $this->validator->validate($data);
       
         if (!empty($errors)) {
+            // error_log('ошибка валидации: '. json_encode($errors, JSON_UNESCAPED_UNICODE));
             return ['success' => false, 'errors'  => $errors];
         }
 
@@ -35,13 +36,14 @@ class TestResource extends Model
                 ? ['success' => true, 'message' => 'Данные успешно сохранены!']
                 : ['success' => false, 'message' => ['db' => 'Ошибка при создании']]; 
         } catch (\PDOException $e) {
+            // error_log('Ошибка PDO при вставке: '. $e->getMessage());
             if(str_contains($e->getMessage(), '1062')) {
                 return [
                     'succes' => false, 
                     'errors' => ['email', 'Пользователь с такой почтой в системе уже есть!']
                 ];
             }
-            
+
             return [
               'success' => false, 
               'errors' => ['db', 'Ошибка базы данных!']

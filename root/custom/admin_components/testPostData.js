@@ -139,7 +139,8 @@ anotherForm.addEventListener("submit", async (e) => {
     });
 
     if(!response.ok) {
-      console.error("не удалось выполнить запрос: ", response)
+      const errorText = await response.text()
+      console.error("не удалось выполнить запрос: ", errorText)
       return
     }
 

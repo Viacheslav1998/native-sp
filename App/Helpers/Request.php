@@ -13,7 +13,7 @@ class Request
    * return $_POST
    * or params
    */
-    public static function post(string $key = null, $default = null)
+    public static function post(string $key = null, $default = [])
     {
         if($key === null) return $_POST;
         return $_POST[$key] ?? $default;
