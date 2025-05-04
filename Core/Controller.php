@@ -3,14 +3,17 @@
 namespace Core;
 
 use App\Helpers\ViewRenderer;
+use App\Helpers\Response;
 
 class Controller
 {
     protected ViewRenderer $viewRenderer;
+    protected Response $response;
 
     public function __construct()
     {
         $this->viewRenderer = new ViewRenderer();
+        $this->response = new Response();
     }
 
     /**
@@ -23,40 +26,19 @@ class Controller
     }
 
     /**
-     * base try/catch handler
-     * wrapper handler
+     * handler json response
      */
     protected function jsonResponse(callable $callback)
     {
-        header('Content-Type: application/json; charset=utf-8');
-
         try {
-            $result = callback();
-            echo json_encode($result, JSON_UNESCAPED_UNICODE);
-            // RETURN ?
-        } catch (\PDOException $e) {
-            if(str_contains($e->getMessage(), '1062')) {
-                http_response_code(422);
-                echo json_encode([
-                    'success' => fasle,
-                    'message' => 'пользователь с такой почтой уже есть!',
-                    'field' => 'email'
-                ], JSON_UNESCAPED_UNICODE);
-            } else {
-                http_response_code(500);
-                echo json_encode([
-                    'success' => false,
-                    'message' => 'ошибка базы данных',
-                    // 'error' => $e->getMessage()
-                ], JSON_UNESCAPED_UNICODE);
-            } 
+            $result = $callback();
+            $this->response->json($result);
         } catch (\Throwable $e) {
-            http_response_code(500);
-            echo json_encode([
+            $this->response->json([
                 'success' => false, 
-                'message' => 'что то пошло не так',
-                // 'error' => $e->getMessage();
-            ], JSON_UNESCAPED_UNICODE);
+                'message' => 'Произошла ошибка.'
+            ], 500);
         }
-    } 
+    }
+    
 }

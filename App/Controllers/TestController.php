@@ -20,6 +20,8 @@ class TestController extends \Core\Controller
   {
       header('Content-Type: application/json; charset=utf-8');
       
+      // $data = $_POST;
+
       $data = [
         'name' => $_POST['name'] ?? '',
         'email' => $_POST['email'] ?? '',
@@ -61,18 +63,13 @@ class TestController extends \Core\Controller
    */
   public function testPostTestData()
   {
-    $data = Request::post();
-
-    $result = $this->testResource->save($data);
-
-    //  незабудь реализовать jsonResponse
-
-    header('Content-Type: application/json; charset=utf-8');
-
-    echo json_encode($result, JSON_UNESCAPED_UNICODE);
+    $this->jsonResponse(function () {
+      $data = Request::post();
+      $this->testResource->save($data);
+    });
   }
 
-  
+
 
   // public function create(){}     // form create (GET)
   // public function store(){}      // save data (POST)

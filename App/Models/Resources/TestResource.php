@@ -42,7 +42,6 @@ class TestResource extends Model
                 ];
             }
             
-            // another error
             return [
               'success' => false, 
               'errors' => ['db', 'Ошибка базы данных!']
