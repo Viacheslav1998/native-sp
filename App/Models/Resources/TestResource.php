@@ -48,10 +48,6 @@ class TestResource extends Model
               'errors' => ['db', 'Ошибка базы данных!']
             ];
         }
-
-        // return $this->storeToDatabase($data)
-        //   ? ['success' => true, 'message' => 'сохранено']
-        //   : ['success' => false, 'message' => ['db' => 'Error in Database']];
     }
 
 
