@@ -31,7 +31,7 @@ class TestResource extends Model
         }
 
         try {
-            $saved = $this->storeToDatabase($data);
+            $saved = $this->store($data);
             return $saved 
                 ? ['success' => true, 'message' => 'Данные успешно сохранены!']
                 : ['success' => false, 'message' => ['db' => 'Ошибка при создании']]; 
@@ -55,7 +55,7 @@ class TestResource extends Model
     /**
      * proper data correction and storage
      */
-    private function storeToDatabase(array $data): bool
+    private function store(array $data): bool
     {
       $sql = "
           INSERT INTO `$this->table` (name, email, title, date_js, description, assessment)
