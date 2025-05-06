@@ -1,19 +1,27 @@
 <?php
-
+/**
+ * ресурс это делегирования
+ * валидация 
+ * сервис по работе с бд
+ * сохранение непосредственно
+ */
 namespace App\Models\Resources;
 
 use Core\Model;
 use App\Validation\TestFormValidators; 
+use App\Helpers\Response;
 
 class TestResource extends Model
 {
     private $table = 'test_data';  
     private TestFormValidators $validator;
+    protected Response $response;
 
     public function __construct(TestFormValidators $validator)
     {
         parent::__construct();
         $this->validator = $validator;
+        $response->response = $response;
     }
 
     /**
@@ -27,8 +35,14 @@ class TestResource extends Model
       
         if (!empty($errors)) {
             // error_log('ошибка валидации: '. json_encode($errors, JSON_UNESCAPED_UNICODE));
-            return ['success' => false, 'errors'  => $errors];
+            return $this->respnse->json([
+                'success' => false,
+                'errors' => $errors,
+            ]);
         }
+
+
+
 
         try {
             $saved = $this->store($data);

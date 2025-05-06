@@ -3,17 +3,17 @@
 namespace Core;
 
 use App\Helpers\ViewRenderer;
-use App\Helpers\Response;
+// use App\Helpers\Response;
 
 class Controller
 {
     protected ViewRenderer $viewRenderer;
-    protected Response $response;
+    // protected Response $response;
 
     public function __construct()
     {
         $this->viewRenderer = new ViewRenderer();
-        $this->response = new Response();
+        // $this->response = new Response();
     }
 
     /**
@@ -28,27 +28,27 @@ class Controller
     /**
      * handler json response
      */
-    protected function jsonResponse(callable $callback)
-    {
-        try {
-            $result = $callback();
+    // protected function jsonResponse(callable $callback)
+    // {
+    //     try {
+    //         $result = $callback();
     
-            if (!is_array($result)) {
-                throw new \RuntimeException('Callback должен возвращать массив, а не null или что-то другое');
-            }
+    //         if (!is_array($result)) {
+    //             throw new \RuntimeException('Callback должен возвращать массив, а не null или что-то другое');
+    //         }
     
-            $this->response->json($result);
+    //         $this->response->json($result);
     
-        } catch (\Throwable $e) {
-            error_log('FATAL JSON ERROR: ' . $e->getMessage());
+    //     } catch (\Throwable $e) {
+    //         error_log('FATAL JSON ERROR: ' . $e->getMessage());
     
-            $this->response->json([
-                'success' => false,
-                'message' => 'Произошла ошибка.',
-                // 'debug_mode' => 'Системная ошибка: ' . $e->getMessage()
-            ], 500);
-        }
-    }
+    //         $this->response->json([
+    //             'success' => false,
+    //             'message' => 'Произошла ошибка.',
+    //             // 'debug_mode' => 'Системная ошибка: ' . $e->getMessage()
+    //         ], 500);
+    //     }
+    // }
     
     
 }
