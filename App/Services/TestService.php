@@ -2,13 +2,13 @@
 
 namespace App\Services;
 
-use App\Core\BaseService;
+use Core\BaseService;
 
 class TestService extends BaseService
 {
     private $table = 'test_data';
 
-    public function save(array $data): array
+    public function save(array $data): bool
     {
         $sql = "
           INSERT INTO `$this->table` (name, email, title, date_js, description, assessment)

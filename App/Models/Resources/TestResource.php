@@ -14,7 +14,7 @@ use App\Services\TestService;
 
 class TestResource extends Model
 {
-    private $table = 'test_data';  
+    private string $table = 'test_data';  
     private TestFormValidators $validator;
     private TestService $testService;
     protected Response $response;
@@ -23,8 +23,8 @@ class TestResource extends Model
     {
         parent::__construct();
         $this->validator = $validator;
-        $response->response = $response;
-        $testService->testService = $testService;
+        $this->response = new Response();
+        $this->testService = new TestService(self::staticPDO());
     }
 
     /**
@@ -32,7 +32,7 @@ class TestResource extends Model
      * return response | error validation
      * @param
      */
-    public function save(array $data): array
+    public function save(array $data): bool
     {
         $errors = $this->validator->validate($data);
       
@@ -45,7 +45,7 @@ class TestResource extends Model
         }
 
         try {
-            $this->testServie->save($data);
+            $saved = $this->testService->save($data);
 
             return $this->response->json([
                 $saved
