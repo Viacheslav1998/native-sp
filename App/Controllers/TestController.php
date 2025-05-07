@@ -72,10 +72,8 @@ class TestController extends \Core\Controller
    */
   public function testPostTestData()
   {
-    $this->jsonResponse(function () {
-      $data = Request::post();
-      return $this->testResource->save($data);
-    });
+    $data = Request::post();
+    return $this->testResource->save($data);
   }
 
 
