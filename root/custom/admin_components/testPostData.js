@@ -145,7 +145,7 @@ anotherForm.addEventListener("submit", async (e) => {
     }
 
     const result = await response.json()
-    console.log(result)
+    console.log(result[0])
   } catch (error) {
     console.error("Ошибка запроса:", error.message || error)
   }

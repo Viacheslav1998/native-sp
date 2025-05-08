@@ -2,6 +2,9 @@
 
 namespace App\Controllers;
 
+/**
+ * Only Views template
+ */
 class AdminController extends \Core\Controller
 {
     // construct auth
