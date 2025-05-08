@@ -24,24 +24,24 @@ class Seeder
         $inserted = 0;
         $chunks = ceil($count / $this->chunkSize);
 
-        for($i = 0; $i < $chanks; $i++) {
+        for($i = 0; $i < $chunks; $i++) {
             $this->pdo->beginTransaction();
 
             $sql = "INSERT INTO `$this->table` (name, email, title, date_js, description, assessment) VALUES ";
+            $placeholders = [];
             $params = [];
-            $values = [];
             
             for($j = 0; $j < $this->chunkSize && $inserted < $count; $j++, $inserted++) {
-                $values[] = "(?,?,?,?,?,?)";
-                $values[] = $this->faker->name;
-                $values[] = $this->faker->safeEmail;
-                $values[] = $this->faker->jobTitle;
-                $values[] = $this->faker->date('Y-m-d');
-                $values[] = $this->faker->text(200);
-                $values[] = rand(1,5);
+                $placeholders[] = "(?,?,?,?,?,?)";
+                $params[] = $this->faker->name;
+                $params[] = $this->faker->safeEmail;
+                $params[] = $this->faker->jobTitle;
+                $params[] = $this->faker->date('Y-m-d');
+                $params[] = $this->faker->text(200);
+                $params[] = rand(1,5);
             }
 
-            $sql .= implode(", ", $values);
+            $sql .= implode(", ", $placeholders);
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute($params);
 
