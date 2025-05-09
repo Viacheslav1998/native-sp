@@ -11,6 +11,7 @@ use Core\Model;
 use App\Validation\TestFormValidators; 
 use App\Helpers\Response;
 use App\Services\TestService;
+use App\ExceptionHandlers\PDOExceptionEmail;
 
 class TestResource extends Model
 {

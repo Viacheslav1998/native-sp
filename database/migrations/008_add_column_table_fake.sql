@@ -1,0 +1,2 @@
+ALTER TABLE fake
+  ADD COLUMN image VARCHAR(255);
