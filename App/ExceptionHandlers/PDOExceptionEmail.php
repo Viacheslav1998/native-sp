@@ -4,7 +4,7 @@ namespace App\ExceptionHandlers;
 
 class PDOExceptionEmail
 {
-    public function handler(\PDOException $e): array
+    public function handle(\PDOException $e): array
     {
         if(str_contains($e->getMessage(), '1062'))
         { 
