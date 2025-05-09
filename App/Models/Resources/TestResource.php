@@ -12,6 +12,7 @@ use App\Validation\TestFormValidators;
 use App\Helpers\Response;
 use App\Services\TestService;
 use App\ExceptionHandlers\PDOExceptionEmail;
+use App\Services\FileUploadService;
 
 class TestResource extends Model
 {
@@ -45,6 +46,18 @@ class TestResource extends Model
                 'success' => false,
                 'errors' => $errors,
             ], 400);
+        }
+
+        if(!empty($data['image'])) {
+            try {
+                $fileUploader = new FileUploadService();
+                $data['image_path'] = $fileUploader->uploadFile($data['image'], __DIR__ . '/../../../public/uploads');
+            } catch (\Exception $e) {
+                return $this->response->json([
+                    'success' => false,
+                    'errors' => ['image' => $e->getMessage()],
+                ], 400);
+            }
         }
 
         try {
