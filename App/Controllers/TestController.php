@@ -73,8 +73,8 @@ class TestController extends \Core\Controller
   public function testPostTestData()
   {
     $data = Request::post();
-    $file = Request::file();
-    return $this->testResource->save($data, $file);
+    $data['image'] = Request::file('image');
+    return $this->testResource->save($data);
   }
 
 

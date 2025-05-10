@@ -38,8 +38,8 @@ class TestResource extends Model
      */
     public function save(array $data): bool
     {
-        error_log('intresting message: '. json_encode($data['image']));
-        die('session and');
+        // error_log('intresting message: '. print_r($data, true));
+
 
         $errors = $this->validator->validate($data);
       

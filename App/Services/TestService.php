@@ -24,7 +24,7 @@ class TestService extends BaseService
           ':date_js' => $data['date_js'],
           ':description' => $data['description'],
           ':assessment' =>  $data['assessment'],
-          ':image' => $data['image'],
+          ':image' => $data['image_path'],
         ]);
     }
 }
