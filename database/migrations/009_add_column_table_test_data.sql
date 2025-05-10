@@ -1,0 +1,2 @@
+ALTER TABLE test_data
+  ADD COLUMN image VARCHAR(255);

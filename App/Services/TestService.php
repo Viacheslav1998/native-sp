@@ -11,8 +11,8 @@ class TestService extends BaseService
     public function save(array $data): bool
     {
         $sql = "
-          INSERT INTO `$this->table` (name, email, title, date_js, description, assessment)
-          VALUES (:name, :email, :title, :date_js, :description, :assessment)
+          INSERT INTO `$this->table` (name, email, title, date_js, description, assessment, image)
+          VALUES (:name, :email, :title, :date_js, :description, :assessment, :image)
         ";
 
         $stmt = $this->pdo->prepare($sql);
@@ -24,6 +24,7 @@ class TestService extends BaseService
           ':date_js' => $data['date_js'],
           ':description' => $data['description'],
           ':assessment' =>  $data['assessment'],
+          ':image' => $data['image'],
         ]);
     }
 }

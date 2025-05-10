@@ -82,7 +82,7 @@
 
   <div class="row">
     <h2 class="text-danger">Форма отправки тестовых данных</h2>
-    <form id="anotherForm">
+    <form id="anotherForm" enctype="multipart/form-data">
       <div class="col">
         <div class="mb-3">
           <label for="name" class="form-label text-secondary">Название</label>
@@ -115,6 +115,10 @@
             <option value="4">4</option>
             <option value="5">5</option>
           </select>
+        </div>
+        <div class="mb-3">
+          <label for="image" class="form-label">Выбрать главное изображение</label>
+          <input class="form-control" name="image" type="file" id="image">
         </div>
         <div style="text-align: right;">
           <button type="submit" class="btn btn-outline-success btn-lg">Отправка данных на сервер (сохранения)</button>

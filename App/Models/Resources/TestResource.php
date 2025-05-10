@@ -38,6 +38,9 @@ class TestResource extends Model
      */
     public function save(array $data): bool
     {
+        error_log('intresting message: '. json_encode($data['image']));
+        die('session and');
+
         $errors = $this->validator->validate($data);
       
         if (!empty($errors)) {
@@ -53,6 +56,7 @@ class TestResource extends Model
                 $fileUploader = new FileUploadService();
                 $data['image_path'] = $fileUploader->uploadFile($data['image'], __DIR__ . '/../../../public/uploads');
             } catch (\Exception $e) {
+                error_log('ошибка при загрузки картинки: ' . $e->getMessage() );
                 return $this->response->json([
                     'success' => false,
                     'errors' => ['image' => $e->getMessage()],
@@ -62,18 +66,19 @@ class TestResource extends Model
 
         try {
             $saved = $this->testService->save($data);
-
             return $this->response->json([
                 $saved
                   ? ['success' => true, 'message' => 'Данные успешно сохранены']
                   : ['success' => false, 'message' => ['db' => 'Ошибка при создании данных']],
             ], 200);
         } catch (\PDOException $e) {
+
             $errors = $this->pdoEmail->handle($e);
-            
+            error_log('ошибка при загрузки картинки: ');
             return $this->response->json([
                 'success' => false,
-                'errors' => $errors
+                'errors' => $errors,
+                'cnfg' => $e->getMessage(),
             ], 500);
         }
 

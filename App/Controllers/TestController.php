@@ -53,7 +53,7 @@ class TestController extends \Core\Controller
   {
     header('Content-Type: application/json; charset=utf-8');
 
-    // getting data
+    // getting data into the controller this way is not good
     $data = [
       'name' => $_POST['name'] ?? '',
       'email' => $_POST['email'] ?? '',
@@ -73,7 +73,8 @@ class TestController extends \Core\Controller
   public function testPostTestData()
   {
     $data = Request::post();
-    return $this->testResource->save($data);
+    $file = Request::file();
+    return $this->testResource->save($data, $file);
   }
 
 

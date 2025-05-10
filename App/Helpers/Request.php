@@ -20,6 +20,15 @@ class Request
     }
 
     /**
+     * return $_FILE
+     * or null
+     */
+    public static function file(string $name): ?array
+    {
+        return $_FILES[$name] ?? null;
+    }
+
+    /**
      * return $_GET
      * or params
      */
