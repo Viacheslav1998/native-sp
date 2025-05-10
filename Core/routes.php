@@ -2,7 +2,8 @@
 
 return [
   // database | generate | create
-  'db/generate' => ['DbSetupContoller', 'generate'],
+  'db/generate' => ['DbSetupController', 'generate'],
+  'status' => ['DbSetupController', 'status'],
 
   // start page\get-data
   '/' => ['HomeController', 'index'],
