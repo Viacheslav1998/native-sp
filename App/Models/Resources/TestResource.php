@@ -10,7 +10,7 @@ namespace App\Models\Resources;
 use Core\Model;
 use App\Validation\TestFormValidators; 
 use App\Helpers\Response;
-use App\Services\TestService;
+use App\Services\CrudService;
 use App\ExceptionHandlers\PDOExceptionEmail;
 use App\Services\FileUploadService;
 
@@ -18,7 +18,7 @@ class TestResource extends Model
 {
     private string $table = 'test_data';  
     private TestFormValidators $validator;
-    private TestService $testService;
+    private CrudService $crudService;
     protected Response $response;
     private PDOExceptionEmail $pdoEmail;
 
@@ -27,7 +27,7 @@ class TestResource extends Model
         parent::__construct();
         $this->validator = $validator;
         $this->response = new Response();
-        $this->testService = new TestService(self::staticPDO());
+        $this->crudService = new CrudService(self::staticPDO(), $this->table);
         $this->pdoEmail = new PDOExceptionEmail();
     }
 
@@ -51,7 +51,7 @@ class TestResource extends Model
             ], 400);
         }
 
-        if(!empty($data['image'])) {
+        if (!empty($data['image'])) {
             try {
                 $fileUploader = new FileUploadService();
                 $data['image_path'] = $fileUploader->uploadFile($data['image'], __DIR__ . '/../../../public/uploads');
@@ -65,16 +65,25 @@ class TestResource extends Model
         }
 
         try {
-            $saved = $this->testService->save($data);
+            $saved = $this->crudService->create([
+                'name' => $data['name'],
+                'email' =>  $data['email'],
+                'title' => $data['title'],
+                'date_js' => $data['date_js'],
+                'description' => $data['description'],
+                'assessment' =>  $data['assessment'],
+                'image' => $data['image_path']
+            ]);
+
             return $this->response->json([
                 $saved
                   ? ['success' => true, 'message' => 'Данные успешно сохранены']
                   : ['success' => false, 'message' => ['db' => 'Ошибка при создании данных']],
             ], 200);
         } catch (\PDOException $e) {
-
             $errors = $this->pdoEmail->handle($e);
-            error_log('ошибка при загрузки картинки: ');
+            error_log('Ошибка при сохранении: '.$e->getMessage());
+
             return $this->response->json([
                 'success' => false,
                 'errors' => $errors,
