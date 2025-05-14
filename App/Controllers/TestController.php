@@ -28,8 +28,6 @@ class TestController extends \Core\Controller
   public function testIndex()
   {
       header('Content-Type: application/json; charset=utf-8');
-      
-      // $data = $_POST;
 
       $data = [
         'name' => $_POST['name'] ?? '',
