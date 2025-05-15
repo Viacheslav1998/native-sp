@@ -30,12 +30,12 @@ class TestController extends \Core\Controller
       header('Content-Type: application/json; charset=utf-8');
 
       $data = [
-        'name' => $_POST['name'] ?? '',
-        'email' => $_POST['email'] ?? '',
-        'title' => $_POST['title'] ?? '',
-        'date' => $_POST['date'] ?? '',
-        'description' => $_POST['description'] ?? '',
-        'assessment' => $_POST['assessment'] ?? '',
+          'name' => $_POST['name'] ?? '',
+          'email' => $_POST['email'] ?? '',
+          'title' => $_POST['title'] ?? '',
+          'date' => $_POST['date'] ?? '',
+          'description' => $_POST['description'] ?? '',
+          'assessment' => $_POST['assessment'] ?? '',
       ];
 
       echo json_encode([
@@ -53,15 +53,15 @@ class TestController extends \Core\Controller
 
     // getting data into the controller this way is not good
     $data = [
-      'name' => $_POST['name'] ?? '',
-      'email' => $_POST['email'] ?? '',
-      'title' => $_POST['title'] ?? '',
-      'age' => $_POST['age'] ?? ''
+        'name' => $_POST['name'] ?? '',
+        'email' => $_POST['email'] ?? '',
+        'title' => $_POST['title'] ?? '',
+        'age' => $_POST['age'] ?? ''
     ];
 
     echo json_encode([
-      'status' => 'ok',
-      'data' => $data
+        'status' => 'ok',
+        'data' => $data
     ]);
   }
 
@@ -70,12 +70,18 @@ class TestController extends \Core\Controller
    */
   public function testPostTestData()
   {
-    $data = Request::post();
-    $data['image'] = Request::file('image');
-    return $this->testResource->save($data);
+      $data = Request::post();
+      $data['image'] = Request::file('image');
+      return $this->testResource->save($data);
   }
 
-
+  /**
+   * just test work in array
+   */
+  public function testArrayAllKeys()
+  {
+     return $this->testResource->testArrayManipulation();
+  }
 
   // public function create(){}     // form create (GET)
   // public function store(){}      // save data (POST)

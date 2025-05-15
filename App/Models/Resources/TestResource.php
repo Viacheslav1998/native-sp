@@ -4,6 +4,7 @@
  * валидация 
  * сервис по работе с бд
  * сохранение непосредственно
+ * 
  */
 namespace App\Models\Resources;
 
@@ -88,7 +89,80 @@ class TestResource extends Model
                 'cnfg' => $e->getMessage(),
             ], 500);
         }
+    }
 
+
+    /**
+     * return @param json [code]
+     * for testing array methods
+     */ 
+    public function testArrayManipulation()
+    {
+        return $this->response->json([
+            'success' => true,
+            'answer_array_value' => array_keys($this->arrayBox(), 'three', false),
+            'answer_array' => array_keys($this->arrayBox()),
+            'answer_all' => $this->arrayBox(),
+        ], 200);
+    }
+
+
+    /**
+     * just array in All Types
+     * for checks
+     */
+    private function arrayBox()
+    {
+        return  [
+            [ // Первый элемент: ассоциативный массив с разными типами данных
+                "name" => "Привет",                // строка
+                1 => 42,                           // число (ключ — число)
+                "isActive" => true,                // boolean
+                "score" => 99.5,                   // float
+                "tags" => ["php", "array", "data"],// массив
+                "details" => [                    // объект (ассоциативный массив)
+                    "city" => "Москва",
+                    2 => false,
+                    "nested" => null
+                ]
+            ],
+            [ // Второй элемент: вложенный массив
+                "items" => [
+                    "строка1", "строка2", "строка3",   // строки
+                    10, 20, 30,                        // числа
+                    true, false, true,                 // boolean
+                    1.1, 2.2, 3.3,                     // float
+                    ["a" => 1], ["b" => 2], ["c" => 3],// объекты
+                    [1], [2], [3]                      // массивы
+                ]
+            ],
+            [ // Третий элемент: массив из вложенных ассоциативных массивов
+                [
+                    "key1" => "value1",
+                    100 => 123,
+                    "bool" => false,
+                    "float" => 6.78,
+                    "array" => ["a", "b", "c"],
+                    "obj" => ["x" => "y"]
+                ],
+                [
+                    "key2" => "value2",
+                    200 => 456,
+                    "bool" => true,
+                    "float" => 9.01,
+                    "array" => [true, false],
+                    "obj" => ["z" => 0]
+                ],
+                [
+                    "key3" => "value3",
+                    300 => 789,
+                    "bool" => false,
+                    "float" => 3.14,
+                    "array" => [],
+                    "obj" => []
+                ]
+            ]
+        ];
     }
 
 }
