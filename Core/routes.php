@@ -22,11 +22,11 @@ return [
 
   // AdminPanel need QAuth = sessions
   'a4min/dashboard' => ['Admin\AdminController', 'dashboard'],
-  'a4min/form-regular-event' => ['AdminController', 'createRegularForm'],
-  'a4min/form-main-event' => ['AdminController', 'createMainForm'],
-  'a4min/events' => ['AdminController', 'events'],
-  'a4min/main-events' => ['AdminController', 'mainEvents'],
-  'a4min/persons' => ['AdminController', 'persons'],
+  'a4min/form-regular-event' => ['Admin\AdminController', 'createRegularForm'],
+  'a4min/form-main-event' => ['Admin\AdminController', 'createMainForm'],
+  'a4min/events' => ['Admin\AdminController', 'events'],
+  'a4min/main-events' => ['Admin\AdminController', 'mainEvents'],
+  'a4min/persons' => ['Admin\AdminController', 'persons'],
 
   // event management need QAuth = sessions \Resources
   'a4min/add-event' => ['EventController', 'addEvent'],
