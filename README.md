@@ -1,6 +1,6 @@
 # Hastle.com - events everyday
 
-Simple project in naive PHP.
+Simple project in PHP v8.3.6
 
 ## Описание
 

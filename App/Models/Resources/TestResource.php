@@ -100,12 +100,49 @@ class TestResource extends Model
     {
         return $this->response->json([
             'success' => true,
-            'answer_array_value' => array_keys($this->arrayBox(), 'three', false),
-            'answer_array' => array_keys($this->arrayBox()),
-            'answer_all' => $this->arrayBox(),
+            // 'answer_array' => array_keys($this->arrayBox()),
+            // 'answer_all' => $this->arrayBox(),
+            // 'upper_case_array' => $this->testChangeAllRegisterKeys(),
+            'chank_array' => $this->changArray(),
         ], 200);
     }
 
+    /**
+     * return @param bool
+     * array_all()
+     * array_any()
+     * array_none()
+     * it`s all php 8 < 8.4 version
+     * not working right now
+     */
+    public function testGetBooleanArray()
+    {
+        $arrayBox = [
+            "1" => "asdasd",
+            "2" => "asdasd",
+            "3" => "asdsad",
+        ];
+
+        var_dump($result = array_arr($arrayBox, function(string $value) {
+            return strlen($value) < 10;
+        }));
+    }
+
+    /**
+     * chunk array
+     */
+    public function changArray()
+    {
+        return array_chunk($this->arrayBox(), 3, true);
+    }
+
+    /**
+     * Changes the case of all keys in an array
+     */
+    public function testChangeAllRegisterKeys(): array
+    {
+        return array_change_key_case($this->arrayBox(), CASE_UPPER);
+    }
 
     /**
      * just array in All Types
@@ -114,6 +151,13 @@ class TestResource extends Model
     private function arrayBox()
     {
         return  [
+            "key_1" => [
+                "super" => "day",
+                "nice work" => "payday",
+                "acme" =>  "this is gg",
+            ],
+            "attention_key_2" => "ha ha ha",
+            "super" => "space",
             [ // Первый элемент: ассоциативный массив с разными типами данных
                 "name" => "Привет",                // строка
                 1 => 42,                           // число (ключ — число)
