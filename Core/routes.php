@@ -2,8 +2,8 @@
 
 return [
   // database | generate | create
-  'db/generate' => ['DbSetupController', 'generate'],
-  'status' => ['DbSetupController', 'status'],
+  'db/generate' => ['Generations\DbSetupController', 'generate'],
+  'status' => ['Generations\DbSetupController', 'status'],
 
   // start page\get-data
   '/' => ['HomeController', 'index'],
@@ -17,7 +17,7 @@ return [
   'test-fetch-data' => ['TestController', 'testFetchData'],
   'test-array-keys' => ['TestController', 'testArrayAllKeys'],
   // test fetch api dataForm secret
-  'a4min/test-fetch' => ['AdminController', 'testFetch'],
+  'a4min/test-fetch' => ['Admin\AdminController', 'testFetch'],
   
 
   // AdminPanel need QAuth = sessions

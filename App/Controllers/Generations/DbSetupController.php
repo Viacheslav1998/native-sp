@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Generations;
 
 use Core\Migration;
 use Core\Model;
