@@ -2,6 +2,8 @@
 
 namespace App\Controllers\Admin;
 
+use App\Helpers\Auth;
+
 /**
  * Only Views template
  */
@@ -9,6 +11,12 @@ class AdminController extends \Core\Controller
 {
     // construct auth
     private $template = 'admin';
+
+    public function __construct()
+    {
+        parent::__construct();
+        Auth::requireAdmin();
+    }
 
     public function dashboard()
     {

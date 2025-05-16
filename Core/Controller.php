@@ -13,7 +13,6 @@ class Controller
     public function __construct()
     {
         $this->viewRenderer = new ViewRenderer();
-        // $this->response = new Response();
     }
 
     /**
