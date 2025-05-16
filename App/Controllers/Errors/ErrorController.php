@@ -12,7 +12,11 @@ class ErrorController extends Controller
      */
     public function notFound()
     {
+        header('Content-Type: text/html; charset=utf-8');
+
         http_response_code(404);
+
+        error_log("404 Not Found: " . $_SERVER['REQUEST_URI']);
 
         return $this->render('base/404');
     }
@@ -21,7 +25,9 @@ class ErrorController extends Controller
      * server error - and something's broken.
      */
     public function serverError()
-    {
+    {   
+        header('Content-Type: text/html; charset=utf-8');
+
         http_response_code(500);
 
         return $this->render('base/500');

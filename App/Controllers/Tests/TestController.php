@@ -80,7 +80,28 @@ class TestController extends \Core\Controller
    */
   public function testArrayAllKeys()
   {
-     return $this->testResource->testArrayManipulation();
+      return $this->testResource->testArrayManipulation();
+  }
+
+
+
+  /**
+   * testing session
+   * check session 
+   * create session[key]=val
+   */
+  public function testSession()
+  {
+      
+
+    // unset($_SESSION['user']); destroy current session
+    // dont use session_destroy
+
+      if(isset($_SESSION['user'])) {
+          echo "Сессия обьявлена";
+      } else {
+          echo "Сессия не существует";
+      }
   }
 
   // public function create(){}     // form create (GET)
