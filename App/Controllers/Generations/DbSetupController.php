@@ -16,17 +16,17 @@ class DbSetupController {
      */
     public function generate()
     {
-      try {
-          $pdo = Model::staticPDO();
-          $migrations = new Migration($pdo);
-          $migrations->run();
-          http_response_code(201);
-          echo json_encode(['Success' => ' Успех! Создано!']);
-      } catch (\PDOException $e) {
-          throw new Exception("возникли проблемы с базой данных");
-          httr_response_code(500);
-          error_log('Error: ', $e->getMessage());
-      }
+        try {
+            $pdo = Model::staticPDO();
+            $migrations = new Migration($pdo);
+            $migrations->run();
+            http_response_code(201);
+            echo json_encode(['Success' => ' Успех! Создано!']);
+        } catch (\PDOException $e) {
+            throw new Exception("возникли проблемы с базой данных");
+            httr_response_code(500);
+            error_log('Error: ', $e->getMessage());
+        }
     }
 
     public function status()

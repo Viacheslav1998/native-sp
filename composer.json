@@ -2,13 +2,7 @@
   "autoload": {
     "psr-4": {
       "App\\": "App/",
-      "App\\Controllers\\": "App/Controllers/",
-      "App\\Controllers\\Admin\\": "App/Controllers/Admin/",
-      "App\\Controllers\\Generations\\": "App/Controllers/Generations/",
-      "App\\Helpers\\": "App/Helpers/",
-      "App\\Models\\": "App/Models/",
-      "Core\\": "Core/",
-      "Core\\Seeds\\": "Core/Seeds/"
+      "Core\\": "Core/"
     }
   },
   "require": {

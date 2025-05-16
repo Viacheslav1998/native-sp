@@ -32,9 +32,9 @@ return [
   'a4min/add-event' => ['EventController', 'addEvent'],
 
   // API
-  'api/post-test-data' => ['TestController', 'testIndex'],
-  'api/testGetDataOneMoreTime' => ['TestController', 'testGetDataOneMoreTime'],
-  'api/testPostTestData' => ['TestController', 'testPostTestData']
+  'api/post-test-data' => ['Tests\TestController', 'testIndex'],
+  'api/testGetDataOneMoreTime' => ['Tests\TestController', 'testGetDataOneMoreTime'],
+  'api/testPostTestData' => ['Tests\TestController', 'testPostTestData'],
 
   // CRUD - create/read/update/delete ... 
 ];

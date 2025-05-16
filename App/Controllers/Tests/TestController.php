@@ -8,7 +8,7 @@
  * а улучшать прослойки можно всегда до бессконечности 
  * тут просто проверки на всякие сущности и вещи - это не боевой проект
  */
-namespace App\Controllers;
+namespace App\Controllers\Tests;
 
 use App\Helpers\Request;
 use App\Validation\TestFormValidators;
