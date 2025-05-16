@@ -38,13 +38,13 @@ class Router
             }
 
             // if no match or route is found
-            $errorController = new \App\Controllers\ErrorController();
+            $errorController = new \App\Controllers\Errors\ErrorController();
 
             return $errorController->notFound();
         } catch (\Throwable $e) {
             error_log($e->getMessage());
 
-            $errorController = new \App\Controllers\ErrorController();
+            $errorController = new \App\Controllers\Errors\ErrorController();
 
             return $errorController->serverError();
         }

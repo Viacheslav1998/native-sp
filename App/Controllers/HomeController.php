@@ -3,11 +3,16 @@
 namespace App\Controllers;
 
 use Core\Controller;
+// use App\Helpers\Auth;
 
 class HomeController extends Controller
 {
     public function index()
     {
+        // $_SESSION['user']['role'] = 'admin'; присвоить роль для проверки
+
+        // echo $_SESSION['user']['role']; // записать данные в массив юзер
+        // unset($_SESSION['user']); удалить в случае ошибки
         return $this->render('home', ['title' => 'Домашняя']);
     }
 
