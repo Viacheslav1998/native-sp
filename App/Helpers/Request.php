@@ -9,6 +9,23 @@ namespace App\Helpers;
 class Request
 {
 
+ 
+    /**
+     * get input data
+     * return json or regular form
+     */
+    public static function postJson(): array
+    {
+        $input = file_get_contents('php://input');
+        $json = json_decode($input, true);
+
+        if(json_last_error() === JSON_ERROR_NONE) {
+            return $json;
+        }
+
+        return $_POST; 
+    }
+
   /**
    * return $_POST
    * or params
