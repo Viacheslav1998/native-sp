@@ -8,7 +8,6 @@ namespace App\Helpers;
  */
 class Request
 {
-
  
     /**
      * get input data
@@ -28,7 +27,7 @@ class Request
 
   /**
    * return $_POST
-   * or params
+   * or []
    */
     public static function post(string $key = null, $default = [])
     {

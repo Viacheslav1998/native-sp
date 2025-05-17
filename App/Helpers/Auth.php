@@ -33,8 +33,13 @@ class Auth
     }
 
     public static function login(array $user): void
-    { 
-        $_SESSION['user'] = $user;
+    {
+        session_regenerate_id(true);
+        $_SESSION['user'] = [
+            'id' => $user['id'],
+            'name' => $user['name'],
+            'role' => $user['role']
+        ];
     }
 
     public static function logout(): void
