@@ -65,6 +65,14 @@ a:hover { color: orange;}
   padding-bottom: 1px;
 }
 
+.form-login {
+  border-radius: 20px;
+  background-color: #fcfcfc;
+  max-width: 400px;
+}
+
+/* end login page */
+
 /* css only for 404 page */
 @media only screen and (min-width: 801px) {
   .img-404 {
