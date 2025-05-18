@@ -1,4 +1,4 @@
-ALTER TABLE users
+ALTER TABLE user
   ADD COLUMN password VARCHAR(255),
-  role COLUMN role VARCHAR(50) DEFAULT 'user'
+  ADD COLUMN role VARCHAR(50) DEFAULT 'user'
 

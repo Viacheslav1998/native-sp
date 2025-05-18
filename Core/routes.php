@@ -5,11 +5,13 @@ return [
   'db/generate' => ['Generations\DbSetupController', 'generate'],
   'status' => ['Generations\DbSetupController', 'status'],
 
-  // start page\get-data
+  // home for all
   '/' => ['HomeController', 'index'],
   'home' => ['HomeController', 'index'],
   'about' => ['HomeController', 'about'],
   'contact' => ['HomeController', 'contact'],
+  'login' => ['HomeController', 'login'],
+  'register' => ['HomeController', 'register'],
   'user/{id}' => ['UserController', 'show'],
 
   // just test code ...

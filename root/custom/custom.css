@@ -58,6 +58,13 @@ a:hover { color: orange;}
 .faster-nav > li {
   margin-bottom: 10px;
 }
+
+/* login page */
+.fone {
+  background-color: #1faf6c;
+  padding-bottom: 1px;
+}
+
 /* css only for 404 page */
 @media only screen and (min-width: 801px) {
   .img-404 {

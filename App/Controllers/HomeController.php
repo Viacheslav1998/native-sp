@@ -25,4 +25,14 @@ class HomeController extends Controller
     {
         return $this->render('contact');
     }
+
+    public function login()
+    {
+        return $this->render('login', ['title' => 'Система входа']);
+    }
+
+    public function register()
+    {
+        return $this->render('register', ['title' => 'Система регистрации']);
+    }
 }
