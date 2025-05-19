@@ -67,8 +67,12 @@ a:hover { color: orange;}
 
 .form-login {
   border-radius: 20px;
-  background-color: #fcfcfc;
-  max-width: 400px;
+  background-color: #d8e8e1;
+  max-width: 500px;
+}
+.decor {
+  background-color: #df9a4b;
+  height: 5px;
 }
 
 /* end login page */
