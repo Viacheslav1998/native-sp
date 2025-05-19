@@ -74,8 +74,11 @@ a:hover { color: orange;}
   background-color: #df9a4b;
   height: 5px;
 }
-
 /* end login page */
+
+/* start register page*/
+
+/* end registre page */
 
 /* css only for 404 page */
 @media only screen and (min-width: 801px) {
