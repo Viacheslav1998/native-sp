@@ -77,7 +77,16 @@ a:hover { color: orange;}
 /* end login page */
 
 /* start register page*/
+.fone-r {
+  background-color: #32084b;
+  padding-bottom: 1px;
+}
 
+.form-register {
+  width: 800px;
+  border-radius: 20px;
+  background: rgb(220, 219, 221);
+}
 /* end registre page */
 
 /* css only for 404 page */
