@@ -25,7 +25,7 @@
         </div>
         <div class="form-group p-2 text-dark fw-bold">
           <label for="selectTown" class="fs-5">Твой город</label>
-          <select class="form-control fs-5" id="selectTown">
+          <select class="form-control fs-5 text-primary" id="selectTown">
             <option>Караганда</option>
             <option>Алмата</option>
             <option>Астана</option>
