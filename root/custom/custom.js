@@ -1,1 +1,1 @@
-import login from './custom_components/login.js';
+import register from './custom_components/register.js';

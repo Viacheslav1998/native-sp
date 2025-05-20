@@ -15,6 +15,7 @@
           <label for="inputName" class="fs-5">Твое имя</label>
           <input type="text" class="form-control px-4 text-primary" id="inputName" placeholder="Введи свое имя">
         </div>
+        <div><button id="cl">pushtobutton</button></div>
         <div class="form-group p-2 text-dark fw-bold">
           <label for="inputFirstName" class="fs-5">Твоя фамилия</label>
           <input type="text" class="form-control px-4 text-primary" id="inputFirstName" placeholder="Введи свою фамилию">
