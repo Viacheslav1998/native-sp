@@ -93,7 +93,7 @@ class TestController extends \Core\Controller
   public function testSession()
   {
       
-
+    // $_SESSION['user']['role'] = 'admin'
     // unset($_SESSION['user']); destroy current session
     // dont use session_destroy
 

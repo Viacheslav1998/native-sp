@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="<?= base_url('root/custom/custom.css') ?>">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
   <script defer type="module" src="<?= base_url('/root/static/main.js') ?>"></script>
-  <script defer src="<?= base_url('/root/custom/custom.js') ?>"></script>
+  <script defer type="module" src="<?= base_url('/root/custom/custom.js') ?>"></script>
 </head>
 <body>
   <div class="container">
