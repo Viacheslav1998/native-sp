@@ -50,12 +50,9 @@ if(window.location.href == login) {
 const sp = document.getElementById("cl");
 
   sp.addEventListener("click", function(e){
-    e.preventDefault();
-    console.log('asdasd');
     const nameId = document.getElementById("inputName").value;
+    console.log(nameId);
   });
-
-
 
 }
 
