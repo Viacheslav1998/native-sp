@@ -42,8 +42,8 @@
           <input type="password" class="form-control px-4 text-primary" id="passwordAgain" placeholder="Нужно ввести пароль еще раз">
         </div>
         <div class="form-group p-2 text-dark fw-bold">
-          <label for="inputPhone" class="fs-5">Твой телефон</label>
-          <input type="number" class="form-control px-4 text-primary" id="inputPhone" placeholder="Нужен твой номер телефона">
+          <label for="phone" class="fs-5">Твой телефон</label>
+          <input type="number" class="form-control px-4 text-primary" id="phone" placeholder="Нужен твой номер телефона">
         </div>
         <div class="form-group p-2 text-dark fw-bold">
           <label for="images">Если нужно можно выбрать фотку или аву</label>
