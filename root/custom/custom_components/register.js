@@ -1,9 +1,9 @@
 /**
  * only login page
  */
-const login = 'http://hastle.test/register';
+const register = 'http://hastle.test/register';
 
-if(window.location.href == login) {
+if(window.location.href == register) {
 
   function validatePassword(password, repeadPassword) {
     if(password !== repeadPassword) {
@@ -15,13 +15,13 @@ if(window.location.href == login) {
     return null;
   }
 
-  // function validationFields(name, ) {
-  //   if()
-  // }
+  function validateFields(name, lastName, email, town) {
+
+  }
 
   // get value from inputs
   const passwordField = document.getElementById("password");
-  const repeadPasswordField = document.getElementById("repeatPassword");
+  const repeadPasswordField = document.getElementById("passwordAgain");
   const submit = document.getElementById("button");
 
   // handler 
@@ -35,9 +35,12 @@ if(window.location.href == login) {
 
     // error / fetch
     if(validationResult) {
+
       console.log(validationResult);
       alert(validationResult);
+
     } else {
+
       const formData = {
         password: password,
       };
@@ -47,12 +50,6 @@ if(window.location.href == login) {
 
 
   }
-const sp = document.getElementById("cl");
-
-  sp.addEventListener("click", function(e){
-    const nameId = document.getElementById("inputName").value;
-    console.log(nameId);
-  });
 
 }
 

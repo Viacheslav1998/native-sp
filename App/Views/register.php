@@ -12,21 +12,20 @@
     <div class="form-register p-5 m-4 shadow">
       <form id="form-register" enctype="multipart/form-data">
         <div class="form-group p-2 text-dark fw-bold">
-          <label for="inputName" class="fs-5">Твое имя</label>
-          <input type="text" class="form-control px-4 text-primary" id="inputName" placeholder="Введи свое имя">
-        </div>
-        <div><button type="button" id="cl">pushtobutton</button></div>
-        <div class="form-group p-2 text-dark fw-bold">
-          <label for="inputFirstName" class="fs-5">Твоя фамилия</label>
-          <input type="text" class="form-control px-4 text-primary" id="inputFirstName" placeholder="Введи свою фамилию">
+          <label for="name" class="fs-5">Твое имя</label>
+          <input type="text" class="form-control px-4 text-primary" id="name" placeholder="Введи свое имя">
         </div>
         <div class="form-group p-2 text-dark fw-bold">
-          <label for="inputEmail" class="fs-5">Твоя почта</label>
-          <input type="email" class="form-control px-4 text-primary" id="inputEmail" placeholder="Введи свою почту">
+          <label for="lastName" class="fs-5">Твоя фамилия</label>
+          <input type="text" class="form-control px-4 text-primary" id="lastName" placeholder="Введи свою фамилию">
         </div>
         <div class="form-group p-2 text-dark fw-bold">
-          <label for="selectTown" class="fs-5">Твой город</label>
-          <select class="form-control fs-5 text-primary" id="selectTown">
+          <label for="email" class="fs-5">Твоя почта</label>
+          <input type="email" class="form-control px-4 text-primary" id="email" placeholder="Введи свою почту">
+        </div>
+        <div class="form-group p-2 text-dark fw-bold">
+          <label for="town" class="fs-5">Твой город</label>
+          <select class="form-control fs-5 text-primary" id="town">
             <option>Караганда</option>
             <option>Алмата</option>
             <option>Астана</option>
@@ -35,22 +34,22 @@
           </select>
         </div>
         <div class="form-group p-2 text-dark fw-bold">
-          <label for="inputPassword" class="fs-5">Твой Пароль</label>
-          <input type="password" class="form-control px-4 text-primary" id="inputPassword" placeholder="Введи свой пароль">
+          <label for="password" class="fs-5">Твой Пароль</label>
+          <input type="password" class="form-control px-4 text-primary" id="password" placeholder="Введи свой пароль">
         </div>
         <div class="form-group p-2 text-dark fw-bold">
-          <label for="inputPasswordAgain" class="fs-5">Еще раз пароль</label>
-          <input type="password" class="form-control px-4 text-primary" id="inputPasswordAgain" placeholder="Нужно ввести пароль еще раз">
+          <label for="passwordAgain" class="fs-5">Еще раз пароль</label>
+          <input type="password" class="form-control px-4 text-primary" id="passwordAgain" placeholder="Нужно ввести пароль еще раз">
         </div>
         <div class="form-group p-2 text-dark fw-bold">
           <label for="inputPhone" class="fs-5">Твой телефон</label>
-          <input type="text" class="form-control px-4 text-primary" id="exampleInputPassword1" placeholder="Нужен твой номер телефона">
+          <input type="number" class="form-control px-4 text-primary" id="inputPhone" placeholder="Нужен твой номер телефона">
         </div>
         <div class="form-group p-2 text-dark fw-bold">
           <label for="images">Если нужно можно выбрать фотку или аву</label>
           <input type="file" class="form-control-file" id="images">
         </div>
-        <button type="submit" class="btn btn-dark m-2">Регистрация</button>
+        <button type="submit" id="push" class="btn btn-dark m-2">Регистрация</button>
       </form>
     </div>
   </div>
