@@ -5,6 +5,10 @@ const register = 'http://hastle.test/register';
 
 if(window.location.href == register) {
 
+  /**
+   * if it's useful anywhere else.
+   * validation only Password
+   */
   function validatePassword(password, repeatPassword) {
     if(password !== repeatPassword) {
       return "пароли не совпадают";
@@ -32,7 +36,11 @@ if(window.location.href == register) {
 
     return null;
   }
-
+  
+  /**
+   * if it's useful anywhere else.
+   * validation another fields
+   */
   function validateFields(name, lastName, email, town, phone) {
     if(name.length < 2 || name.length > 20) {
       return "Имя должно быть от 2 до 20 символов";
@@ -59,10 +67,28 @@ if(window.location.href == register) {
     return null;
   }
 
-  // get value from inputs
+  // get pass values
   const passwordField = document.getElementById("password");
   const repeatPasswordField = document.getElementById("passwordAgain");
+  
+  // get another values
+  const nameInput = document.getElementById("name");
+  const lastNameInput = document.getElementById("lastName");
+  const emailInput = document.getElementById("email");
+  const townInput = document.getElementById("town");
+  const phoneInput = document.getElementById("phone");
 
+  // get file if is exists
+
+  // добавить все поля 
+  // получить все значение для другой проверки 
+  // дозакончить условие - если оба возвращают что то или нет
+  // получение через инпутс гет пут инпутс помойму функция преобразовать в строку а там в массив
+  // пробувать кохранять данные в бд - 
+  // не забудь роль по умолчания 
+  // присваивается user и 
+  // в зависимости от роли который дает админ 
+  // могут быть видны определенные структуры сайта
 
   const submit = document.getElementById("button");
 
@@ -76,21 +102,27 @@ if(window.location.href == register) {
     // pass validate
     const validationResult = validatePassword(password, repeatPassword);
 
-    // another files work
+    // another fields 
+    const name = nameInput.value.trim() ;
+    const lastName = lastNameInput.value.trim();
+    const email = emailInput.value.trim();
+    const town = townInput.value.trim();
+    const phone = phoneInput.value.trim();
+    // fields validate
+    const validationResultFields = validateFields(name, lastName, email, town, phone);
 
+    // check file input
     
     // error / fetch
-    if(validationResult) {
-
-      console.log(validationResult);
-      alert(validationResult);
-
+    if(validationResult && validationResultFields) {
+      console.log(validationResult || validationResultFields);
     } else {
 
-      const formData = {
-        password: password,
-      };
 
+      console.log('it`s okey');
+      // const formData = {
+      //   password: password,
+      // };
 
     }
 
