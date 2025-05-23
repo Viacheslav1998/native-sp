@@ -101,9 +101,10 @@ if(window.location.href == register) {
     
     // error / fetch
     if(validationResultFields || validationResult) {
-      modal.showModal("Ошибка: ", validationResultFields || validationResult); 
+      modal.showModal(validationResultFields || validationResult); 
       // console.log(" Ошибка: ", validationResultFields || validationResult);
     } else {
+      modal.showModal("Успешно ! Данные приняты");
       const formData = {
         name: name, 
         lastName: lastName,
@@ -112,7 +113,6 @@ if(window.location.href == register) {
         phone: phone,
         password: password
       };
-      modal.showModal("Все хорошо проблем нет");   
     }
 
   }
@@ -120,9 +120,9 @@ if(window.location.href == register) {
   const submit = document.getElementById("push");
   submit.addEventListener("click", handleSubmit);
 
+
   // close if is modal
-  const close = document.getElementById("modal-close");
-  close.addEventListener("click", modal.closeModal);
+  document.getElementById("modal-close")?.addEventListener("click", modal.closeModal);
 
 }
 

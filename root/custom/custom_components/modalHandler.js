@@ -24,13 +24,13 @@ function showModal(content) {
     list.appendChild(li);
   }
 
-  modal.style.display = "block";
+  modal.classList.add("show");
 }
 
 function closeModal() {
   const modal = document.getElementById("modal");
   if(modal) {
-    modal.style.display = "none";
+    modal.classList.remove("show");
   }
 }
 

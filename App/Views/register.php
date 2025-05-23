@@ -1,4 +1,4 @@
-<div id="modal" style="display:none; background:#333; color:white; padding:1em;">
+<div id="modal" class="modal-box">
   <h2>Уведомление</h2>
   <ul id="modal-list"></ul>
   <button id="modal-close">Закрыть</button>
@@ -39,7 +39,7 @@
         </div>
         <div class="form-group p-2 text-dark fw-bold">
           <label for="phone" class="fs-5">Телефон</label>
-          <input type="number" class="form-control px-4 text-primary" id="phone" placeholder="Нужен твой номер телефона">
+          <input type="text" class="form-control px-4 text-primary" id="phone" placeholder="Нужен твой номер телефона">
         </div>
         <div class="form-group p-2 text-dark fw-bold">
           <label for="password" class="fs-5">Пароль</label>
