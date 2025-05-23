@@ -78,20 +78,6 @@ if(window.location.href == register) {
   const townInput = document.getElementById("town");
   const phoneInput = document.getElementById("phone");
 
-  // get file if is exists
-
-  // добавить все поля 
-  // получить все значение для другой проверки 
-  // дозакончить условие - если оба возвращают что то или нет
-  // получение через инпутс гет пут инпутс помойму функция преобразовать в строку а там в массив
-  // пробувать кохранять данные в бд - 
-  // не забудь роль по умолчания 
-  // присваивается user и 
-  // в зависимости от роли который дает админ 
-  // могут быть видны определенные структуры сайта
-
-  const submit = document.getElementById("button");
-
   // handler 
   function handleSubmit(event) {
     event.preventDefault();
@@ -114,20 +100,18 @@ if(window.location.href == register) {
     // check file input
     
     // error / fetch
-    if(validationResult && validationResultFields) {
-      console.log(validationResult || validationResultFields);
+    if(validationResultFields || validationResult) {
+      console.log(" Ошибка: ", validationResultFields || validationResult);
     } else {
 
-
       console.log('it`s okey');
-      // const formData = {
-      //   password: password,
-      // };
-
+   
     }
 
-
   }
+
+  const submit = document.getElementById("push");
+  submit.addEventListener("click", handleSubmit);
 
 }
 

@@ -10,7 +10,7 @@
   </div>
   <div class="wrapper-form-register d-flex justify-content-center pt-4 pb-5">
     <div class="form-register p-5 m-4 shadow">
-      <form id="form-register" enctype="multipart/form-data">
+      <form id="form-register">
         <div class="form-group p-2 text-dark fw-bold">
           <label for="name" class="fs-5">Твое имя</label>
           <input type="text" class="form-control px-4 text-primary" id="name" placeholder="Введи свое имя">
@@ -34,20 +34,16 @@
           </select>
         </div>
         <div class="form-group p-2 text-dark fw-bold">
+          <label for="phone" class="fs-5">Твой телефон</label>
+          <input type="number" class="form-control px-4 text-primary" id="phone" placeholder="Нужен твой номер телефона">
+        </div>
+        <div class="form-group p-2 text-dark fw-bold">
           <label for="password" class="fs-5">Твой Пароль</label>
           <input type="password" class="form-control px-4 text-primary" id="password" placeholder="Введи свой пароль">
         </div>
         <div class="form-group p-2 text-dark fw-bold">
           <label for="passwordAgain" class="fs-5">Еще раз пароль</label>
           <input type="password" class="form-control px-4 text-primary" id="passwordAgain" placeholder="Нужно ввести пароль еще раз">
-        </div>
-        <div class="form-group p-2 text-dark fw-bold">
-          <label for="phone" class="fs-5">Твой телефон</label>
-          <input type="number" class="form-control px-4 text-primary" id="phone" placeholder="Нужен твой номер телефона">
-        </div>
-        <div class="form-group p-2 text-dark fw-bold">
-          <label for="images">Если нужно можно выбрать фотку или аву</label>
-          <input type="file" class="form-control-file" id="images">
         </div>
         <button type="submit" id="push" class="btn btn-dark m-2">Регистрация</button>
       </form>
