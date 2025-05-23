@@ -1,6 +1,7 @@
 /**
  * only login page
  */
+
 const register = 'http://hastle.test/register';
 
 if(window.location.href == register) {
@@ -96,14 +97,19 @@ if(window.location.href == register) {
     const phone = phoneInput.value.trim();
     // fields validate
     const validationResultFields = validateFields(name, lastName, email, town, phone);
-
-    // check file input
     
     // error / fetch
     if(validationResultFields || validationResult) {
       console.log(" Ошибка: ", validationResultFields || validationResult);
     } else {
-
+      const formData = {
+        name: name, 
+        lastName: lastName,
+        email: email, 
+        town: town,
+        phone: phone,
+        password: password
+      };
       console.log('it`s okey');
    
     }
@@ -111,7 +117,8 @@ if(window.location.href == register) {
   }
 
   const submit = document.getElementById("push");
-  submit.addEventListener("click", handleSubmit);
+  // submit.addEventListener("click", handleSubmit);
+  // submit.addEventListener("click", attention);
 
 }
 

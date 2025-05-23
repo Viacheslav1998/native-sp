@@ -12,19 +12,19 @@
     <div class="form-register p-5 m-4 shadow">
       <form id="form-register">
         <div class="form-group p-2 text-dark fw-bold">
-          <label for="name" class="fs-5">Твое имя</label>
+          <label for="name" class="fs-5">Имя</label>
           <input type="text" class="form-control px-4 text-primary" id="name" placeholder="Введи свое имя">
         </div>
         <div class="form-group p-2 text-dark fw-bold">
-          <label for="lastName" class="fs-5">Твоя фамилия</label>
+          <label for="lastName" class="fs-5">Фамилия</label>
           <input type="text" class="form-control px-4 text-primary" id="lastName" placeholder="Введи свою фамилию">
         </div>
         <div class="form-group p-2 text-dark fw-bold">
-          <label for="email" class="fs-5">Твоя почта</label>
+          <label for="email" class="fs-5">Почта</label>
           <input type="email" class="form-control px-4 text-primary" id="email" placeholder="Введи свою почту">
         </div>
         <div class="form-group p-2 text-dark fw-bold">
-          <label for="town" class="fs-5">Твой город</label>
+          <label for="town" class="fs-5">Город</label>
           <select class="form-control fs-5 text-primary" id="town">
             <option>Караганда</option>
             <option>Алмата</option>
@@ -34,11 +34,11 @@
           </select>
         </div>
         <div class="form-group p-2 text-dark fw-bold">
-          <label for="phone" class="fs-5">Твой телефон</label>
+          <label for="phone" class="fs-5">Телефон</label>
           <input type="number" class="form-control px-4 text-primary" id="phone" placeholder="Нужен твой номер телефона">
         </div>
         <div class="form-group p-2 text-dark fw-bold">
-          <label for="password" class="fs-5">Твой Пароль</label>
+          <label for="password" class="fs-5">Пароль</label>
           <input type="password" class="form-control px-4 text-primary" id="password" placeholder="Введи свой пароль">
         </div>
         <div class="form-group p-2 text-dark fw-bold">
