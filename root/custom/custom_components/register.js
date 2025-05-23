@@ -1,6 +1,7 @@
 /**
  * only login page
  */
+import modal from './modalHandler.js';
 
 const register = 'http://hastle.test/register';
 
@@ -100,7 +101,8 @@ if(window.location.href == register) {
     
     // error / fetch
     if(validationResultFields || validationResult) {
-      console.log(" Ошибка: ", validationResultFields || validationResult);
+      modal.showModal("Ошибка: ", validationResultFields || validationResult); 
+      // console.log(" Ошибка: ", validationResultFields || validationResult);
     } else {
       const formData = {
         name: name, 
@@ -110,15 +112,17 @@ if(window.location.href == register) {
         phone: phone,
         password: password
       };
-      console.log('it`s okey');
-   
+      modal.showModal("Все хорошо проблем нет");   
     }
 
   }
 
   const submit = document.getElementById("push");
-  // submit.addEventListener("click", handleSubmit);
-  // submit.addEventListener("click", attention);
+  submit.addEventListener("click", handleSubmit);
+
+  // close if is modal
+  const close = document.getElementById("modal-close");
+  close.addEventListener("click", modal.closeModal);
 
 }
 

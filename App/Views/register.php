@@ -1,4 +1,8 @@
-
+<div id="modal" style="display:none; background:#333; color:white; padding:1em;">
+  <h2>Уведомление</h2>
+  <ul id="modal-list"></ul>
+  <button id="modal-close">Закрыть</button>
+</div>
 <div class="fone-r">
   <div class="decor"></div>
   <div class="row">
@@ -45,7 +49,7 @@
           <label for="passwordAgain" class="fs-5">Еще раз пароль</label>
           <input type="password" class="form-control px-4 text-primary" id="passwordAgain" placeholder="Нужно ввести пароль еще раз">
         </div>
-        <button type="submit" id="push" class="btn btn-dark m-2">Регистрация</button>
+        <button type="button" id="push" class="btn btn-dark m-2">Регистрация</button>
       </form>
     </div>
   </div>
