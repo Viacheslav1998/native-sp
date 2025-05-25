@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class UserController
+class PersonController
 {
     public function show($id)
     {
