@@ -102,7 +102,6 @@ if(window.location.href == register) {
     // error / fetch
     if(validationResultFields || validationResult) {
       modal.showModal(validationResultFields || validationResult); 
-      // console.log(" Ошибка: ", validationResultFields || validationResult);
     } else {
       modal.showModal("Успешно ! Данные приняты");
       const formData = {
@@ -113,8 +112,25 @@ if(window.location.href == register) {
         phone: phone,
         password: password
       };
+      fetch('api/person', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(response => response.json())
+      .then(data => {
+        if(data.success) {
+          console.log('зарегистрирован успешно');
+        } else {
+          console.log('Ошибка: ', data.message);
+        }
+      })
+      .catch(err => {
+        console.error('ошибка сети: ', err);
+      });
     }
-
   }
 
   const submit = document.getElementById("push");
