@@ -12,6 +12,7 @@ class RegisterController extends \Core\Controller
     public function save()
     {
       /** 
+       * // array $data :bool
         name: name, 
         lastName: lastName,
         email: email, 
@@ -19,8 +20,9 @@ class RegisterController extends \Core\Controller
         phone: phone,
         password: password
        */
-
-       echo "123 text 123";
+       
+       $data = Request::postJson();
+       var_dump($data);
        die();
 
         try {

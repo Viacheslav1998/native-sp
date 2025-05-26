@@ -15,7 +15,8 @@ return [
   'user/{id}' => ['PersonController', 'show'],
 
   // register
-  'register/show' => ['RegisterController', 'save'],
+  'person/save' => ['RegisterController', 'save'],
+  
   // just test code ...
   'test-array-string' => ['TestController', 'testDataArrayToString'],
   'test-fetch-data' => ['TestController', 'testFetchData'],

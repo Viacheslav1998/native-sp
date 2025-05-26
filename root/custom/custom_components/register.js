@@ -112,7 +112,7 @@ if(window.location.href == register) {
         phone: phone,
         password: password
       };
-      fetch('api/person', {
+      fetch('/person/save', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
