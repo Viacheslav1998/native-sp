@@ -95,8 +95,8 @@ a:hover { color: orange;}
   top: 120px;
   left: 50%;
   transform: translateX(-50%) translateY(-10px);
-  background: #333;
-  color: white;
+  background: #32084b;
+  color: #e7e7e7;
   padding: 1em 1.5em;
   border-radius: 8px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
@@ -126,7 +126,7 @@ a:hover { color: orange;}
 
 #modal-close {
   margin-top: 1em;
-  background: #555;
+  background: #644c9e;
   border: none;
   color: white;
   padding: 0.5em 1em;
@@ -135,7 +135,7 @@ a:hover { color: orange;}
 }
 
 #modal-close:hover {
-  background: #777;
+  background: rgb(63, 58, 141);;
 }
 
 

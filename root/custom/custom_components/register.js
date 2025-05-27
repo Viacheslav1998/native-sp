@@ -113,7 +113,7 @@ if(window.location.href == register) {
         password: password
       };
 
-      fetch('/person/saveы', {
+      fetch('/person/save', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
