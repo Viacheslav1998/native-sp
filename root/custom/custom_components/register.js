@@ -124,32 +124,38 @@ if(window.location.href == register) {
         const contentType = response.headers.get('Content-Type');
 
         if(!response.ok) {
-          const errorText = contentType.includes('application/json')
-            ? (await response.json()).message
-            : await response.text();
+          let errorMessage = `Ошибка ${response.status}`;
 
-            throw new Error(`Ошибка ${response.status}: ${errorText} `);
+          if(response.status === 404) {
+            errorMessage = 'Проблема! Ресурс не найден 404';
+          } else if (response.status === 500) {
+            errorMessage = 'Внутренняя проблема сервера 500';
+          } else if (contentType.includes('application/json')) {
+            const errorJson = await response.json();
+            errorMessage = errorJson.message || errorMessage;
+          }
+
+          throw new Error(errorMessage);
         }
 
-        if(!contentType.includes('appliocation/json')) {
-          const raw = await response.text();
-          throw new Error(`Ответ не в json: ${raw}`);
+        if (!contentType.includes('application/json')) {
+          throw new Error('Некорректный ответ от сервера (ожидался JSON)');
         }
 
         return response.json();
       })
       .then(data => {
         if(data.success) {
-          modal.showModal(data.success)
+          modal.showModal(data.message || 'Успешно');
           console.log('зарегистрирован успешно');
         } else {
-          modal.showModal(data.success);
-          console.log(data);
+          modal.showModal(data.message || 'Что то пошло не так');
+          console.log(data.message);
         }
       })
       .catch(err => {
         console.error('Ошибка сети: ', err);
-        modal.showModal('Произошла ошибка: ', err.message);
+        modal.showModal(`${err.message}`);
       });
     }
   }
