@@ -112,6 +112,7 @@ if(window.location.href == register) {
         phone: phone,
         password: password
       };
+
       fetch('/person/saveы', {
         method: 'POST',
         headers: {
@@ -119,13 +120,30 @@ if(window.location.href == register) {
         },
         body: JSON.stringify(formData)
       })
-      .then(response => response.json())
+      .then(async response => {
+        const contentType = response.headers.get('Content-Type');
+
+        if(!response.ok) {
+          const errorText = contentType.includes('application/json')
+            ? (await response.json()).message
+            : await response.text();
+
+            throw new Error(`Ошибка ${response.status}: ${errorText} `);
+        }
+
+        if(!contentType.includes('appliocation/json')) {
+          const raw = await response.text();
+          throw new Error(`Ответ не в json: ${raw}`);
+        }
+
+        return response.json();
+      })
       .then(data => {
         if(data.success) {
           modal.showModal(data.success)
           console.log('зарегистрирован успешно');
         } else {
-          modal.showModal(data);
+          modal.showModal(data.success);
           console.log(data);
         }
       })
