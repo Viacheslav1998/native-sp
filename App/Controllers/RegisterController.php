@@ -3,16 +3,16 @@
 namespace App\Controllers;
 
 use App\Helpers\Request;
-use App\Model\Resources\RegisterResource;
+use App\Models\Resources\PersonResource;
 
 class RegisterController extends \Core\Controller 
 {
-    private RegisterResource $register;
+    private PersonResource $person;
 
     public function __construct()
     {
         parent::__construct();
-        $this->register = new RegisterResource();
+        $this->person = new PersonResource();
     }
    
 
@@ -22,8 +22,7 @@ class RegisterController extends \Core\Controller
     public function save()
     {  
         $data = Request::postJson();
-        error_log($data);
-        return $this->register->save($data);
+        return $this->person->save($data);
     }
 
 }
