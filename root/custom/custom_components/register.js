@@ -103,7 +103,7 @@ if(window.location.href == register) {
     if(validationResultFields || validationResult) {
       modal.showModal(validationResultFields || validationResult); 
     } else {
-      modal.showModal("Успешно ! Данные приняты");
+      // modal.showModal("Успешно ! Данные приняты");
       const formData = {
         name: name, 
         lastName: lastName,
@@ -112,7 +112,7 @@ if(window.location.href == register) {
         phone: phone,
         password: password
       };
-      fetch('/person/save', {
+      fetch('/person/saveы', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -122,13 +122,16 @@ if(window.location.href == register) {
       .then(response => response.json())
       .then(data => {
         if(data.success) {
+          modal.showModal(data.success)
           console.log('зарегистрирован успешно');
         } else {
-          console.log('Ошибка: ', data);
+          modal.showModal(data);
+          console.log(data);
         }
       })
       .catch(err => {
-        console.error('ошибка сети: ', err);
+        console.error('Ошибка сети: ', err);
+        modal.showModal('Произошла ошибка: ', err.message);
       });
     }
   }

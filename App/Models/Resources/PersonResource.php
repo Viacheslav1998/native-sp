@@ -34,11 +34,11 @@ class PersonResource extends Model
                 200
             );
         } catch (\PDOException $e) {
-            error_log('Ошибка сохранения' . $e->getMessage());
+            error_log('Ошибка PDO: ' . $e->getMessage());
+            error_log('Входные данные: ' . json_encode($data, JSON_PRETTY_PRINT));
             return $this->response->json([
                 'success' => false,
                 'message' => 'Ошибка при сохранении',
-                'cnfg' => $e->getMessage() 
             ], 500);
         }
     }
