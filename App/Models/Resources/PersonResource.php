@@ -29,7 +29,6 @@ class TestResouce extends Model
                 $saved
                   ? ['sucess' => true, 'message' => 'Пользователь Сохранен!']
                   : ['success' => false, 'message' => 'Ошибка не удалось сохранить пользователя']
-            
             ], 200);
         } catch (\PDOException $e) {
             error_log('Ошибка сохранения' . $e->getMessage());

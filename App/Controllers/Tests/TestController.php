@@ -66,7 +66,7 @@ class TestController extends \Core\Controller
   }
 
   /**
-   * the First method to Save test data
+   * test Save data
    */
   public function testPostTestData()
   {
@@ -76,7 +76,7 @@ class TestController extends \Core\Controller
   }
 
   /**
-   * just test work in array
+   * validation of array methods
    */
   public function testArrayAllKeys()
   {

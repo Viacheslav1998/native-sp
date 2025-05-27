@@ -3,35 +3,27 @@
 namespace App\Controllers;
 
 use App\Helpers\Request;
+use App\Model\Resources\RegisterResource;
 
 class RegisterController extends \Core\Controller 
 {
+    private RegisterResource $register;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->register = new RegisterResource();
+    }
+   
+
     /**
      * save person
      */
     public function save()
-    {
-      /** 
-       * // array $data :bool
-        name: name, 
-        lastName: lastName,
-        email: email, 
-        town: town,
-        phone: phone,
-        password: password
-       */
-       
-       $data = Request::postJson();
-       var_dump($data);
-       die();
-
-        try {
-            $saved = $this->crudService->create([
-                $name = $_POST['name']
-            ]);
-        } catch (\Throwable $th) {
-          //throw $th;
-        }
+    {  
+        $data = Request::postJson();
+        error_log($data);
+        return $this->register->save($data);
     }
 
 }
