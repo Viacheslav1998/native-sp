@@ -124,7 +124,7 @@ if(window.location.href == register) {
         if(data.success) {
           console.log('зарегистрирован успешно');
         } else {
-          console.log('Ошибка: ', data.message);
+          console.log('Ошибка: ', data);
         }
       })
       .catch(err => {

@@ -27,17 +27,18 @@ class PersonResource extends Model
     {
         try {
             $saved = $this->crudService->create($data);
-            return $this->response->json([
+            return $this->response->json(
                 $saved
-                  ? ['sucess' => true, 'message' => 'Пользователь Сохранен!']
-                  : ['success' => false, 'message' => 'Ошибка не удалось сохранить пользователя']
-            ], 200);
+                  ? ['success' => true, 'message' => 'Пользователь Сохранен!']
+                  : ['success' => false, 'message' => 'Ошибка не удалось сохранить пользователя'],
+                200
+            );
         } catch (\PDOException $e) {
-          error_log(json_encode($yourArray));
+            error_log('Ошибка сохранения' . $e->getMessage());
             return $this->response->json([
                 'success' => false,
                 'message' => 'Ошибка при сохранении',
-                'cnfg' => error_log(json_encode($yourArray)), 
+                'cnfg' => $e->getMessage() 
             ], 500);
         }
     }
