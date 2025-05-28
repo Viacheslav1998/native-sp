@@ -23,6 +23,9 @@
       <div class="col-xl-4 col-sm-6 my-2 text-center">
         <a href="/a4min/persons" class="d-flex align-items-center justify-content-center btn btn-outline-dark w-100 h-100 py-4">Управление пользователями</a>
       </div>
+      <div class="col-xl-4 col-sm-6 my-2 text-center">
+        <a href="/a4min/profile" class="d-flex align-items-center justify-content-center btn btn-outline-dark w-100 h-100 py-4">Профиль</a>
+      </div>
     </div>
   </div>
 </header>
