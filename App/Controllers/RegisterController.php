@@ -15,7 +15,6 @@ class RegisterController extends \Core\Controller
         $this->person = new PersonResource();
     }
    
-
     /**
      * save person
      */

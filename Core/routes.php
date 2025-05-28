@@ -16,7 +16,7 @@ return [
 
   // register
   'person/save' => ['RegisterController', 'save'],
-  
+
   // just test code ...
   'test-array-string' => ['TestController', 'testDataArrayToString'],
   'test-fetch-data' => ['TestController', 'testFetchData'],
@@ -24,7 +24,6 @@ return [
   // test fetch api dataForm secret
   'a4min/test-fetch' => ['Admin\AdminController', 'testFetch'],
   
-
   // AdminPanel need QAuth = sessions
   'a4min/dashboard' => ['Admin\AdminController', 'dashboard'],
   'a4min/form-regular-event' => ['Admin\AdminController', 'createRegularForm'],
@@ -32,7 +31,7 @@ return [
   'a4min/events' => ['Admin\AdminController', 'events'],
   'a4min/main-events' => ['Admin\AdminController', 'mainEvents'],
   'a4min/persons' => ['Admin\AdminController', 'persons'],
-
+  'a4min/profile' => ['Admin\AdminController', 'profile'],
   // event management need QAuth = sessions \Resources
   'a4min/add-event' => ['EventController', 'addEvent'],
 

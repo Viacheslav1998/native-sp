@@ -48,6 +48,11 @@ class AdminController extends \Core\Controller
         return $this->render('admin/persons', ['title' => 'Управление пользователями'], $this->template);
     }
 
+    public function profile()
+    {
+        return $this->render('admin/profile', ['title' => 'профиль пользователя'], $this->template);
+    }
+
     public function testFetch()
     {
         return $this->render('test/test-handler-data', ['title' => 'шаблон для тестирования api'], $this->template);

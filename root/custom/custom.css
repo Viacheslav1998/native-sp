@@ -98,6 +98,7 @@ a:hover { color: orange;}
   background: #32084b;
   color: #e7e7e7;
   padding: 1em 1.5em;
+  border: 5px solid #dab512;
   border-radius: 8px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   z-index: 10000;
