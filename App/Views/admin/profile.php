@@ -8,43 +8,43 @@
     <div class="col-md-4 text-center mb-5 ">
       <div class="person-imagen">
         <img src="/images/foneb.jpg" alt="Фото профиля" class="img-thumbnail">
-        <p>изменить картинку</p>
+        <form>
+          <div class="form-group">
+            <label class="custom-select-image" for="imagen">Поменять Аватар</label>
+            <input type="file" class="form-control-file" id="imagen">
+          </div>
+        </form>
       </div>
     </div>
     <div class="col">
       <h3>Привет ! Пользователь</h3>
-      <p style="font-weight: 100; font-size: 24px;" class="text-dark"> здесь ты сможешь сменить профиль</p>
+      <p style="font-weight: 100; font-size: 24px;" class="text-dark">Здесь ты сможешь изменит данные</p>
       <form>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <div class="form-group pb-2">
+          <label for="name">Имя</label>
+          <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="изменить имя">
+          <small id="name" class="form-text text-muted">Поменяй имя если что то не так</small>
         </div>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <div class="form-group pb-2">
+          <label for="lastName">Фамилия</label>
+          <input type="text" class="form-control" id="lastName" aria-describedby="lastName" placeholder="Изменить фамилию">
+          <small id="lastName" class="form-text text-muted">Поменяй фамилю если что то не так</small>
         </div>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <div class="form-group pb-2">
+          <label for="Email">Почта</label>
+          <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Изменить почту">
+          <small id="Email" class="form-text text-muted">Поменяй почту если что то не так</small>
         </div>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <div class="form-group pb-4">
+          <label for="phone">Телефон</label>
+          <input type="phone" class="form-control" id="phone" aria-describedby="phone" placeholder="Изменить номер телефона">
+          <small id="phone" class="form-text text-muted">Поменяй номер если что то не так</small>
         </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-dark">Изменить</button>
       </form>
+      <div class="col mt-4">
+        <p class="text-danger" style="font-weight: 300; font-size: 18px;">Изменение данных ограничено - только 3 раза</p>
+      </div>
     </div>
   </div>
 </div>

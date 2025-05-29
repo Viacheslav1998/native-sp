@@ -31,4 +31,14 @@
   width: 200px;
   height: 200px;
 }
+
+input[type=file] {
+    visibility: hidden;
+    opacity: 0;
+}
+.custom-select-image:hover {
+  cursor: pointer;
+  color: orangered;
+  border-bottom: 2px solid orangered;
+}
 /* end profile */
