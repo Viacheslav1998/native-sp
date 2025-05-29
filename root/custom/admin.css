@@ -20,3 +20,15 @@
 .cs-grey {
   color: #615c63;
 }
+
+/* profile */
+.person-imagen {
+  background-position: contain;
+}
+
+.person-imagen img {
+  border-radius: 20px;
+  width: 200px;
+  height: 200px;
+}
+/* end profile */
