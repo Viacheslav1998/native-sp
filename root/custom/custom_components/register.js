@@ -103,7 +103,6 @@ if(window.location.href == register) {
     if(validationResultFields || validationResult) {
       modal.showModal(validationResultFields || validationResult); 
     } else {
-      // modal.showModal("Успешно ! Данные приняты");
       const formData = {
         name: name, 
         lastName: lastName,
@@ -162,7 +161,7 @@ if(window.location.href == register) {
 
   const submit = document.getElementById("push");
   submit.addEventListener("click", handleSubmit);
-  
+
   // close if is modal
   document.getElementById("modal-close")?.addEventListener("click", modal.closeModal);
 
@@ -170,5 +169,5 @@ if(window.location.href == register) {
 
 
 export default {
-
+  validateFields
 }
