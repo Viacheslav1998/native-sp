@@ -20,21 +20,21 @@ if(window.location.href == register) {
       return "Пароль должен быть не меньше 6 символов";
     }
   
-    // if (!/[A-Z]/.test(password)) {
-    //   return "Пароль должен содержать хотя бы одну заглавную букву";
-    // }
+    if (!/[A-Z]/.test(password)) {
+      return "Пароль должен содержать хотя бы одну заглавную букву";
+    }
   
-    // if (!/[a-z]/.test(password)) {
-    //   return "Пароль должен содержать хотя бы одну строчную букву";
-    // }
+    if (!/[a-z]/.test(password)) {
+      return "Пароль должен содержать хотя бы одну строчную букву";
+    }
   
-    // if (!/[0-9]/.test(password)) {
-    //   return "Пароль должен содержать хотя бы одну цифру";
-    // }
+    if (!/[0-9]/.test(password)) {
+      return "Пароль должен содержать хотя бы одну цифру";
+    }
   
-    // if (!/[^a-zA-Z0-9]/.test(password)) {
-    //   return "Пароль должен содержать хотя бы один спецсимвол (!, @, # и т.п.)";
-    // }
+    if (!/[^a-zA-Z0-9]/.test(password)) {
+      return "Пароль должен содержать хотя бы один спецсимвол (!, @, # и т.п.)";
+    }
 
     return null;
   }
@@ -162,8 +162,7 @@ if(window.location.href == register) {
 
   const submit = document.getElementById("push");
   submit.addEventListener("click", handleSubmit);
-
-
+  
   // close if is modal
   document.getElementById("modal-close")?.addEventListener("click", modal.closeModal);
 

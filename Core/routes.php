@@ -33,7 +33,6 @@ return [
   'a4min/persons' => ['Admin\AdminController', 'persons'],
   'a4min/profile' => ['Admin\AdminController', 'profile'],
   // event management need QAuth = sessions \Resources
-  'a4min/add-event' => ['EventController', 'addEvent'],
 
   // API
   'api/post-test-data' => ['Tests\TestController', 'testIndex'],
