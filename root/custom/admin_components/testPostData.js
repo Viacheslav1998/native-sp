@@ -1,155 +1,159 @@
-// forms
-const testForm = document.getElementById("testForm")
-const testPushData = document.getElementById("checkStatic")
-const formFile = document.getElementById("formFile")
-// const anotherForm = document.getElementbyId("anotherForm")
+// testing another forms
+const testPage = 'http://hustle.test/testPage';
 
-// get imagen
-const fileInput = document.getElementById("file")
+if(window.location.href == testPage) {
+  const testForm = document.getElementById("testForm")
+  const testPushData = document.getElementById("checkStatic")
+  const formFile = document.getElementById("formFile")
+  // const anotherForm = document.getElementbyId("anotherForm")
 
-/**
- * form for file
- * test get and manipulation file image - types [jpg, jpeg, png, gif] - memory-size[1000]
- */
-formFile.addEventListener("submit", async (e) => {
-    e.preventDefault()  
-    const file = fileInput.files[0]
-    console.log(file)
-});
+  // get imagen
+  const fileInput = document.getElementById("file")
 
-
-/**
- * test data for use append
- * Just check the data and accept the answer
- * @response text but you can use json
- * there's no try/catch method
- */
-testPushData.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  const testData = new FormData()
-  const date = new Date().toLocaleDateString()
-
-  testData.append("name", "Slavik")
-  testData.append("email", "nice.lorad@mail.com")
-  testData.append("title", "move and move")
-  testData.append("date", date)
-  testData.append("description", "this is a very interesting page and news - you can use it right now")
-  testData.append("assessment", "5")
-
-  const response = await fetch("/api/post-test-data", {
-    method: 'POST',
-    body: testData
+  /**
+   * form for file
+   * test get and manipulation file image - types [jpg, jpeg, png, gif] - memory-size[1000]
+   */
+  formFile.addEventListener("submit", async (e) => {
+      e.preventDefault()  
+      const file = fileInput.files[0]
+      console.log(file)
   });
 
-  if(!response.ok) {
-    console.error("Error Network - ошибка")
-    return;
-  }
 
-  const result = await response.text();
+  /**
+   * test data for use append
+   * Just check the data and accept the answer
+   * @response text but you can use json
+   * there's no try/catch method
+   */
+  testPushData.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  // const result = await response.json();
-  console.log('ответ сервера: ' + result);
-});
+    const testData = new FormData()
+    const date = new Date().toLocaleDateString()
 
+    testData.append("name", "Slavik")
+    testData.append("email", "nice.lorad@mail.com")
+    testData.append("title", "move and move")
+    testData.append("date", date)
+    testData.append("description", "this is a very interesting page and news - you can use it right now")
+    testData.append("assessment", "5")
 
-/**
- * Another async form send-data
- * setTimeout - send timer
- * use [await]
- * @return json 
- */
-async function sendData() {
-
-  // create object data
-  const data = new FormData();
-
-  // add data into formData
-  data.append('name', 'Steven')
-  data.append('email', 'stv@mail.com')
-  data.append('title', 'tiny defender')
-  data.append('age', '1993')
-
-  try {
-    const response = await fetch('/api/testGetDataOneMoreTime', {
+    const response = await fetch("/api/post-test-data", {
       method: 'POST',
-      body: data
+      body: testData
     });
 
     if(!response.ok) {
-      console.error('Error to call data');
+      console.error("Error Network - ошибка")
       return;
     }
 
-    const result = await response.json();
-    console.log(result.data)
-  } catch(error) {
-    console.error("Error response: " + error)
-  }
-}
+    const result = await response.text();
 
-// setTimeout(sendData, 1500);
+    // const result = await response.json();
+    console.log('ответ сервера: ' + result);
+  });
 
 
-/**
- * Another form. 
- * We use then / setTimeout
- */
+  /**
+   * Another async form send-data
+   * setTimeout - send timer
+   * use [await]
+   * @return json 
+   */
+  async function sendData() {
 
-function testPersonData() {
-  // create obj FormData 
-  const person = new FormData();
+    // create object data
+    const data = new FormData();
 
-  // get data
-  person.append('name', 'Jack')
-  person.append('email', 'oxxwrd@gmail.com')
-  person.append('population', 5)
+    // add data into formData
+    data.append('name', 'Steven')
+    data.append('email', 'stv@mail.com')
+    data.append('title', 'tiny defender')
+    data.append('age', '1993')
 
-  // send data get response
-  fetch('/api/testGetFakePerson', {
-    method: "POST",
-    body: person
-  })
+    try {
+      const response = await fetch('/api/testGetDataOneMoreTime', {
+        method: 'POST',
+        body: data
+      });
 
-  .then(response => {
-    if(!response.ok) {
-      throw new Error("Ошибка при отправке данных")
+      if(!response.ok) {
+        console.error('Error to call data');
+        return;
+      }
+
+      const result = await response.json();
+      console.log(result.data)
+    } catch(error) {
+      console.error("Error response: " + error)
     }
-    return response.json()
-  })
+  }
 
-  .then(result => {
-    console.log('ответ от сервера: ', result )
-  })
+  // setTimeout(sendData, 1500);
 
-  .catch(error => {
-    console.error('ошибка запроса: ', error)
+
+  /**
+   * Another form. 
+   * We use then / setTimeout
+   */
+
+  function testPersonData() {
+    // create obj FormData 
+    const person = new FormData();
+
+    // get data
+    person.append('name', 'Jack')
+    person.append('email', 'oxxwrd@gmail.com')
+    person.append('population', 5)
+
+    // send data get response
+    fetch('/api/testGetFakePerson', {
+      method: "POST",
+      body: person
+    })
+
+    .then(response => {
+      if(!response.ok) {
+        throw new Error("Ошибка при отправке данных")
+      }
+      return response.json()
+    })
+
+    .then(result => {
+      console.log('ответ от сервера: ', result )
+    })
+
+    .catch(error => {
+      console.error('ошибка запроса: ', error)
+    });
+  }
+  // setTimeout(testPersonData, 1500);
+
+
+  anotherForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('/api/testPostTestData',{
+        method: "POST",
+        body: new FormData(anotherForm)
+      });
+
+      if(!response.ok) {
+        const errorText = await response.text()
+        console.error("не удалось выполнить запрос: ", errorText)
+        return
+      }
+
+      const result = await response.json()
+      console.log(result[0])
+    } catch (error) {
+      console.error("Ошибка запроса:", error.message || error)
+    }
   });
 }
-// setTimeout(testPersonData, 1500);
-
-
-anotherForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  try {
-    const response = await fetch('/api/testPostTestData',{
-      method: "POST",
-      body: new FormData(anotherForm)
-    });
-
-    if(!response.ok) {
-      const errorText = await response.text()
-      console.error("не удалось выполнить запрос: ", errorText)
-      return
-    }
-
-    const result = await response.json()
-    console.log(result[0])
-  } catch (error) {
-    console.error("Ошибка запроса:", error.message || error)
-  }
-});
 
 export default {
 

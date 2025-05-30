@@ -91,7 +91,7 @@ if(window.location.href == register) {
     const validationResult = validatePassword(password, repeatPassword);
 
     // another fields 
-    const name = nameInput.value.trim() ;
+    const name = nameInput.value.trim();
     const lastName = lastNameInput.value.trim();
     const email = emailInput.value.trim();
     const town = townInput.value.trim();
@@ -149,7 +149,7 @@ if(window.location.href == register) {
           console.log('зарегистрирован успешно');
         } else {
           modal.showModal(data.message || 'Что то пошло не так');
-          console.log(data.message);
+          console.error(data.message);
         }
       })
       .catch(err => {

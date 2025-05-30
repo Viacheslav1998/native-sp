@@ -40,7 +40,7 @@
           <input type="phone" class="form-control" id="phone" aria-describedby="phone" placeholder="Изменить номер телефона">
           <small id="phone" class="form-text text-muted">Поменяй номер если что то не так</small>
         </div>
-        <button type="button" class="btn btn-dark">Изменить</button>
+        <button id="person-push" type="button" class="btn btn-dark">Изменить</button>
       </form>
       <div class="col mt-4">
         <p class="text-danger" style="font-weight: 300; font-size: 18px;">Изменение данных ограничено - только 3 раза</p>
