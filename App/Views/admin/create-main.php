@@ -39,7 +39,8 @@
         <br>
         </div>
         <div>
-          <label for="file" class="form-label text-secondary">Выбери изображение</label>
+          <i>(расширения картинок - .jpg, .jpeg, .png, .gif)</i><br>
+          <label for="file" class="btn btn-outline-success btn-lg form-label text-secondary mt-2">Выбери изображение</label>
           <input name="file" class="form-control form-control-lg" id="file" type="file">
         </div>
       </div>

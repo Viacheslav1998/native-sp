@@ -43,7 +43,7 @@
         </div>
         <div>
           <i>(расширения картинок - .jpg, .jpeg, .png, .gif)</i><br>
-          <label for="file" class="create-file form-label">Выбери изображение</label>
+          <label for="file" class="btn btn-outline-success btn-lg form-label mt-2">Выбери изображение</label>
           <input name="file" class="form-control form-control-lg" id="file" type="file" accept=".jpg, .jpeg, .png, .gif">
         </div>
       </div>

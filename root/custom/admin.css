@@ -42,17 +42,4 @@ input[type=file] {
   border-bottom: 2px solid orangered;
 }
 
-.create-file {
-  background-color: #615c63;
-  border-radius: 8px;
-  cursor: pointer;
-  color: white;
-  transition: 0.2s ease all;
-  padding: 5px;
-  margin-top: 10px;
-  font-size: 18px;
-}
-.create-file:hover {
-  background-color: rgb(56, 56, 56);
-}
 /* end profile */
