@@ -49,7 +49,7 @@
           <label for="passwordAgain" class="fs-5">Еще раз пароль</label>
           <input type="password" class="form-control px-4 text-primary" id="passwordAgain" placeholder="Нужно ввести пароль еще раз">
         </div>
-        <button type="button" id="push" class="btn btn-dark m-2">Регистрация</button>
+        <button id="push" type="button" class="btn btn-dark m-2">Регистрация</button>
       </form>
     </div>
   </div>

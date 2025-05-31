@@ -14,6 +14,8 @@ const emailInput = document.getElementById("email");
 const phoneInput = document.getElementById("phone");
 
 
+modal.showModal('asdaasd');
+
 function personSubmit(event) {
   event.preventDefault();
 
@@ -23,7 +25,7 @@ function personSubmit(event) {
   const email = emailInput.value.trim();
   const phone = phoneInput.value.trim();
 
-  const validationResult = validate.validateFields()
+  const validationResult = validate.validateFields(name, lastName, email, phone);
 
   if(validationResult) {
     modal.showModal(validationResult); 
@@ -82,7 +84,7 @@ function personSubmit(event) {
   }
 }
 
-const push = getElementById('person-push');
+const push = document.getElementById('person-push');
 push.addEventListener('click', personSubmit);
 
 export default {

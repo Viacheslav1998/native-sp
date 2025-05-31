@@ -22,7 +22,7 @@
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
           <label class="form-check-label text-black" for="exampleCheck1">Запомнить меня</label>
         </div>
-        <button type="submit" class="btn btn-danger m-2">Зайти</button>
+        <button id="push" type="button" class="btn btn-danger m-2">Зайти</button>
       </form>
     </div>
   </div>

@@ -3,9 +3,9 @@
  */
 import modal from './modalHandler.js';
 
-const register = 'http://hastle.test/register';
+const pages = 'http://hastle.test/register';
 
-if(window.location.href == register) {
+if(pages.includes(window.location.href)) {
 
   /**
    * if it's useful anywhere else.
@@ -145,8 +145,10 @@ if(window.location.href == register) {
       })
       .then(data => {
         if(data.success) {
-          modal.showModal(data.message || 'Успешно');
-          console.log('зарегистрирован успешно');
+          modal.showModal(data.message || 'Успешно - Идет перенаправление ...');
+          setTimeout(function () {
+              window.location.href = '/login';
+          }, 1500);
         } else {
           modal.showModal(data.message || 'Что то пошло не так');
           console.error(data.message);
@@ -169,5 +171,4 @@ if(window.location.href == register) {
 
 
 export default {
-  validateFields
 }
