@@ -3,7 +3,7 @@
   <div class="row">
     <form id="formEvent">
       <div class="col">
-      <div class="mb-3">
+        <div class="mb-3">
           <input class="form-control form-control-lg cs-grey" name="id" type="hidden" required>
         </div>
         <div class="mb-3">
@@ -33,7 +33,7 @@
           </select>
         </div>
         <div>
-        <label for="fullDesk" class="form-label text-secondary">Полное описание</label>
+          <label for="fullDesk" class="form-label text-secondary">Полное описание</label>
         <br>
         <div class="form-floating">
           <textarea rows="8" style="height: 100%;" name="fullDesk" class="form-control cs-grey" placeholder="Полное описание" id="fullDesk" required></textarea>
@@ -42,7 +42,8 @@
         <br>
         </div>
         <div>
-          <label for="file" class="form-label text-secondary">Выбери изображение(расширения картинок - .jpg, .jpeg, .png, .gif)</label>
+          <i>(расширения картинок - .jpg, .jpeg, .png, .gif)</i><br>
+          <label for="file" class="create-file form-label">Выбери изображение</label>
           <input name="file" class="form-control form-control-lg" id="file" type="file" accept=".jpg, .jpeg, .png, .gif">
         </div>
       </div>
