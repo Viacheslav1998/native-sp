@@ -26,7 +26,12 @@ class PersonResource extends Model
     public function save(array $data): bool
     {
         try {
+            if(!empty($data['password'])) {
+                $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+            }
+
             $saved = $this->crudService->create($data);
+            
             return $this->response->json(
                 $saved
                   ? ['success' => true, 'message' => 'Пользователь Сохранен!']

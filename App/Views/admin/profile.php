@@ -45,6 +45,26 @@
       <div class="col mt-4">
         <p class="text-danger" style="font-weight: 300; font-size: 18px;">Изменение данных ограничено - только 3 раза</p>
       </div>
+
+      <div class="col">
+
+      // вот это нужно сделать потому что у нас пароля нет
+      // сохранять 
+      // сверить данные которые ты получаешь
+      // проверить записать данные в сессию и разрешить доступ если ок
+      $input = file_get_contents('php://input');
+      $data = json_decode($input, true);
+
+      if (!$data || !isset($data['password'])) {
+          echo json_encode(['error' => 'Password not provided']);
+          exit;
+      }
+
+      $password = $data['password'];
+      $hash = password_hash($password, PASSWORD_DEFAULT);
+
+      echo json_encode(['hash' => $hash]);
+      </div>
     </div>
   </div>
 </div>
