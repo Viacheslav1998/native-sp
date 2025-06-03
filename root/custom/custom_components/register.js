@@ -128,7 +128,8 @@ if(pages.includes(window.location.href)) {
           if(response.status === 404) {
             errorMessage = 'Проблема! Ресурс не найден 404';
           } else if (response.status === 500) {
-            errorMessage = 'Внутренняя проблема сервера 500';
+            const errorText = await response.text();
+            errorMessage = 'Внутренняя проблема сервера 500 ' + errorText;
           } else if (contentType.includes('application/json')) {
             const errorJson = await response.json();
             errorMessage = errorJson.message || errorMessage;

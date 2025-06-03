@@ -41,6 +41,14 @@ class PersonResource extends Model
         } catch (\PDOException $e) {
             error_log('Ошибка PDO: ' . $e->getMessage());
             error_log('Входные данные: ' . json_encode($data, JSON_PRETTY_PRINT));
+
+            if($e->getCode() === '23000' && str_contains($e->getMessage(), 'Duplicate entry')) {
+                return $this->response->json([
+                    'success' => false,
+                    'message' => 'Пользователь с такой почтой уже существует !'
+                ], 400);
+            }
+
             return $this->response->json([
                 'success' => false,
                 'message' => 'Ошибка при сохранении',
