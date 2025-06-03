@@ -66,12 +66,9 @@ class Migration
         return true;
     }
 
-
-   
-
     /**
-     * Command stack is executed
-     * Database management
+     * table creation algorithm
+     * returns the number of created tables
      */
     public function run(): int
     {
