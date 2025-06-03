@@ -73,32 +73,32 @@ class Migration
      * Command stack is executed
      * Database management
      */
-    public function run()
+    public function run(): int
     {
-        // create tables if not exists
         $this->createMigrationsTable();
 
-        // get apllied migrations
         $applied = $this->getAppliedMigrations();
-
-        // get all files migrations sql
         $files = glob($this->migrationDir . '*.sql');
 
-        // migration overshoot
-        foreach($files as $file) {
+        $appliedCount = 0;
+
+        foreach ($files as $file) {
             $filename = basename($file);
 
-            // if migration has been done, skip
-            if(in_array($filename, $applied)) {
-              continue;
+            if (in_array($filename, $applied)) {
+                continue;
             }
 
-            // echo "Applying migration: $filename\n";
-            if(!$this->applyMigration($filename)) {
+            if ($this->applyMigration($filename)) {
+                $appliedCount++;
+            } else {
                 break;
             }
         }
+
+        return $appliedCount;
     }
+
 
     /** 
      * generation logs/errors

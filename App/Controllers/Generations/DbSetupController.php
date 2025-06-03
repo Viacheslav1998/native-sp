@@ -19,9 +19,16 @@ class DbSetupController {
         try {
             $pdo = Model::staticPDO();
             $migrations = new Migration($pdo);
-            $migrations->run();
-            http_response_code(201);
-            echo json_encode(['Success' => ' Успех! Создано!']);
+            $appliedCount = $migrations->run();
+
+            http_response_code(200);
+
+            if($appliedCount > 0) {
+                echo json_encode(['Success' => "Успех! Применено миграций: $appliedCount"], JSON_UNESCAPED_UNICODE);
+            } else {
+                echo json_encode(['Info' => 'Миграции уже применены. Новых таблиц не создано.'], JSON_UNESCAPED_UNICODE);
+            }
+            
         } catch (\PDOException $e) {
             throw new Exception("возникли проблемы с базой данных");
             httr_response_code(500);
