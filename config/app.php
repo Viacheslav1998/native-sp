@@ -3,8 +3,10 @@
 // strict mode
 declare(strict_types=1);
 
-//sessions
-session_start();
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use App\Helpers\Session;
+
 
 // show error
 ini_set('display_errors', 0);
@@ -25,3 +27,7 @@ function xDump($stuff)
     var_dump($stuff);
     echo '</pre>';
 }
+
+// session setup and initialization
+Session::start();
+Session::initUser();
