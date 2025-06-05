@@ -71,7 +71,7 @@ class Request
     }
 
     /**
-     * get input
+     * get Data / array
      */
     public static function input(): array
     {

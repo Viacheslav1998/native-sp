@@ -5,7 +5,6 @@ namespace App\Helpers;
 /**
  * verification and setting of rights user
  * access control
- * session destruction
  */
 class Auth
 {
@@ -27,7 +26,7 @@ class Auth
     public static function requireAdmin()
     {
         if(!self::isAdmin()) {
-            header("Location: /");
+            header('Location: /');
             exit;
         }
     }
@@ -40,10 +39,5 @@ class Auth
             'name' => $user['name'],
             'role' => $user['role']
         ];
-    }
-
-    public static function logout(): void
-    {
-        unset($_SESSION['user']);
     }
 }
