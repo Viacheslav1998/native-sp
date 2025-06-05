@@ -14,9 +14,10 @@ return [
   'register' => ['HomeController', 'register'],
   'user/{id}' => ['PersonController', 'show'],
 
-  // register
+  // register / login
   'person/save' => ['RegisterController', 'save'],
-
+  'person/login' => ['LoginController', 'login'],
+  
   // just test code ...
   'test-array-string' => ['TestController', 'testDataArrayToString'],
   'test-fetch-data' => ['TestController', 'testFetchData'],

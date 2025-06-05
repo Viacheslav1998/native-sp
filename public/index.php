@@ -8,7 +8,6 @@ use Core\Router;
 $routes = require __DIR__ . '/../Core/routes.php';
 $router = new Router();
 
-
 foreach ($routes as $path => $controller) {
     $router->add($path, $controller);
 }
