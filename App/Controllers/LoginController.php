@@ -3,18 +3,16 @@
 namespace App\Controllers;
 
 use App\Helpers\Request;
-use App\Helpers\Response;
-use App\Models\Resources\PersonResource;
+use App\Models\Resources\LoginResource;
 
 class LoginController extends \Core\Controller
 {
-    private PersonResource $person;
-    protected Response $response;
+    private LoginResource $person;
 
     public function __construct()
     {
         parent::__construct();
-        $this->person = new PersonResource();
+        $this->person = new LoginResource();
     }
 
     /**
@@ -23,15 +21,9 @@ class LoginController extends \Core\Controller
     public function login()
     {
         $data = Request::postJson();
+         error_log(json_encode($data));
 
-        if(!$this->person->verify($data)) {
-           // вероятно нужно вернуть джэйсон респонс 
-           // но лучше в ресурсе персон создать логин\verify метод и там делать проверку 
-            echo json_encode(['error' => 'Пользователь не найден']);
-            exit;
-        }
-
-        // проверка на соответствии только нужно получить данные
-
+        $this->person->verify($data);
+        exit;
     }
 }

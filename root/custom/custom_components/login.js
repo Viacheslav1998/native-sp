@@ -49,11 +49,14 @@ if(window.location.pathname === '/login') {
 
           if(response.status === 404) {
             errorMessage = 'Ресурс не найден 404';
+            modal.showModal(errorMessage);
           } else if (response.status === 500) {
             errorMessage = 'Внутреняя проблема с сервера 500 ' + errorText;
+            modal.showModal(errorMessage);
           } else if (contentType.includes('application/json')) {
             const errorJson = await response.json();
             errorMessage = errorJson.message || errorMessage; 
+            modal.showModal(errorMessage)
           }
 
           throw new Error(errorMessage);

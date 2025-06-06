@@ -16,26 +16,35 @@ class LoginResource extends Model
     public function __construct()
     {
       $this->response = new Response();
-        parend::__construct();
+        parent::__construct();
     }
 
     /**
      * Check and set Person in session
      */
-    public function login(array $data): bool
+    public function verify(array $data): array
     {
         $user = $this->getUserByEmail($data['email']);
 
+        // error_log(json_encode($user));
+
+        // exit;
+
         if(!$user || !password_verify($data['password'], $user['password'])) {
-          return $this->response->json(
-            ['success' => 'Такого пользователя нет !'],
-            404
-          );
+            return $this->response->json([
+                'success' => false,
+                'message' => 'Пользователь не найден!'
+            ], 400);
         }
 
+        // set settion
         Auth::login($data);
 
-        return true;
+        // succes
+        return $this->response->json([
+            'success' => true,
+            'message' => 'Совпадения найдены!'
+        ], 200);
     }
 
     /**
@@ -44,11 +53,11 @@ class LoginResource extends Model
     private function getUserByEmail(string $email): ?array
     {
         $pdo = $this->pdo();
-        $sql = "SELECT id, name, email, password {$this->table} WHERE = :email LIMIT 1";
+        $sql = "SELECT id, name, email, password FROM {$this->table} WHERE email = :email LIMIT 1";
         $stmt = $pdo->prepare($sql);
         $stmt->execute(['email' => $email]);
 
-        return $stmt->fetch(PDO::FETCH_ASSOC) ?: null;
+        return $stmt->fetch() ?: null;
     }
 
 }
