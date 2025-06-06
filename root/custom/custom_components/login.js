@@ -2,7 +2,7 @@
  * only login page
  */
 
-// import modal from './modalHandler.js';
+import modal from './modalHandler.js';
 
 if(window.location.pathname === '/login') {
   
@@ -34,7 +34,7 @@ if(window.location.pathname === '/login') {
         email: email,
         password: password,
       };
-      
+
       fetch('/person/login', {
         method: 'POST',
         headers: {
@@ -83,7 +83,7 @@ if(window.location.pathname === '/login') {
     }
   }
 
-  const summit = document.getElementById('push');
+  const submit = document.getElementById('push');
   submit.addEventListener('click', handleLogin);
 
   // close if is modal 
