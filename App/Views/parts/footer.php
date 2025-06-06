@@ -26,8 +26,8 @@
             <li><a href="">Ночные события</a></li>
             <li><a href="">Дневные события</a></li>
             <li><a href="">Специальные события</a></li>
-            <li><a href="">события</a></li>
-            <li><a href="">события</a></li>
+            <li><a href="/login">Вход</a></li>
+            <li><a href="/register">Регистрация</a></li>
           </ul>
         </div>
       </div>
