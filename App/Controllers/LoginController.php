@@ -21,8 +21,6 @@ class LoginController extends \Core\Controller
     public function login()
     {
         $data = Request::postJson();
-         error_log(json_encode($data));
-
         $this->person->verify($data);
         exit;
     }

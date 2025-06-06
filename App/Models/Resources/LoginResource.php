@@ -26,10 +26,6 @@ class LoginResource extends Model
     {
         $user = $this->getUserByEmail($data['email']);
 
-        // error_log(json_encode($user));
-
-        // exit;
-
         if(!$user || !password_verify($data['password'], $user['password'])) {
             return $this->response->json([
                 'success' => false,
@@ -52,7 +48,7 @@ class LoginResource extends Model
      */
     private function getUserByEmail(string $email): ?array
     {
-        $pdo = $this->pdo();
+        $pdo = Model::staticPDO();
         $sql = "SELECT id, name, email, password FROM {$this->table} WHERE email = :email LIMIT 1";
         $stmt = $pdo->prepare($sql);
         $stmt->execute(['email' => $email]);
