@@ -21,7 +21,7 @@ class LoginController extends \Core\Controller
     public function login()
     {
         $person = Request::postJson();
-        xDump($person);
+        error_log('данные получены ' . json_encode($person));
         die();
 
         if(!$this->person->login($person)) {

@@ -14,8 +14,6 @@ const emailInput = document.getElementById("email");
 const phoneInput = document.getElementById("phone");
 
 
-modal.showModal('asdaasd');
-
 function personSubmit(event) {
   event.preventDefault();
 

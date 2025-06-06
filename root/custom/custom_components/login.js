@@ -5,25 +5,24 @@
 import modal from './modalHandler.js';
 
 if(window.location.pathname === '/login') {
-  
-  const emailInput = document.getElementById('email');
-  const passwordInput = document.getElementById('password');
-
   function validate(email, password) {
-    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return "Некорректный email";
     }
-
-    if(password.length < 6) {
+    if (password.length < 6) {
       return "Пароль должен быть не меньше 6 символов";
     }
+    return null;
   }
+
+  const emailInput = document.getElementById('email');
+  const passwordInput = document.getElementById('password');
 
   function handleLogin(event) {
     event.preventDefault();
 
-    const email = emailInput.value.trim;
-    const password = passwordInput.value.trim;
+    const email = emailInput.value.trim();
+    const password = passwordInput.value.trim();
 
     const validationResult = validate(email, password);
     
@@ -61,7 +60,7 @@ if(window.location.pathname === '/login') {
         }
 
         if(!contentType.includes('application/json')) {
-          throw new Error('Некорректный ответ от сервар (ожидался json)');
+          throw new Error('Некорректный ответ от сервер (ожидался json)');
         }
 
         return response.json();

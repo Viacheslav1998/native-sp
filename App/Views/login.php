@@ -24,8 +24,8 @@
           <input id="password" type="password" class="form-control px-4 text-danger" placeholder="Вводи свой пароль">
         </div>
         <div class="form-group form-check m-2 py-2">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label text-black" for="exampleCheck1">Запомнить меня</label>
+          <input type="checkbox" class="form-check-input" id="checkbox">
+          <label class="form-check-label text-black" for="checkbox">Запомнить меня</label>
         </div>
         <button id="push" type="button" class="btn btn-danger m-2">Зайти</button>
       </form>
