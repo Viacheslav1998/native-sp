@@ -3,11 +3,13 @@
 namespace App\Controllers;
 
 use App\Helpers\Request;
+use App\Helpers\Response;
 use App\Models\Resources\PersonResource;
 
 class LoginController extends \Core\Controller
 {
     private PersonResource $person;
+    protected Response $response;
 
     public function __construct()
     {
@@ -20,16 +22,16 @@ class LoginController extends \Core\Controller
      */
     public function login()
     {
-        $person = Request::postJson();
-        error_log('данные получены ' . json_encode($person));
-        die();
+        $data = Request::postJson();
 
-        if(!$this->person->login($person)) {
+        if(!$this->person->verify($data)) {
+           // вероятно нужно вернуть джэйсон респонс 
+           // но лучше в ресурсе персон создать логин\verify метод и там делать проверку 
             echo json_encode(['error' => 'Пользователь не найден']);
             exit;
         }
 
-        Header('Location: /');
-        exit;
+        // проверка на соответствии только нужно получить данные
+
     }
 }
