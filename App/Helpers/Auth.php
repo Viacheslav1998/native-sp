@@ -88,6 +88,7 @@ class Auth
      */
     public static function hasRole(string $role): bool
     {
+        error_log('CURRENT SESSION ROLE: ' . ($_SESSION['user']['role'] ?? 'not set'));
         return self::check() && ($_SESSION['user']['role'] ?? null) === $role;
     }
 

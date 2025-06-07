@@ -19,15 +19,13 @@ class AdminController extends \Core\Controller
 
     public function dashboard()
     {
-        $user = Auth::hasRole('user');
-        $admin = Auth::hasRole('admin');
+        $name = Auth::getUser();
 
         return $this->render(
             'admin/dashboard',
             [
                 'title' => 'Добро пожаловать в админку',
-                'user' => $user,
-                'admin' => $admin,
+                'name' => $name,
             ],
             $this->template
         );
@@ -61,13 +59,15 @@ class AdminController extends \Core\Controller
     public function profile()
     {
         Auth::requireUser();
-        $name = getUser();
-
+        $name = Auth::getUser();
+        $data = Auth::getSession();
+        
         return $this->render(
             'admin/profile',
             [
                 'title' => 'профиль пользователя',
-                'name' => $name 
+                'name' => $name,
+                'data' => $data 
             ],
             $this->template
         );
