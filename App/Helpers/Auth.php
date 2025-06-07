@@ -13,19 +13,49 @@ class Auth
         return isset($_SESSION['user']);
     }
 
-    public static function user(): ?array
-    {
-        return $_SESSION['user'] ?? null;
-    }
-
     public static function isAdmin(): bool
     {
         return self::check() && ($_SESSION['user']['role'] ?? null) === 'admin';
     }
 
+    public static function isUser(): bool
+    {
+        return self::check() && ($_SESSION['user']['role'] ?? null) === 'user'; 
+    }
+
+    public static function isGuest(): bool
+    {
+        return self::check() && ($_SESSION['user']['role'] ?? null) === 'guest';
+    }
+
+    /**
+     * check Admin
+     */
     public static function requireAdmin()
     {
         if(!self::isAdmin()) {
+            header('Location: /');
+            exit;
+        }
+    }
+
+    /**
+     * check User
+     */
+     public static function requireUser()
+     {
+        if(!self::isUser()) {
+            header('Location: /');
+            exit;
+        }
+     }
+
+     /**
+     * check Guest
+     */
+    public static function requireGuest()
+    {
+        if(!self::isUser()) {
             header('Location: /');
             exit;
         }

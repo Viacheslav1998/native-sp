@@ -22,9 +22,9 @@ class Session
         if(!isset($_SESSION['user'])) {
             $_SESSION['user'] = [
                 'id' => null,
-                'name' => 'Guest',
+                'name' => 'guest',
                 'email' => null,
-                'role' => 'Guest',
+                'role' => 'guest',
             ];
         }
     }
@@ -36,7 +36,7 @@ class Session
     {
         unset($_SESSION['user']);
         header('Location: /');
-        exit();
+        exit;
     }
 
 }

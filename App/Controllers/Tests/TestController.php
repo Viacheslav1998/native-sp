@@ -83,8 +83,6 @@ class TestController extends \Core\Controller
       return $this->testResource->testArrayManipulation();
   }
 
-
-
   /**
    * testing session
    * check session 

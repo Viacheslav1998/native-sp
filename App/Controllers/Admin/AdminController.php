@@ -15,11 +15,11 @@ class AdminController extends \Core\Controller
     public function __construct()
     {
         parent::__construct();
-        // Auth::requireAdmin();
     }
 
     public function dashboard()
     {
+        Auth::requireAdmin();
         return $this->render('admin/dashboard', ['title' => 'Добро пожаловать в админку'], $this->template);
     }
 

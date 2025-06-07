@@ -7,8 +7,6 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use App\Helpers\Session;
 
-
-
 // show error
 ini_set('display_errors', 0);
 ini_set('log_errors', 1);
