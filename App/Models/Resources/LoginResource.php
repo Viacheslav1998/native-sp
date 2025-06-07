@@ -34,7 +34,7 @@ class LoginResource extends Model
         }
 
         // set settion
-        Auth::login($data);
+        Auth::login($user);
 
         // succes
         return $this->response->json([
@@ -49,7 +49,7 @@ class LoginResource extends Model
     private function getUserByEmail(string $email): ?array
     {
         $pdo = Model::staticPDO();
-        $sql = "SELECT id, name, email, password FROM {$this->table} WHERE email = :email LIMIT 1";
+        $sql = "SELECT id, name, email, password, role FROM {$this->table} WHERE email = :email LIMIT 1";
         $stmt = $pdo->prepare($sql);
         $stmt->execute(['email' => $email]);
 
