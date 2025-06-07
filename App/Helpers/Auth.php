@@ -8,6 +8,9 @@ namespace App\Helpers;
  */
 class Auth
 {
+
+    const UNKNOWN_USER = 'Неизвестный пользователь';
+    
     /**
      * only test Current Data Session
      * don`t use it anywhere
@@ -19,11 +22,11 @@ class Auth
 
     /**
      * you can use universan method hasRole
-     * but you can too use it getting current User if Exists
+     * but you can too use it getting current User name if Exists
      */
-    public static function getUserName(): string
+    public static function getUser(): string
     {
-        return $_SESSION['user']['name'] ?? null;
+        return $_SESSION['user']['name'] ?? self::UNKNOWN_USER;
     } 
 
 

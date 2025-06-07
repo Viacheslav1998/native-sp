@@ -61,13 +61,13 @@ class AdminController extends \Core\Controller
     public function profile()
     {
         Auth::requireUser();
-        $dump = Auth::getCurrentSession();
+        $name = getUser();
 
         return $this->render(
             'admin/profile',
             [
                 'title' => 'профиль пользователя',
-                'data' => $dump 
+                'name' => $name 
             ],
             $this->template
         );
