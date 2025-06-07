@@ -8,6 +8,25 @@ namespace App\Helpers;
  */
 class Auth
 {
+    /**
+     * only test Current Data Session
+     * don`t use it anywhere
+     */
+    public static function getSession(): ?array
+    {
+        return $_SESSION['user'] ?? null;
+    }
+
+    /**
+     * you can use universan method hasRole
+     * but you can too use it getting current User if Exists
+     */
+    public static function getUserName(): string
+    {
+        return $_SESSION['user']['name'] ?? null;
+    } 
+
+
     public static function check(): bool
     {
         return isset($_SESSION['user']);
@@ -55,10 +74,18 @@ class Auth
      */
     public static function requireGuest()
     {
-        if(!self::isUser()) {
+        if(!self::isGuest()) {
             header('Location: /');
             exit;
         }
+    }
+
+    /**
+     * universal get/check role
+     */
+    public static function hasRole(string $role): bool
+    {
+        return self::check() && ($_SESSION['user']['role'] ?? null) === $role;
     }
 
     /**

@@ -19,8 +19,18 @@ class AdminController extends \Core\Controller
 
     public function dashboard()
     {
-        Auth::requireAdmin();
-        return $this->render('admin/dashboard', ['title' => 'Добро пожаловать в админку'], $this->template);
+        $user = Auth::hasRole('user');
+        $admin = Auth::hasRole('admin');
+
+        return $this->render(
+            'admin/dashboard',
+            [
+                'title' => 'Добро пожаловать в админку',
+                'user' => $user,
+                'admin' => $admin,
+            ],
+            $this->template
+        );
     }
 
     public function createRegularForm()
@@ -50,7 +60,17 @@ class AdminController extends \Core\Controller
 
     public function profile()
     {
-        return $this->render('admin/profile', ['title' => 'профиль пользователя'], $this->template);
+        Auth::requireUser();
+        $dump = Auth::getCurrentSession();
+
+        return $this->render(
+            'admin/profile',
+            [
+                'title' => 'профиль пользователя',
+                'data' => $dump 
+            ],
+            $this->template
+        );
     }
 
     public function testFetch()
