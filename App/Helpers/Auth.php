@@ -22,13 +22,12 @@ class Auth
 
     /**
      * you can use universan method hasRole
-     * but you can too use it getting current User name if Exists
+     * but you can too use it getting current User name if exists
      */
     public static function getUser(): string
     {
         return $_SESSION['user']['name'] ?? self::UNKNOWN_USER;
     } 
-
 
     public static function check(): bool
     {
@@ -50,9 +49,6 @@ class Auth
         return self::check() && ($_SESSION['user']['role'] ?? null) === 'guest';
     }
 
-    /**
-     * check Admin
-     */
     public static function requireAdmin()
     {
         if(!self::isAdmin()) {
@@ -61,9 +57,6 @@ class Auth
         }
     }
 
-    /**
-     * check User
-     */
      public static function requireUser()
      {
         if(!self::isUser()) {
@@ -72,29 +65,31 @@ class Auth
         }
      }
 
-     /**
-     * check Guest
-     */
-    public static function requireGuest()
+    public static function denyGuests()
     {
-        if(!self::isGuest()) {
+        if(self::isGuest()) {
             header('Location: /');
             exit;
         }
     }
 
-    /**
-     * universal get/check role
-     */
+
     public static function hasRole(string $role): bool
     {
-        error_log('CURRENT SESSION ROLE: ' . ($_SESSION['user']['role'] ?? 'not set'));
         return self::check() && ($_SESSION['user']['role'] ?? null) === $role;
     }
 
-    /**
-     * Set Person data
-     */
+
+    public static function hasAnyRole(array $roles): bool
+    {
+        if(!self::check()) {
+            return false;
+        }
+
+        return in_array($_SERVER['user']['role'] ?? null, $roles, true);
+    }
+
+
     public static function login(array $user): void
     {
         session_regenerate_id(true);

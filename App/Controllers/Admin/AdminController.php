@@ -15,6 +15,8 @@ class AdminController extends \Core\Controller
     public function __construct()
     {
         parent::__construct();
+        
+        Auth::denyGuests();
     }
 
     public function dashboard()
@@ -60,7 +62,7 @@ class AdminController extends \Core\Controller
     {
         Auth::requireUser();
         $name = Auth::getUser();
-        $data = Auth::getSession();
+        $data = Auth::getSession(); // rm
         
         return $this->render(
             'admin/profile',
