@@ -3,20 +3,23 @@
 namespace App\Controllers\Admin;
 
 use App\Helpers\Auth;
+use App\Traits\RequireAuth;
 
 /**
  * Only Views template
  */
 class AdminController extends \Core\Controller
 {
+
+     use RequireAuth;
+
     // construct auth
     private $template = 'admin';
 
     public function __construct()
     {
         parent::__construct();
-        
-        Auth::denyGuests();
+        $this->denyIfGuest();
     }
 
     public function dashboard()

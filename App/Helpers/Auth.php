@@ -65,7 +65,7 @@ class Auth
         }
      }
 
-    public static function denyGuests()
+    public static function denyGuest()
     {
         if(self::isGuest()) {
             header('Location: /');
