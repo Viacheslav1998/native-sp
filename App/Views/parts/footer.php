@@ -11,10 +11,14 @@
       <div class="fw-lighter">
         <p>Информация о сотрудничестве находится в шапке</p>
       </div>
+      <?php  
+        if (\App\Helpers\Auth::hasRole('admin') || \App\Helpers\Auth::hasRole('user')) : 
+      ?>
       <div>
         <h4 class="fw-light">Для пользователей:</h4>
         <a href="/a4min/dashboard" class="btn btn-outline-warning">Управление</a>
       </div>
+      <?php endif; ?>
     </div>
     <div class="col m-1 d-flex justify-content-center">
       <div>
