@@ -10,4 +10,13 @@ trait RequireAuth
     {
         Auth::denyGuest();
     }
+
+    protected function denyIfAdmin(): void
+    {
+
+        if(Auth::hasAnyRole(['admin', 'user'])) {
+            header('Location: /');
+            exit;
+        }
+    }
 }

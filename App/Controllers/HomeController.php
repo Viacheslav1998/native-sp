@@ -3,16 +3,14 @@
 namespace App\Controllers;
 
 use Core\Controller;
-// use App\Helpers\Auth;
+use App\Traits\RequireAuth;
 
 class HomeController extends Controller
 {
+    use RequireAuth;
+
     public function index()
     {
-        // $_SESSION['user']['role'] = 'admin'; присвоить роль для проверки
-
-        // echo $_SESSION['user']['role']; // записать данные в массив юзер
-        // unset($_SESSION['user']); удалить в случае ошибки
         return $this->render('home', ['title' => 'Домашняя']);
     }
 
@@ -28,11 +26,13 @@ class HomeController extends Controller
 
     public function login()
     {
+        $this->denyIfAdmin();
         return $this->render('login', ['title' => 'Система входа']);
     }
 
     public function register()
     {
+        $this->denyIfAdmin();
         return $this->render('register', ['title' => 'Система регистрации']);
     }
 }
