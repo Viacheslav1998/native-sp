@@ -12,7 +12,7 @@
         <p>Информация о сотрудничестве находится в шапке</p>
       </div>
       <?php  
-        if (\App\Helpers\Auth::hasRole('admin') || \App\Helpers\Auth::hasRole('user')) : 
+        if (\App\Helpers\Auth::hasAnyRole(['admin', 'user'])): 
       ?>
       <div>
         <h4 class="fw-light">Для пользователей:</h4>

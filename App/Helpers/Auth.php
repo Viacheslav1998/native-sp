@@ -86,7 +86,7 @@ class Auth
             return false;
         }
 
-        return in_array($_SERVER['user']['role'] ?? null, $roles, true);
+        return in_array($_SESSION['user']['role'] ?? null, $roles, true);
     }
 
 
