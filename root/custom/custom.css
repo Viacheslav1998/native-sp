@@ -97,7 +97,10 @@ a:hover { color: orange;}
 .imagen-about-us {
   background-image: url("/images/abus.jpg");
   background-repeat: no-repeat;
+  background-size: cover;
 }
+
+.h-about { margin: 0 auto; max-width: 600px; border-radius: 10px; background-color: rgba(37, 37, 37, 0.925);}
 /* and about-us */
 
 .modal-box {
