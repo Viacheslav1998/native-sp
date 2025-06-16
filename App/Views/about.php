@@ -1,21 +1,72 @@
 <div class="imagen-head-about-us text-white my-4"> 
   <div class="row">
     <div class="col mx-4 my-5 flex justify-content-center text-center">
-      <h1 class="display-6 p-3 h-about text-white text-center">О нашей компании</h1>
+      <h1 class="display-6 fw-lighter p-3 h-about text-white text-center">О нашей компании</h1>
     </div>
   </div>
 </div>
 
-<div class="imagen-about-us">
+<div class="imagen-about-us mb-4">
   <div class="row">
     <div class="col">
-      <div class="content-about-us p-5">
-        <p>Наша компания — это команда увлечённых профессионалов, для которых качество, инновации и внимание к деталям стоят на первом месте. Мы создаём современные и удобные инструменты, помогающие нашим клиентам решать задачи быстро, эффективно и с удовольствием.
-        Мы верим, что технологии должны работать на человека, а не наоборот. Поэтому мы уделяем особое внимание удобству, дизайну и функциональности каждого продукта.
-        За годы работы мы накопили значительный опыт в сфере рекламы, технологий и пользовательского сервиса. Наши специалисты — признанные эксперты в своих областях, и именно благодаря их опыту и энтузиазму мы продолжаем развиваться, внедрять новые идеи и быть на шаг впереди.
+      <div class="content-about-us fw-light p-5">
+        <p class="fs-5 text-white">Наша компания — это команда увлечённых профессионалов, для которых качество, инновации и внимание к деталям стоят на первом месте. Мы создаём современные и удобные инструменты, помогающие нашим клиентам решать задачи быстро, эффективно и с удовольствием.
+</p>
+<p class="fs-5 text-white">
+        Мы верим, что технологии должны работать на человека, а не наоборот. Поэтому мы уделяем особое внимание удобству, дизайну и функциональности каждого продукта.</p>
+        <p class="fs-5 text-white">
+        За годы работы мы накопили значительный опыт в сфере рекламы, технологий и пользовательского сервиса. Наши специалисты — признанные эксперты в своих областях, и именно благодаря их опыту и энтузиазму мы продолжаем развиваться, внедрять новые идеи и быть на шаг впереди.</p>
+        <p class="fs-5 text-white">
         Мы не просто создаём решения — мы стремимся делать мир вокруг немного лучше. Помощь окружающим, социальная ответственность и честный подход к бизнесу для нас — не просто слова, а настоящие принципы.
         </p>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="mb-3 ">
+  <div class="row">
+    <div class="col">
+      <div class="services-about-us">
+        <h2 class="fw-bolder text-grey pb-3">Наши сервисы готовы к сотрудничеству</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex flex-wrap justify-content-between p-5 bg-warning">
+
+    <div class=" mb-3">
+      <div class="card" style="width: 18rem;">
+        <img src="images/city.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+
+    <div class=" mb-3">
+      <div class="card" style="width: 18rem;">
+        <img src="images/city.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+
+    <div class=" mb-3">
+      <div class="card" style="width: 18rem;">
+        <img src="images/city.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>

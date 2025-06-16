@@ -95,12 +95,21 @@ a:hover { color: orange;}
 }
 
 .imagen-about-us {
-  background-image: url("/images/abus.jpg");
+  background-image: url("/images/day.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.h-about { margin: 0 auto; max-width: 600px; border-radius: 10px; background-color: rgba(37, 37, 37, 0.925);}
+.h-about { margin: 0 auto; max-width: 600px; border-radius: 10px; background-color: rgba(59, 58, 58, 0.78);}
+
+.content-about-us {
+  background-color: rgba(53, 50, 50, 0.76);
+}
+
+.services-about-us {
+  color: grey;
+  
+}
 /* and about-us */
 
 .modal-box {
