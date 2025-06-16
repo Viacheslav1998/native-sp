@@ -19,6 +19,9 @@
         <a href="/a4min/dashboard" class="btn btn-outline-warning">Управление</a>
       </div>
       <?php endif; ?>
+      <div>
+        <p>Некоторые ресурсы взяты: <a style="color: orange;" href="https://ru.freepik.com" target="_blank" rel="noopener noreferrer"><span>Freepik</span></a></p>
+      </div>
     </div>
     <div class="col m-1 d-flex justify-content-center">
       <div>

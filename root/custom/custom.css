@@ -87,8 +87,18 @@ a:hover { color: orange;}
   border-radius: 20px;
   background: rgb(220, 219, 221);
 }
-/* end registre page */
+/* end register page */
 
+/* about-us */
+.imagen-head-about-us{
+  background-image: url("/images/city.jpg");
+}
+
+.imagen-about-us {
+  background-image: url("/images/abus.jpg");
+  background-repeat: no-repeat;
+}
+/* and about-us */
 
 .modal-box {
   position: fixed;
