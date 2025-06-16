@@ -27,8 +27,11 @@
 <div class="mb-3 ">
   <div class="row">
     <div class="col">
-      <div class="services-about-us">
-        <h2 class="fw-bolder text-grey pb-3">Наши сервисы готовы к сотрудничеству</h2>
+      <div class="services-about-us pb-2">
+        <h2 class="fw-bolder text-grey ">Также: наши сервисы.</h2>
+        <p class="fs-5 fw-light">Удобные инструменты для разных решений включают в себя: <br>
+        Разработка по, Дизайна и Управление рекламой 
+        </p>
       </div>
     </div>
   </div>
