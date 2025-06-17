@@ -108,7 +108,14 @@ a:hover { color: orange;}
 
 .services-about-us {
   color: grey;
-  
+}
+
+.about-us-cards {
+  background: teal;
+}
+.box-cards:hover {
+  color: white;
+  background-color: rgb(22, 99, 109);
 }
 /* and about-us */
 

@@ -45,37 +45,37 @@
     </div>
   </div>
 
-  <div class="d-flex flex-wrap justify-content-between p-5 bg-warning">
+  <div class="d-flex flex-wrap justify-content-between p-5 about-us-cards">
 
-    <div class=" mb-3">
-      <div class="card" style="width: 18rem;">
-        <img src="images/city.jpg" class="card-img-top" alt="...">
+    <div class="mb-3">
+      <div class="card box-cards" style="width: 18rem;">
+        <img src="images/about/programing.jpg" class="card-img-top">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 class="card-title">Разработка ПО</h5>
+          <p class="card-text">Закажите проффесиональную разработку своего приложения, сайт визитка, интернет приложение ...</p>
+          <a href="#" class="btn btn-success">Перейти...</a>
         </div>
       </div>
     </div>
 
-    <div class=" mb-3">
-      <div class="card" style="width: 18rem;">
-        <img src="images/city.jpg" class="card-img-top" alt="...">
+    <div class="mb-3">
+      <div class="card box-cards" style="width: 18rem;">
+        <img src="images/about/advertisement.jpg" class="card-img-top">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 class="card-title">Реклама</h5>
+          <p class="card-text">Заказ рекламы, реклама это мощный двигатель - продвижение вашего продукта зависит только от рекламмы</p>
+          <a href="#" class="btn btn-success">Перейти...</a>
         </div>
       </div>
     </div>
 
-    <div class=" mb-3">
-      <div class="card" style="width: 18rem;">
-        <img src="images/city.jpg" class="card-img-top" alt="...">
+    <div class="mb-3">
+      <div class="card box-cards" style="width: 18rem;">
+        <img src="images/about/web-design.jpg" class="card-img-top">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 class="card-title">Дизайн, не только сайтов</h5>
+          <p class="card-text">Проектирование готового решение, как сайтов так и чего либо другого, мы занимаемся всем</p>
+          <a href="#" class="btn btn-success">Перейти...</a>
         </div>
       </div>
     </div>
