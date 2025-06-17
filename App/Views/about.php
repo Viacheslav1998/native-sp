@@ -52,7 +52,7 @@
         <img src="images/about/programing.jpg" class="card-img-top">
         <div class="card-body">
           <h5 class="card-title">Разработка ПО</h5>
-          <p class="card-text">Закажите проффесиональную разработку своего приложения, сайт визитка, интернет приложение ...</p>
+          <p class="card-text ">Закажите проффесиональную разработку своего приложения, сайт визитка, интернет приложение ...</p>
           <a href="#" class="btn btn-success">Перейти...</a>
         </div>
       </div>
@@ -63,7 +63,7 @@
         <img src="images/about/advertisement.jpg" class="card-img-top">
         <div class="card-body">
           <h5 class="card-title">Реклама</h5>
-          <p class="card-text">Заказ рекламы, реклама это мощный двигатель - продвижение вашего продукта зависит только от рекламмы</p>
+          <p class="card-text ">Заказ рекламы, реклама это мощный двигатель - продвижение вашего продукта зависит только от рекламмы</p>
           <a href="#" class="btn btn-success">Перейти...</a>
         </div>
       </div>
@@ -74,7 +74,7 @@
         <img src="images/about/web-design.jpg" class="card-img-top">
         <div class="card-body">
           <h5 class="card-title">Дизайн, не только сайтов</h5>
-          <p class="card-text">Проектирование готового решение, как сайтов так и чего либо другого, мы занимаемся всем</p>
+          <p class="card-text ">Проектирование готового решение, как сайтов так и чего либо другого, мы занимаемся всем</p>
           <a href="#" class="btn btn-success">Перейти...</a>
         </div>
       </div>
