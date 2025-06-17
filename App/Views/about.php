@@ -45,7 +45,7 @@
     </div>
   </div>
 
-  <div class="d-flex flex-wrap justify-content-between p-5 about-us-cards">
+  <div class="d-flex flex-wrap justify-content-md-between justify-content-center p-5 about-us-cards">
 
     <div class="mb-3">
       <div class="card box-cards" style="width: 18rem;">
