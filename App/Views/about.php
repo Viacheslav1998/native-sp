@@ -5,7 +5,6 @@
     </div>
   </div>
 </div>
-
 <div class="row">
   <div class="col">
     <div class="services-about-us pb-2">
@@ -14,7 +13,6 @@
     </div>
   </div>
 </div> 
-
 <div class="imagen-about-us mb-4">
   <div class="row">
     <div class="col">
@@ -32,7 +30,6 @@
     </div>
   </div>
 </div>
-
 <div class="mb-3 ">
   <div class="row">
     <div class="col">
@@ -44,9 +41,7 @@
       </div>
     </div>
   </div>
-
   <div class="d-flex flex-wrap justify-content-md-between justify-content-center p-5 about-us-cards">
-
     <div class="mb-3">
       <div class="card box-cards" style="width: 18rem;">
         <img src="images/about/programing.jpg" class="card-img-top">
@@ -57,7 +52,6 @@
         </div>
       </div>
     </div>
-
     <div class="mb-3">
       <div class="card box-cards" style="width: 18rem;">
         <img src="images/about/advertisement.jpg" class="card-img-top">
@@ -68,7 +62,6 @@
         </div>
       </div>
     </div>
-
     <div class="mb-3">
       <div class="card box-cards" style="width: 18rem;">
         <img src="images/about/web-design.jpg" class="card-img-top">
@@ -79,6 +72,5 @@
         </div>
       </div>
     </div>
-
   </div>
 </div>
