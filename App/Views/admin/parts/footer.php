@@ -3,10 +3,11 @@
     <div class="row text-center">
       <div class="col text-white">
         <h6>ADM.HASTLE.</h6>
-        <a href="/" class="btn btn-outline-warning">перейти на сайт</a>
+        <a href="/" class="btn btn-outline-warning mx-3">перейти на сайт</a>
+        <a href="/logout" class="btn btn-outline-danger">выйти</a>
       </div>
       <div class="col text-white">
-        <h6>Привет: пользователь</h6>
+        <h6>Привет: <?php echo $name; ?> </h6>
       </div>
       <div class="col">
         <h6 class="text-white">faster tools</h6>

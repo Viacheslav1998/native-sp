@@ -65,14 +65,12 @@ class AdminController extends \Core\Controller
     {
         Auth::requireUser();
         $name = Auth::getUser();
-        $data = Auth::getSession(); // rm
         
         return $this->render(
             'admin/profile',
             [
                 'title' => 'профиль пользователя',
                 'name' => $name,
-                'data' => $data 
             ],
             $this->template
         );
