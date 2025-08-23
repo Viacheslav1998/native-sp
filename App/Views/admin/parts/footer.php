@@ -4,7 +4,7 @@
       <div class="col text-white">
         <h6>ADM.HASTLE.</h6>
         <a href="/" class="btn btn-outline-warning mx-3">перейти на сайт</a>
-        <a href="/logout" class="btn btn-outline-danger">выйти</a>
+        <a href="/logout" class="btn btn-outline-danger my-2">выйти</a>
       </div>
       <div class="col text-white">
         <h6>Привет: <?php echo $name; ?> </h6>

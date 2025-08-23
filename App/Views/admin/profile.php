@@ -43,7 +43,7 @@
         <button id="person-push" type="button" class="btn btn-dark">Изменить</button>
       </form>
       <div class="col mt-4">
-        <p class="text-danger" style="font-weight: 300; font-size: 18px;">Изменение данных ограничено - только 3 раза</p>
+        <p class="text-dark" style="font-weight: bold; font-size: 18px; border-bottom: 1px solid orangered;">Изменение данных ограничено - только 3 раза</p>
       </div>
     </div>
   </div>
