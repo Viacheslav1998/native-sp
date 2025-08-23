@@ -49,7 +49,7 @@ class Auth
         return self::check() && ($_SESSION['user']['role'] ?? null) === 'guest';
     }
 
-    public static function requireAdmin()
+    public static function requireAdmin(): void
     {
         if(!self::isAdmin()) {
             header('Location: /');
@@ -57,7 +57,7 @@ class Auth
         }
     }
 
-     public static function requireUser()
+     public static function requireUser(): void 
      {
         if(!self::isUser()) {
             header('Location: /');
@@ -65,7 +65,7 @@ class Auth
         }
      }
 
-    public static function denyGuest()
+    public static function denyGuest(): void
     {
         if(self::isGuest()) {
             header('Location: /');
@@ -101,4 +101,25 @@ class Auth
             'role' => $user['role']
         ];
     }
+    
+    public static function destroy() : void
+    {
+        unset($_SESSION['user']);
+        
+        if (ini_get("session.use_cookies")) {
+            $params = session_get_cookie_params();
+            setcookie(
+                session_name(),
+                '',
+                time() - 3600, 
+                $params['id'],
+                $params['name'],
+                $params['email'],
+                $params['role']
+            );
+        }
+
+        header('Location: /');
+    }
+
 }
