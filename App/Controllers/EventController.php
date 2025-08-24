@@ -3,31 +3,42 @@
 namespace App\Controllers;
 use App\Helpers\Request;
 use App\Helpers\Response;
-use App\Models\Event;
+use App\Models\EventModel;
 
-class EventResource extends \Core\Controller
+class EventController extends \Core\Controller
 {
-    public function getEvent($id): array
+
+    private EventModel $eventModel;
+
+    public function __construct()
+    {
+        $this->getEvent = new EventModel();
+    }
+
+    /**
+     * render view events
+     */
+    public function index()
+    {
+        return $this->render('Event', ['title' => 'События']);
+    }
+
+    /**
+     * getData
+     */
+    public function getEvent($id): void
     {
         try {
             $event = $this->eventModel->getItem($id);
 
-            
+            if(!$event) {
+                Response::error('Событие не найдено!', 404);
+            }
 
-            echo json_encode([
-                'status' => 'success',
-                'code' => 200,
-                'data' => $event,
-            ], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
-        
-        } catch (Exception $e) {
-            http_response_code(500);
-            header('Content-type: application/json; charset=utf-8');
-            
-            echo json_encode([
-                'status' => 'error',
-                'message' => 'Серверная ошибка',
-            ], JSON_UNESCAPED_UNICODE);
+            Response::success($event);
+
+        } catch (\Exception $e) {
+            Response::error('Серверная ошибка', 500);
         }
     }
 

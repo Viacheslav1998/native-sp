@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Models\Resources;
+namespace App\Models;
 
 use Core\Model;
 
 use App\Helpers\Response;
 
-class EventResource extends Model
+class EventModel extends Model
 {
     private string $table = 'events';
     protected Response $response;
