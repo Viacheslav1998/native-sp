@@ -13,7 +13,9 @@ class EventController extends \Core\Controller
 
     public function __construct()
     {
+        parent::__construct();
         $this->eventModel = new EventModel();
+        
     }
 
     /**
@@ -21,7 +23,7 @@ class EventController extends \Core\Controller
      */
     public function index()
     {
-        return $this->render('even', ['title' => 'События']);
+       return $this->render('event', ['title' => 'События']);
     }
 
     /**
