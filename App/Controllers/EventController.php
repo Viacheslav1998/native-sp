@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+
 use App\Helpers\Request;
 use App\Helpers\Response;
 use App\Models\EventModel;
@@ -12,7 +13,7 @@ class EventController extends \Core\Controller
 
     public function __construct()
     {
-        $this->getEvent = new EventModel();
+        $this->eventModel = new EventModel();
     }
 
     /**
@@ -20,7 +21,7 @@ class EventController extends \Core\Controller
      */
     public function index()
     {
-        return $this->render('Event', ['title' => 'События']);
+        return $this->render('even', ['title' => 'События']);
     }
 
     /**
@@ -28,7 +29,7 @@ class EventController extends \Core\Controller
      */
     public function getEvent($id): void
     {
-        try {
+        try {   
             $event = $this->eventModel->getItem($id);
 
             if(!$event) {

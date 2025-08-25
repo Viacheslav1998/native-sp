@@ -13,6 +13,10 @@ return [
   'login' => ['HomeController', 'login'],
   'register' => ['HomeController', 'register'],
   'user/{id}' => ['PersonController', 'show'],
+  
+  // event 
+  'events' => ['EventController', 'index'],
+  'event/{id}' => ['EventController', 'single'],
 
   // register / login
   'person/save' => ['RegisterController', 'save'],

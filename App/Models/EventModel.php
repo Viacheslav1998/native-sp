@@ -23,8 +23,7 @@ class EventModel extends Model
       $sql = "SELECT id, title, date FROM events WHERE id = :id";
       $stmt = $pdo->prepare($sql);
       $stmt->execute(['id' => $id]);
-
-      $event = $stmt->fetch(PDO::FETCH_ASSOC);
+      $event = $stmt->fetch();
       
       return $event ?: null;
     }
