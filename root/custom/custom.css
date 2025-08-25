@@ -119,6 +119,17 @@ a:hover { color: orange;}
 }
 /* and about-us */
 
+/* start single event*/
+
+.custom-font-bold {
+  font-weight: bold;
+}
+.custom-font-color-sl {
+  color: rgb(37, 37, 37)!important;
+}
+
+/* end single event*/
+
 .modal-box {
   position: fixed;
   top: 120px;

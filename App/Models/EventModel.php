@@ -19,12 +19,10 @@ class EventModel extends Model
 
     public function getItem(int $id): ?array
     {
-      $pdo = Model::staticPDO();
-      $sql = "SELECT id, title, date FROM events WHERE id = :id";
-      $stmt = $pdo->prepare($sql);
-      $stmt->execute(['id' => $id]);
-      $event = $stmt->fetch();
+      $sql = "SELECT id, title, date FROM events WHERE id = :id LIMIT 1";
+      $stmt = Model::staticPDO()->prepare($sql);
+      $stmt->execute([':id' => $id]);
       
-      return $event ?: null;
+      return $stmt->fetch() ?: null;
     }
 }
