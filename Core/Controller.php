@@ -3,12 +3,10 @@
 namespace Core;
 
 use App\Helpers\ViewRenderer;
-// use App\Helpers\Response;
 
 class Controller
 {
     protected ViewRenderer $viewRenderer;
-    // protected Response $response;
 
     public function __construct()
     {
