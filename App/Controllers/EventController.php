@@ -19,11 +19,17 @@ class EventController extends \Core\Controller
     }
 
     /**
-     * render view events
+     * render view only one
      */
     public function index()
     {
        return $this->render('event', ['title' => 'События']);
+    }
+
+    // test
+    public function testEvents()
+    {
+        return $this->render('all', ['title' => 'все события']);
     }
 
     /**

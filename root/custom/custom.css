@@ -127,6 +127,11 @@ a:hover { color: orange;}
 .custom-font-color-sl {
   color: rgb(37, 37, 37)!important;
 }
+.my-text-container {
+  line-height: 1.8;
+  font-weight: 300;
+  font-size: 18px;
+}
 
 /* end single event*/
 

@@ -14,7 +14,7 @@
 
 <div class="row px-3">
   <div class="col">
-    <div class="">
+    <div>
       тип события: <span class="badge text-bg-primary">Обычное</span>
     </div>
     <hr>
@@ -22,10 +22,11 @@
       <h1>Покатушки</h1>
     </div>
     <div>
-      <img src="" alt="IMAGEN">
+      <img src="/images/g17.jpg" class="img-fluid" alt="IMAGEN">
     </div>
+    <hr>
     <div>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam quis neque tempore, nam ullam voluptatem doloribus nulla, quibusdam asperiores saepe illum error reiciendis? Facilis hic aspernatur cumque laboriosam rem ipsam.
+      <p class="my-text-container p-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam quis neque tempore, nam ullam voluptatem doloribus nulla, quibusdam asperiores saepe illum error reiciendis? Facilis hic aspernatur cumque laboriosam rem ipsam.
       Temporibus laudantium quod asperiores vitae. Iure rem atque temporibus aliquid tenetur quas similique minus id, quae, pariatur in dicta ipsa recusandae, ratione ipsum quasi aspernatur consequuntur quaerat enim ipsam autem.
       Velit magnam pariatur provident iure modi ipsa nesciunt rerum! Inventore ratione quae facere, numquam nostrum suscipit corrupti vitae, exercitationem doloribus at, autem nobis praesentium perspiciatis voluptatibus alias. Possimus, consequuntur ratione?
       Voluptate, reiciendis. Suscipit odio totam non, soluta quos, cum alias doloremque iste recusandae, fugit numquam id unde. Earum consequuntur, modi exercitationem, necessitatibus tempore pariatur temporibus, maiores vitae adipisci similique dolor.
@@ -59,8 +60,6 @@
   <h2>Случайные новости:</h2>
 </div>
 <hr>
-
-
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
   <div class="col">
@@ -100,7 +99,6 @@
     </div>
   </div>
 </div>
-
 <hr>
 <div class="bg-warning p-2">
   <button type="button" class="btn btn-outline-light">вернутся</button>

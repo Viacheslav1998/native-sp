@@ -15,6 +15,7 @@ return [
   'user/{id}' => ['PersonController', 'show'],
   
   // event 
+  'test' => ['EventController', 'testEvents'],
   'events' => ['EventController', 'index'],
   'event/{id}' => ['EventController', 'single'],
 
