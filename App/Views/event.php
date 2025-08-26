@@ -15,7 +15,7 @@
 <div class="row px-3">
   <div class="col">
     <div class="">
-      тип события: <b>обычное</b>
+      тип события: <span class="badge text-bg-primary">Обычное</span>
     </div>
     <hr>
     <div>
@@ -59,18 +59,49 @@
   <h2>Случайные новости:</h2>
 </div>
 <hr>
-<div class="row g-2 mx-1">
-  <div class="col-6 bg-dark">
-    <div class="p-3 text-center text-white">Custom column padding</div>
+
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card h-100">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">Last updated 3 mins ago</small>
+      </div>
+    </div>
   </div>
-  <div class="col-6 bg-dark">
-    <div class="p-3 text-center text-white">Custom column padding</div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">Last updated 3 mins ago</small>
+      </div>
+    </div>
   </div>
-  <div class="col-6 bg-dark">
-    <div class="p-3 text-center text-white">Custom column padding</div>
-  </div>
-  <div class="col-6 bg-dark">
-    <div class="p-3 text-center text-white">Custom column padding</div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">Last updated 3 mins ago</small>
+      </div>
+    </div>
   </div>
 </div>
+
 <hr>
+<div class="bg-warning p-2">
+  <button type="button" class="btn btn-outline-light">вернутся</button>
+</div>
