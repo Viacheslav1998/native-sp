@@ -8,8 +8,8 @@ class DatabaseBackup
 
     public function __construct()
     {
-        $this->backupFile = __DIR__ . '../../db_backup.sql';
-        $this->flagFile = __DIR__ . '../../.backup_done';
+        $this->backupFile = __DIR__ . '/../db_backup.sql';
+        $this->flagFile = __DIR__ . '/../.backup_done';
     }
 
     public function backup(): void
@@ -33,7 +33,7 @@ class DatabaseBackup
 
     protected function doBackup(): void
     {
-        $dbUser = 'user';
+        $dbUser = 'root';
         $dbPass = '1914';
         $dbName = 'hastle';
 
