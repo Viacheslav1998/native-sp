@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    container_name: php-app
+    ports:
+      - "8080:80"
+    volumes: 
+      - .:/var/www/html
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: hustle        
+      MYSQL_USER: root           
+      MYSQL_PASSWORD: 1914
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./App/db_backup.sql:/docker-entrypoint-initdb.d/db_backup.sql
+
+
+  composer:
+    image: composer:2
+    container_name: composer
+    working_dir: /var/www/html
+    volumes: 
+      - .:/var/www/html
+    command: install
+
+volumes: 
+  db_data:
