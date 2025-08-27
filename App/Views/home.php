@@ -111,7 +111,7 @@
     <div class="position-relative bg-dark p-1 mb-3 text-white custom-img-size">    
       <div class="position-absolute py-3 px-5 top-0 start-0 w-100 h-100 d-flex flex-column justify-content-between">
         <div class="custom-fone-grey p-2">
-          <h2>Бесплатный тренинг по бродкастингу</h2>
+          <h2>Бесплатный тренинг по подкастам</h2>
           <p>Запись будет с 9 по 15 число, потому что места ограничены. Пробные бесплатные 3 урока. Секретные методики и ...</p>
         </div>
         <div class="row">

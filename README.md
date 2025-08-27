@@ -43,4 +43,4 @@ php cli/seed.php --count=100000
 создат нужное колличество данных 
 
 ## Пример (еще как видите пилится) сайта
-![Hastle.com](main.png)
+![Hastle.com](ggz.png)
