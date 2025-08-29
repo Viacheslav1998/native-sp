@@ -29,9 +29,9 @@ exit
 6) проверка - docker compose exec db mysql -u root -proot
 
 
-# USE hastle;
-# SHOW TABLES;
-# SELECT * FROM users LIMIT 5;
+#### USE hastle;
+#### SHOW TABLES;
+#### SELECT * FROM users LIMIT 5;
 ====
 
 7) ну если нужно остановить все контейнеры docker compose down
