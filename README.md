@@ -9,8 +9,23 @@ Simple project in PHP v8.3.6
 
 Довольно просто составлена реализация **миграций**. Для простоты, но существует множество способов её реализации. Я сделаю автоматизацию, хотя было бы лучше, если бы это была команда в командной строке.
 
-## данные 
-
+## запуск и установка приложения
+##  используем docker
+0.1) проверь есть ли у тебя докер 
+1) docker compose run --rm composer install - выполнение всего 
+2) npm i - установка пакетов
+3) (если у тебя linux) Находясь в корне репозитория: sudo chmod +x init.sh
+4) запуск докер контейнеров docker compose up -d --build
+5) docker compose exec db bash - импортировать дамп в ручную(один раз)
+внутри контейнера - пиши это mysql -u root -proot hastle < /docker-entrypoint-initdb.d/db_backup.sql
+exit
+6) проверка - docker compose exec db mysql -u root -proot
+USE hastle;
+SHOW TABLES;
+SELECT * FROM users LIMIT 5;
+====
+?) ну если нужно остановить все контейнеры docker compose down
+?) очистка бд - если нужно пересоздать дамп docker compose down -v
 
 ## Миграции
 
