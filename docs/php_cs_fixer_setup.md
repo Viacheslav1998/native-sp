@@ -1,19 +1,28 @@
-Fixer + pre-push hook
-1️⃣ Установка PHP-CS-Fixer
+# Fixer + pre-push hook
+
+## 1️⃣ Установка PHP-CS-Fixer
 
 Установи через Composer (в dev-зависимости):
-composer require --dev friendsofphp/php-cs-fixer
 
+```bash
+composer require --dev friendsofphp/php-cs-fixer
+```
 
 Проверь, что он работает:
+
+```bash
 vendor/bin/php-cs-fixer --version
-Должен показать версию.
+```
+
+> Должен показать версию.
 
 ---
 
-2️⃣ Создание конфига .php-cs-fixer.php
-В корне проекта создай файл:
+## 2️⃣ Создание конфига `.php-cs-fixer.php`
 
+В корне проекта создай файл `.php-cs-fixer.php` со следующим содержимым:
+
+```php
 <?php
 
 $finder = PhpCsFixer\Finder::create()
@@ -28,24 +37,41 @@ return (new PhpCsFixer\Config())
         'ordered_imports' => ['sort_algorithm' => 'alpha'],
     ])
     ->setFinder($finder);
+```
 
 ---
-3️⃣ Ручной запуск для проверки
+
+## 3️⃣ Ручной запуск для проверки
+
 Проверить, что всё ок:
-vendor/bin/php-cs-fixer fix --dry-run --diff -v
 
-Покажет, какие файлы нарушают правила.
+```bash
+vendor/bin/php-cs-fixer fix --dry-run --diff -v
+```
+
+> Покажет, какие файлы нарушают правила.
+
 Исправить всё:
+
+```bash
 vendor/bin/php-cs-fixer fix -v
+```
 
 ---
-4️⃣ Настройка pre-push hook
+
+## 4️⃣ Настройка pre-push hook
+
 Создай хук:
+
+```bash
 nano .git/hooks/pre-push
+```
 
 Вставь в него:
 
+```sh
 #!/bin/sh
+
 echo "🔧 Запускаю PHP-CS-Fixer..."
 vendor/bin/php-cs-fixer fix --using-cache=yes -v
 
@@ -55,24 +81,37 @@ if ! git diff --quiet; then
 fi
 
 echo "✅ Всё чисто, пуш продолжается."
+```
 
 Сделай исполняемым:
+
+```bash
 chmod +x .git/hooks/pre-push
+```
 
 ---
-5️⃣ Тест
+
+## 5️⃣ Тест
+
 Сделай тестовый коммит:
 
+```bash
 git commit --allow-empty -m "test cs-fixer"
+```
 
-и пробуй пуш 
+Попробуй пуш:
+
+```bash
 git push
+```
 
 ---
-6️⃣ (Опционально) Настройка в CI
+
+## 6️⃣ (Опционально) Настройка в CI
 
 Чтобы проверка срабатывала даже если кто-то забудет локально:
 
+```yaml
 # .github/workflows/php-cs-fixer.yml
 name: PHP-CS-Fixer
 
@@ -88,3 +127,5 @@ jobs:
           php-version: '8.2'
       - run: composer install
       - run: vendor/bin/php-cs-fixer fix --dry-run --diff -v
+```
+
