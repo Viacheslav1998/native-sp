@@ -6,11 +6,11 @@ use Core\Migration;
 use Core\Model;
 
 /**
- * Checking the status of the production server 
+ * Checking the status of the production server
  * generate/create DB/Tables/Columns
  */
-class DbSetupController {
-
+class DbSetupController
+{
     /**
      * generate/create/update/rename Table - Column.
      */
@@ -23,14 +23,14 @@ class DbSetupController {
 
             http_response_code(200);
 
-            if($appliedCount > 0) {
+            if ($appliedCount > 0) {
                 echo json_encode(['Success' => "Успех! Применено миграций: $appliedCount"], JSON_UNESCAPED_UNICODE);
             } else {
                 echo json_encode(['Info' => 'Миграции уже применены. Новых таблиц не создано.'], JSON_UNESCAPED_UNICODE);
             }
-            
+
         } catch (\PDOException $e) {
-            throw new Exception("возникли проблемы с базой данных");
+            throw new Exception('возникли проблемы с базой данных');
             httr_response_code(500);
             error_log('Error: ', $e->getMessage());
         }
@@ -39,7 +39,6 @@ class DbSetupController {
     public function status()
     {
         http_response_code(200);
-        echo json_encode(['success' =>  '200']);
+        echo json_encode(['success' => '200']);
     }
-
 }

@@ -14,7 +14,7 @@ class Response
         header('Content-Type: application/json; charset=utf-8');
 
         echo json_encode(
-            $data, 
+            $data,
             JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT
         );
         exit;
@@ -32,11 +32,9 @@ class Response
     public static function error(string $message, int $statusCode = 500): void
     {
         self::json([
-            'status' => 'error', 
+            'status' => 'error',
             'code' => $statusCode,
             'message' => $message
         ], $statusCode);
     }
-
-
 }

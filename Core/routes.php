@@ -13,8 +13,8 @@ return [
   'login' => ['HomeController', 'login'],
   'register' => ['HomeController', 'register'],
   'user/{id}' => ['PersonController', 'show'],
-  
-  // event 
+
+  // event
   'test' => ['EventController', 'testEvents'],
   'events' => ['EventController', 'index'],
   'event/{id}' => ['EventController', 'single'],
@@ -22,14 +22,14 @@ return [
   // register / login
   'person/save' => ['RegisterController', 'save'],
   'person/login' => ['LoginController', 'login'],
-  
+
   // just test code ...
   'test-array-string' => ['TestController', 'testDataArrayToString'],
   'test-fetch-data' => ['TestController', 'testFetchData'],
   'test-array-keys' => ['TestController', 'testArrayAllKeys'],
   // test fetch api dataForm secret
   'a4min/test-fetch' => ['Admin\AdminController', 'testFetch'],
-  
+
   // AdminPanel need QAuth = sessions
   'a4min/dashboard' => ['Admin\AdminController', 'dashboard'],
   'a4min/form-regular-event' => ['Admin\AdminController', 'createRegularForm'],
@@ -45,5 +45,5 @@ return [
   'api/testGetDataOneMoreTime' => ['Tests\TestController', 'testGetDataOneMoreTime'],
   'api/testPostTestData' => ['Tests\TestController', 'testPostTestData'],
   'session/check' => ['Tests\TestController', 'testSession'],
-  // CRUD - create/read/update/delete ... 
+  // CRUD - create/read/update/delete ...
 ];

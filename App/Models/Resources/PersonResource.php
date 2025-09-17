@@ -2,16 +2,16 @@
 
 namespace App\Models\Resources;
 
-use Core\Model;
 use App\Helpers\Response;
 use App\Services\CrudService;
+use Core\Model;
 
 class PersonResource extends Model
 {
     private string $table = 'users';
     private CrudService $crudService;
     protected Response $response;
-    
+
     public function __construct()
     {
         parent::__construct();
@@ -26,12 +26,12 @@ class PersonResource extends Model
     public function save(array $data): bool
     {
         try {
-            if(!empty($data['password'])) {
+            if (!empty($data['password'])) {
                 $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
             }
 
             $saved = $this->crudService->create($data);
-            
+
             return $this->response->json(
                 $saved
                   ? ['success' => true, 'message' => 'Пользователь Сохранен!']
@@ -42,7 +42,7 @@ class PersonResource extends Model
             error_log('Ошибка PDO: ' . $e->getMessage());
             error_log('Входные данные: ' . json_encode($data, JSON_PRETTY_PRINT));
 
-            if($e->getCode() === '23000' && str_contains($e->getMessage(), 'Duplicate entry')) {
+            if ($e->getCode() === '23000' && str_contains($e->getMessage(), 'Duplicate entry')) {
                 return $this->response->json([
                     'success' => false,
                     'message' => 'Пользователь с такой почтой уже существует !'

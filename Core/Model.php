@@ -18,7 +18,7 @@ class Model
 
     protected function connect()
     {
-        $config = require __DIR__ . "/../config/database.php";
+        $config = require __DIR__ . '/../config/database.php';
 
         $host = $config['host'];
         $db = $config['db'];
@@ -53,6 +53,7 @@ class Model
         if (!self::$pdo) {
             new self();
         }
+
         return self::$pdo;
-    }    
+    }
 }

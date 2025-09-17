@@ -2,20 +2,18 @@
 
 namespace App\Models\Resources;
 
-use Core\Model;
-
-use App\Helpers\Response;
 use App\Helpers\Auth;
+use App\Helpers\Response;
+use Core\Model;
 
 class LoginResource extends Model
 {
-
     private string $table = 'users';
     protected Response $response;
 
     public function __construct()
     {
-      $this->response = new Response();
+        $this->response = new Response();
         parent::__construct();
     }
 
@@ -26,7 +24,7 @@ class LoginResource extends Model
     {
         $user = $this->getUserByEmail($data['email']);
 
-        if(!$user || !password_verify($data['password'], $user['password'])) {
+        if (!$user || !password_verify($data['password'], $user['password'])) {
             return $this->response->json([
                 'success' => false,
                 'message' => 'Пользователь не найден!'
@@ -55,5 +53,4 @@ class LoginResource extends Model
 
         return $stmt->fetch() ?: null;
     }
-
 }

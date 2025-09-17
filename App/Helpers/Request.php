@@ -8,7 +8,6 @@ namespace App\Helpers;
  */
 class Request
 {
- 
     /**
      * get input data
      * return json or regular form
@@ -18,20 +17,23 @@ class Request
         $input = file_get_contents('php://input');
         $json = json_decode($input, true);
 
-        if(json_last_error() === JSON_ERROR_NONE) {
+        if (json_last_error() === JSON_ERROR_NONE) {
             return $json;
         }
 
-        return $_POST; 
+        return $_POST;
     }
 
-  /**
-   * return $_POST
-   * or []
-   */
+    /**
+     * return $_POST
+     * or []
+     */
     public static function post(string $key = null, $default = [])
     {
-        if($key === null) return $_POST;
+        if ($key === null) {
+            return $_POST;
+        }
+
         return $_POST[$key] ?? $default;
     }
 
@@ -50,7 +52,10 @@ class Request
      */
     public static function get(string $key = null, $default = null)
     {
-        if($key === null) return $_GET;
+        if ($key === null) {
+            return $_GET;
+        }
+
         return $_GET[$key] ?? $default;
     }
 
@@ -60,8 +65,8 @@ class Request
     public static function all(): array
     {
         return $_REQUEST;
-    } 
-  
+    }
+
     /**
      * check param
      */
@@ -82,15 +87,16 @@ class Request
      * return json input data
      */
     public static function json(): array
-    {   
+    {
         $json = file_get_contents('php://input');
+
         return json_decode($json, true) ?? [];
     }
 
     /**
      * GET CURRENT METHOD
      */
-    public static function method(): string 
+    public static function method(): string
     {
         return $_SERVER['REQUEST_METHOD'] ?? 'GET';
     }
@@ -100,7 +106,7 @@ class Request
      */
     public static function isPost(): bool
     {
-        return strtoupper(self::method())  === 'POST'; 
+        return strtoupper(self::method()) === 'POST';
     }
 
     /**
@@ -114,7 +120,7 @@ class Request
     /**
      * IP
      */
-    public function ip() : string
+    public function ip(): string
     {
         return $_SERVER['REMOTE_ADDR'] ?? '127.0.0.1';
     }
@@ -126,6 +132,7 @@ class Request
     {
         $key = strtoupper(str_replace('-', '_', $key));
         $key = 'HTTP_' . $key;
+
         return $_SERVER[$key] ?? null;
     }
 }

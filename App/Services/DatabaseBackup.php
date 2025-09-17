@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Services;
 
 class DatabaseBackup
@@ -17,17 +18,18 @@ class DatabaseBackup
         $firstRun = !file_exists($this->flagFile);
 
         if ($firstRun || $this->needsBackup()) {
-          $this->doBackup();
-          file_put_contents($this->flagFile, date('Y-m-d H:i:s'));
-          echo "Backup completed! \n";
+            $this->doBackup();
+            file_put_contents($this->flagFile, date('Y-m-d H:i:s'));
+            echo "Backup completed! \n";
         } else {
-          echo "Backup";
+            echo 'Backup';
         }
     }
 
     protected function needsBackup(): bool
     {
         $last = file_get_contents($this->flagFile);
+
         return (time() - strtotime($last)) > 3600;
     }
 

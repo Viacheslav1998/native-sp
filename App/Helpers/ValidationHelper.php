@@ -2,8 +2,8 @@
 
 namespace App\Helpers;
 
-class ValidationHelper {
-    
+class ValidationHelper
+{
     // required field
     public static function required($value): bool
     {
@@ -17,10 +17,10 @@ class ValidationHelper {
     }
 
     // string is min
-    public static function minLength($value, $length): bool 
+    public static function minLength($value, $length): bool
     {
         return strlen($value) >= $length;
-    } 
+    }
 
     // string is max
     public static function maxLengh($value, $length): bool
@@ -29,10 +29,8 @@ class ValidationHelper {
     }
 
     // value is number
-    public static function numeric($value): bool 
+    public static function numeric($value): bool
     {
         return is_numeric($value);
     }
-
 }
-

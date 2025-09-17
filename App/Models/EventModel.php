@@ -2,9 +2,8 @@
 
 namespace App\Models;
 
-use Core\Model;
-
 use App\Helpers\Response;
+use Core\Model;
 
 class EventModel extends Model
 {
@@ -19,10 +18,10 @@ class EventModel extends Model
 
     public function getItem(int $id): ?array
     {
-      $sql = "SELECT id, title, date FROM events WHERE id = :id LIMIT 1";
-      $stmt = Model::staticPDO()->prepare($sql);
-      $stmt->execute([':id' => $id]);
-      
-      return $stmt->fetch() ?: null;
+        $sql = 'SELECT id, title, date FROM events WHERE id = :id LIMIT 1';
+        $stmt = Model::staticPDO()->prepare($sql);
+        $stmt->execute([':id' => $id]);
+
+        return $stmt->fetch() ?: null;
     }
 }

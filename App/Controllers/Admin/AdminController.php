@@ -10,8 +10,7 @@ use App\Traits\RequireAuth;
  */
 class AdminController extends \Core\Controller
 {
-
-     use RequireAuth;
+    use RequireAuth;
 
     // construct auth
     private $template = 'admin';
@@ -65,7 +64,7 @@ class AdminController extends \Core\Controller
     {
         Auth::requireUser();
         $name = Auth::getUser();
-        
+
         return $this->render(
             'admin/profile',
             [

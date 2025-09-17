@@ -2,7 +2,7 @@
 
 namespace App\Traits;
 
-use App\Helpers\Auth; 
+use App\Helpers\Auth;
 
 trait RequireAuth
 {
@@ -13,7 +13,7 @@ trait RequireAuth
 
     protected function denyIfAdmin(): void
     {
-        if(Auth::hasAnyRole(['admin', 'user'])) {
+        if (Auth::hasAnyRole(['admin', 'user'])) {
             header('Location: /');
             exit;
         }

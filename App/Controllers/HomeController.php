@@ -2,8 +2,8 @@
 
 namespace App\Controllers;
 
-use Core\Controller;
 use App\Traits\RequireAuth;
+use Core\Controller;
 
 class HomeController extends Controller
 {
@@ -27,12 +27,14 @@ class HomeController extends Controller
     public function login()
     {
         $this->denyIfAdmin();
+
         return $this->render('login', ['title' => 'Система входа']);
     }
 
     public function register()
     {
         $this->denyIfAdmin();
+
         return $this->render('register', ['title' => 'Система регистрации']);
     }
 }

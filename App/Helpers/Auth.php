@@ -8,9 +8,8 @@ namespace App\Helpers;
  */
 class Auth
 {
+    public const UNKNOWN_USER = 'Неизвестный пользователь';
 
-    const UNKNOWN_USER = 'Неизвестный пользователь';
-    
     /**
      * only test Current Data Session
      * don`t use it anywhere
@@ -27,7 +26,7 @@ class Auth
     public static function getUser(): string
     {
         return $_SESSION['user']['name'] ?? self::UNKNOWN_USER;
-    } 
+    }
 
     public static function check(): bool
     {
@@ -41,7 +40,7 @@ class Auth
 
     public static function isUser(): bool
     {
-        return self::check() && ($_SESSION['user']['role'] ?? null) === 'user'; 
+        return self::check() && ($_SESSION['user']['role'] ?? null) === 'user';
     }
 
     public static function isGuest(): bool
@@ -51,44 +50,41 @@ class Auth
 
     public static function requireAdmin(): void
     {
-        if(!self::isAdmin()) {
+        if (!self::isAdmin()) {
             header('Location: /');
             exit;
         }
     }
 
-     public static function requireUser(): void 
-     {
-        if(!self::isUser()) {
+    public static function requireUser(): void
+    {
+        if (!self::isUser()) {
             header('Location: /');
             exit;
         }
-     }
+    }
 
     public static function denyGuest(): void
     {
-        if(self::isGuest()) {
+        if (self::isGuest()) {
             header('Location: /');
             exit;
         }
     }
-
 
     public static function hasRole(string $role): bool
     {
         return self::check() && ($_SESSION['user']['role'] ?? null) === $role;
     }
 
-
     public static function hasAnyRole(array $roles): bool
     {
-        if(!self::check()) {
+        if (!self::check()) {
             return false;
         }
 
         return in_array($_SESSION['user']['role'] ?? null, $roles, true);
     }
-
 
     public static function login(array $user): void
     {
@@ -97,21 +93,21 @@ class Auth
         $_SESSION['user'] = [
             'id' => $user['id'],
             'name' => $user['name'],
-            'email'=> $user['email'],
+            'email' => $user['email'],
             'role' => $user['role']
         ];
     }
-    
-    public static function destroy() : void
+
+    public static function destroy(): void
     {
         unset($_SESSION['user']);
-        
-        if (ini_get("session.use_cookies")) {
+
+        if (ini_get('session.use_cookies')) {
             $params = session_get_cookie_params();
             setcookie(
                 session_name(),
                 '',
-                time() - 3600, 
+                time() - 3600,
                 $params['id'],
                 $params['name'],
                 $params['email'],
@@ -121,5 +117,4 @@ class Auth
 
         header('Location: /');
     }
-
 }

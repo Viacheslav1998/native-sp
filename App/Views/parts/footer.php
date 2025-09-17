@@ -11,9 +11,9 @@
       <div class="fw-lighter">
         <p>Информация о сотрудничестве находится в шапке</p>
       </div>
-      <?php  
-        if (\App\Helpers\Auth::hasAnyRole(['admin', 'user'])): 
-      ?>
+      <?php
+        if (\App\Helpers\Auth::hasAnyRole(['admin', 'user'])):
+            ?>
       <div>
         <h4 class="fw-light">Для пользователей:</h4>
         <a href="/a4min/dashboard" class="btn btn-outline-warning">Управление</a>
@@ -33,9 +33,9 @@
             <li><a href="">Ночные события</a></li>
             <li><a href="">Дневные события</a></li>
             <li><a href="">Специальные события</a></li>
-          <?php  
-            if (!\App\Helpers\Auth::hasAnyRole(['admin', 'user'])): 
-          ?>
+          <?php
+                  if (!\App\Helpers\Auth::hasAnyRole(['admin', 'user'])):
+                      ?>
             <li><a href="/login">Вход</a></li>
             <li><a href="/register">Регистрация</a></li>
            <?php endif; ?>

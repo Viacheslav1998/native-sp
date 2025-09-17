@@ -21,5 +21,4 @@ class Controller
     {
         $this->viewRenderer->render($view, $data, $layout);
     }
-
 }

@@ -1,4 +1,4 @@
 <?php
 
-// class products -> create DB - model product - 
+// class products -> create DB - model product -
 // add - fun short products

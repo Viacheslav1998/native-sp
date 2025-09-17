@@ -1,16 +1,17 @@
 <?php
-    // use Exception;
-    // just test Exception write log in file
-    class TestException
+
+// use Exception;
+// just test Exception write log in file
+class TestException
+{
+    public function testExcpt()
     {
-        public function testExcpt()
-        {
-            try{ 
-                if(10 != 9) {
-                    throw new Exception("Error....");
-                }
-            } catch(Exception $e) {
-                error_log($e->getMessage());
+        try {
+            if (10 != 9) {
+                throw new Exception('Error....');
             }
+        } catch (Exception $e) {
+            error_log($e->getMessage());
         }
     }
+}

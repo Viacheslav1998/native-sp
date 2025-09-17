@@ -9,17 +9,17 @@ class Session
      */
     public static function start(): void
     {
-      if(session_status() === PHP_SESSION_NONE) {
-          session_start();
-      }
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
     }
-    
+
     /**
      * set Default Session
      */
-    public static function initUser(): void 
+    public static function initUser(): void
     {
-        if(!isset($_SESSION['user'])) {
+        if (!isset($_SESSION['user'])) {
             $_SESSION['user'] = [
                 'id' => null,
                 'name' => 'guest',
@@ -38,5 +38,4 @@ class Session
         header('Location: /');
         exit;
     }
-
 }

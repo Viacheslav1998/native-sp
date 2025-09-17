@@ -1,23 +1,25 @@
 <?php
+
 /**
  * ресурс это делегирования
- * валидация 
+ * валидация
  * сервис по работе с бд
  * сохранение непосредственно
- * 
+ *
  */
+
 namespace App\Models\Resources;
 
-use Core\Model;
-use App\Validation\TestFormValidators; 
+use App\ExceptionHandlers\PDOExceptionEmail;
 use App\Helpers\Response;
 use App\Services\CrudService;
-use App\ExceptionHandlers\PDOExceptionEmail;
 use App\Services\FileUploadService;
+use App\Validation\TestFormValidators;
+use Core\Model;
 
 class TestResource extends Model
 {
-    private string $table = 'test_data';  
+    private string $table = 'test_data';
     private TestFormValidators $validator;
     private CrudService $crudService;
     protected Response $response;
@@ -41,7 +43,7 @@ class TestResource extends Model
     {
         // error_log('intresting message: '. print_r($data, true));
         $errors = $this->validator->validate($data);
-      
+
         if (!empty($errors)) {
             // error_log('ошибка валидации: '. json_encode($errors, JSON_UNESCAPED_UNICODE));
             return $this->response->json([
@@ -55,7 +57,8 @@ class TestResource extends Model
                 $fileUploader = new FileUploadService();
                 $data['image_path'] = $fileUploader->uploadFile($data['image'], __DIR__ . '/../../../public/uploads');
             } catch (\Exception $e) {
-                error_log('ошибка при загрузки картинки: ' . $e->getMessage() );
+                error_log('ошибка при загрузки картинки: ' . $e->getMessage());
+
                 return $this->response->json([
                     'success' => false,
                     'errors' => ['image' => $e->getMessage()],
@@ -66,11 +69,11 @@ class TestResource extends Model
         try {
             $saved = $this->crudService->create([
                 'name' => $data['name'],
-                'email' =>  $data['email'],
+                'email' => $data['email'],
                 'title' => $data['title'],
                 'date_js' => $data['date_js'],
                 'description' => $data['description'],
-                'assessment' =>  $data['assessment'],
+                'assessment' => $data['assessment'],
                 'image' => $data['image_path']
             ]);
 
@@ -91,11 +94,10 @@ class TestResource extends Model
         }
     }
 
-
     /**
      * return @param json [code]
      * for testing array methods
-     */ 
+     */
     public function testArrayManipulation()
     {
         return $this->response->json([
@@ -118,12 +120,12 @@ class TestResource extends Model
     public function testGetBooleanArray()
     {
         $arrayBox = [
-            "1" => "asdasd",
-            "2" => "asdasd",
-            "3" => "asdsad",
+            '1' => 'asdasd',
+            '2' => 'asdasd',
+            '3' => 'asdsad',
         ];
 
-        var_dump($result = array_arr($arrayBox, function(string $value) {
+        var_dump($result = array_arr($arrayBox, function (string $value) {
             return strlen($value) < 10;
         }));
     }
@@ -151,62 +153,61 @@ class TestResource extends Model
     private function arrayBox()
     {
         return  [
-            "key_1" => [
-                "super" => "day",
-                "nice work" => "payday",
-                "acme" =>  "this is gg",
+            'key_1' => [
+                'super' => 'day',
+                'nice work' => 'payday',
+                'acme' => 'this is gg',
             ],
-            "attention_key_2" => "ha ha ha",
-            "super" => "space",
+            'attention_key_2' => 'ha ha ha',
+            'super' => 'space',
             [ // Первый элемент: ассоциативный массив с разными типами данных
-                "name" => "Привет",                // строка
+                'name' => 'Привет',                // строка
                 1 => 42,                           // число (ключ — число)
-                "isActive" => true,                // boolean
-                "score" => 99.5,                   // float
-                "tags" => ["php", "array", "data"],// массив
-                "details" => [                    // объект (ассоциативный массив)
-                    "city" => "Москва",
+                'isActive' => true,                // boolean
+                'score' => 99.5,                   // float
+                'tags' => ['php', 'array', 'data'],// массив
+                'details' => [                    // объект (ассоциативный массив)
+                    'city' => 'Москва',
                     2 => false,
-                    "nested" => null
+                    'nested' => null
                 ]
             ],
             [ // Второй элемент: вложенный массив
-                "items" => [
-                    "строка1", "строка2", "строка3",   // строки
+                'items' => [
+                    'строка1', 'строка2', 'строка3',   // строки
                     10, 20, 30,                        // числа
                     true, false, true,                 // boolean
                     1.1, 2.2, 3.3,                     // float
-                    ["a" => 1], ["b" => 2], ["c" => 3],// объекты
+                    ['a' => 1], ['b' => 2], ['c' => 3],// объекты
                     [1], [2], [3]                      // массивы
                 ]
             ],
             [ // Третий элемент: массив из вложенных ассоциативных массивов
                 [
-                    "key1" => "value1",
+                    'key1' => 'value1',
                     100 => 123,
-                    "bool" => false,
-                    "float" => 6.78,
-                    "array" => ["a", "b", "c"],
-                    "obj" => ["x" => "y"]
+                    'bool' => false,
+                    'float' => 6.78,
+                    'array' => ['a', 'b', 'c'],
+                    'obj' => ['x' => 'y']
                 ],
                 [
-                    "key2" => "value2",
+                    'key2' => 'value2',
                     200 => 456,
-                    "bool" => true,
-                    "float" => 9.01,
-                    "array" => [true, false],
-                    "obj" => ["z" => 0]
+                    'bool' => true,
+                    'float' => 9.01,
+                    'array' => [true, false],
+                    'obj' => ['z' => 0]
                 ],
                 [
-                    "key3" => "value3",
+                    'key3' => 'value3',
                     300 => 789,
-                    "bool" => false,
-                    "float" => 3.14,
-                    "array" => [],
-                    "obj" => []
+                    'bool' => false,
+                    'float' => 3.14,
+                    'array' => [],
+                    'obj' => []
                 ]
             ]
         ];
     }
-
 }
