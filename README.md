@@ -75,7 +75,8 @@ php cli/seed.php --count=100000
 создат нужное колличество данных 
 
 ## выполнить backup
-/App/bin/backup.php
+находясь в директории App выполни cli command
+php /bin/backup.php
 
 ## Пример (еще как видите пилится) сайта
 ![Hastle.com](ggz.png)
